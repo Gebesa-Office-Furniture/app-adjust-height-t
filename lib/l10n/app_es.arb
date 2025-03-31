@@ -1,0 +1,774 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "The conventional newborn programmer greeting"
+    },
+    "start": "Empezar",
+    "@start": {
+        "description": "Empezar configuración"
+    },
+    "next": "Siguiente",
+    "@next": {
+        "description": "Siguiente paso"
+    },
+    "connect": "Conectar",
+    "@connect": {
+        "description": "Conectar al dispositivo"
+    },
+    "signIn": "Iniciar sesión",
+    "@signIn": {
+        "description": "Iniciar sesión en la app"
+    },
+    "signUp": "Registrarse",
+    "@signUp": {
+        "description": "Registrarse en la app"
+    },
+    "email": "Correo electrónico",
+    "@email": {
+        "description": "Etiqueta de entrada de correo electrónico"
+    },
+    "enterEmail": "Ingresa tu correo electrónico",
+    "@enterEmail": {
+        "description": "Marcador de posición de entrada de correo electrónico"
+    },
+    "password": "Contraseña",
+    "@password": {
+        "description": "Etiqueta de entrada de contraseña"
+    },
+    "enterPassword": "Ingresa tu contraseña",
+    "@enterPassword": {
+        "description": "Marcador de posición de entrada de contraseña"
+    },
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "@forgotPassword": {
+        "description": "Enlace de contraseña olvidada"
+    },
+    "turnOnBluetooth": "Activa el Bluetooth de tu dispositivo",
+    "@turnOnBluetooth": {
+        "description": "Instrucción para activar el Bluetooth"
+    },
+    "bluetoothEnabled": "El Bluetooth está activado, continúa con el siguiente paso",
+    "@bluetoothEnabled": {
+        "description": "Confirmación de que el Bluetooth está activado"
+    },
+    "enableBluetooth": "Activa el Bluetooth",
+    "@enableBluetooth": {
+        "description": "Botón para activar el Bluetooth"
+    },
+    "connectDeskTitle": "Asegúrate de que tu escritorio esté conectado a la electricidad y encendido",
+    "@connectDeskTitle": {
+        "description": "Título para conectar el escritorio"
+    },
+    "blueToothDeskInstalled": "Asegúrate de que tu escritorio tenga el dispositivo Bluetooth de Gebesa instalado",
+    "@blueToothDeskInstalled": {
+        "description": "Instrucción para verificar si el escritorio tiene el dispositivo Bluetooth instalado"
+    },
+    "welcome": "Te damos la bienvenida a",
+    "@welcome": {
+        "description": "Mensaje de bienvenida"
+    },
+    "termsAndConditions": "Al continuar, aceptas los términos de uso y la política de privacidad de la App de Gebesa.",
+    "@termsAndConditions": {
+        "description": "Mensaje de términos y condiciones"
+    },
+    "step1": "1. Asegúrate de que tu escritorio esté encendido y el Bluetooth activado.",
+    "@step1": {
+        "description": "Primer paso para conectar el escritorio"
+    },
+    "step2": "2. Asegúrate de que tu escritorio tenga el dispositivo Bluetooth instalado.",
+    "@step2": {
+        "description": "Segundo paso para conectar el escritorio"
+    },
+    "username": "¿Cuál es tu nombre de usuario?",
+    "@username": {
+        "description": "Pregunta sobre el nombre de usuario"
+    },
+    "enterUsername": "Ingresa tu nombre de usuario",
+    "@enterUsername": {
+        "description": "Marcador de posición de entrada de nombre de usuario"
+    },
+    "email2": "¿Cuál es tu correo electrónico?",
+    "@email2": {
+        "description": "Pregunta sobre el correo electrónico"
+    },
+    "enterEmail2": "Ingresa tu correo electrónico",
+    "@enterEmail2": {
+        "description": "Marcador de posición de entrada de correo electrónico"
+    },
+    "password2": "¿Cuál es tu contraseña?",
+    "@password2": {
+        "description": "Pregunta sobre la contraseña"
+    },
+    "enterPassword2": "Ingresa tu contraseña",
+    "@enterPassword2": {
+        "description": "Marcador de posición de entrada de contraseña"
+    },
+    "confirmPassword": "Confirma tu contraseña",
+    "@confirmPassword": {
+        "description": "Pregunta para confirmar la contraseña"
+    },
+    "enterConfirmPassword": "Confirma tu contraseña",
+    "@enterConfirmPassword": {
+        "description": "Marcador de posición de entrada de confirmación de contraseña"
+    },
+    "changeName": "Cambiar nombre del dispositivo",
+    "@changeName": {
+        "description": "Título para cambiar el nombre del dispositivo"
+    },
+    "disconnect": "Desconectar",
+    "@disconnect": {
+        "description": "Botón para desconectar el dispositivo"
+    },
+    "open": "Abrir",
+    "@open": {
+        "description": "Botón para abrir el escritorio"
+    },
+    "notConnectable": "N/A",
+    "@notConnectable": {
+        "description": "Dispositivo no conectable"
+    },
+    "pairing": "Conectando dispositivo...",
+    "@pairing": {
+        "description": "Mensaje de emparejamiento en progreso"
+    },
+    "disconnectQ": "¿Quieres desconectarte de",
+    "@disconnectQ": {
+        "description": "Pregunta para desconectar el dispositivo"
+    },
+    "cancel": "Cancelar",
+    "@cancel": {
+        "description": "Botón para cancelar la acción"
+    },
+    "confirm": "Confirmar",
+    "@confirm": {
+        "description": "Botón para confirmar la acción"
+    },
+    "save": "Guardar",
+    "@save": {
+        "description": "Botón para guardar la acción"
+    },
+    "nameNotEmpty": "El nombre no puede estar vacío",
+    "@nameNotEmpty": {
+        "description": "Mensaje de error para nombre vacío"
+    },
+    "invalidName": "Nombre inválido",
+    "@invalidName": {
+        "description": "Mensaje de error para nombre inválido"
+    },
+    "notConnected": "No conectado",
+    "@notConnected": {
+        "description": "Mensaje de no conectado"
+    },
+    "connectYourDesk": "Conecta tu escritorio de nuevo",
+    "@connectYourDesk": {
+        "description": "Mensaje para conectar el escritorio"
+    },
+    "findDevices": "Buscar dispositivos",
+    "@findDevices": {
+        "description": "Botón para buscar dispositivos"
+    },
+    "saveCurrentHeight": "Guardar la altura actual como",
+    "@saveCurrentHeight": {
+        "description": "Mensaje para guardar la altura actual"
+    },
+    "standing": "Altura de pie",
+    "@standing": {
+        "description": "Etiqueta de altura de pie"
+    },
+    "sitting": "Altura sentado",
+    "@sitting": {
+        "description": "Etiqueta de altura sentado"
+    },
+    "rest": "Altura de descanso",
+    "@rest": {
+        "description": "Etiqueta de altura de descanso"
+    },
+    "standingMemory": "De pie",
+    "@standingMemory": {
+        "description": "Etiqueta de posición de pie"
+    },
+    "sittingMemory": "Sentado",
+    "@sittingMemory": {
+        "description": "Etiqueta de posición sentado"
+    },
+    "restMemory": "Descanso",
+    "@restMemory": {
+        "description": "Etiqueta de posición de descanso"
+    },
+    "bluetoothDisabled": "Bluetooth desactivado",
+    "@bluetoothDisabled": {
+        "description": "Mensaje de Bluetooth desactivado"
+    },
+    "messageTurnOnBluetooth": "El Bluetooth está desactivado, activa el Bluetooth de tu dispositivo",
+    "@messageTurnOnBluetooth": {
+        "description": "Instrucción para activar el Bluetooth"
+    },
+    "enableBluetooth2": "Activar Bluetooth",
+    "@enableBluetooth2": {
+        "description": "Botón para activar Bluetooth"
+    },
+    "preferencesButton": "Preferencias de usuario",
+    "@preferencesButton": {
+        "description": "Botón de preferencias de usuario"
+    },
+    "darkMode": "Modo oscuro",
+    "@darkMode": {
+        "description": "Interruptor de modo oscuro"
+    },
+    "language": "Idioma",
+    "@language": {
+        "description": "Idioma"
+    },
+    "english": "Inglés",
+    "@english": {
+        "description": "Idioma inglés"
+    },
+    "spanish": "Español",
+    "@spanish": {
+        "description": "Idioma español"
+    },
+    "unitOfMeasure": "Unidad de medida",
+    "@unitOfMeasure": {
+        "description": "Selección de unidad de medida"
+    },
+    "metric": "Sistema métrico",
+    "@metric": {
+        "description": "Unidad de medida métrica"
+    },
+    "imperial": "Sistema imperial",
+    "@imperial": {
+        "description": "Unidad de medida imperial"
+    },
+    "metricUnits": "cm, kg",
+    "@metricUnits": {
+        "description": "Unidades métricas"
+    },
+    "imperialUnits": "in, lb",
+    "@imperialUnits": {
+        "description": "Unidades imperiales"
+    },
+    "healthyReminders": "Recordatorios saludables",
+    "@healthyReminders": {
+        "description": "Etiqueta de recordatorios saludables"
+    },
+    "notifications": "Recibir notificaciones",
+    "@notifications": {
+        "description": "Interruptor de notificaciones"
+    },
+    "sedenataryReminder": "Recordatorio de sedentarismo",
+    "@sedenataryReminder": {
+        "description": "Interruptor de recordatorio de sedentarismo"
+    },
+    "turnOnNotifications": "Las notificaciones están desactivadas, actívalas. Esto te permitirá recibir recordatorios y actualizaciones",
+    "@turnOnNotifications": {
+        "description": "Instrucción para activar las notificaciones"
+    },
+    "deskSettings": "Configuración del escritorio",
+    "@deskSettings": {
+        "description": "Configuración del escritorio"
+    },
+    "settings": "Configuración",
+    "@settings": {
+        "description": "Configuración"
+    },
+    "myWeight": "Mi peso",
+    "@myWeight": {
+        "description": "Etiqueta de mi peso"
+    },
+    "myHeight": "Mi altura",
+    "@myHeight": {
+        "description": "Etiqueta de mi altura"
+    },
+    "recommendedHeight": "Usar las alturas recomendadas",
+    "@recommendedHeight": {
+        "description": "Usar la altura recomendada"
+    },
+    "recomedation": "Alturas recomendadas de Gebesa",
+    "@recomedation": {
+        "description": "Alturas recomendadas de Gebesa"
+    },
+    "changeMeasure": "Si deseas cambiar la unidad de medida, puedes hacerlo en la configuración de las unidades de medida",
+    "@changeMeasure": {
+        "description": "Instrucción para cambiar la unidad de medida"
+    },
+    "profile": "Perfil",
+    "@profile": {
+        "description": "Etiqueta de perfil"
+    },
+    "changePassword": "Cambiar contraseña",
+    "@changePassword": {
+        "description": "Cambiar contraseña"
+    },
+    "name": "Nombre",
+    "@name": {
+        "description": "Nombre"
+    },
+    "textChangePassword": "Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña",
+    "@textChangePassword": {
+        "description": "Instrucción para cambiar la contraseña"
+    },
+    "send": "Enviar",
+    "@send": {
+        "description": "Enviar"
+    },
+    "socketException": "Sin conexión a internet",
+    "@socketException": {
+        "description": "Mensaje de error de conexión a internet"
+    },
+    "socketExceptionMessage": "Por favor, verifica tu conexión a internet e intenta de nuevo",
+    "@socketExceptionMessage": {
+        "description": "Mensaje de error de conexión a internet"
+    },
+    "timeOutException": "La solicitud ha excedido el tiempo límite",
+    "@timeOutException": {
+        "description": "Mensaje de error de tiempo de espera"
+    },
+    "timeOutExceptionMessage": "Por favor, verifica tu conexión a internet e intenta de nuevo",
+    "@timeOutExceptionMessage": {
+        "description": "Mensaje de error de tiempo de espera"
+    },
+    "formatException": "Error al decodificar la respuesta del servidor",
+    "@formatException": {
+        "description": "Mensaje de error de formato"
+    },
+    "formatExceptionMessage": "Por favor, intenta de nuevo",
+    "@formatExceptionMessage": {
+        "description": "Mensaje de error de formato"
+    },
+    "unknownException": "Error desconocido",
+    "@unknownException": {
+        "description": "Mensaje de error desconocido"
+    },
+    "unknownExceptionMessage": "Por favor, intenta de nuevo",
+    "@unknownExceptionMessage": {
+        "description": "Mensaje de error desconocido"
+    },
+    "emailAlreadyInUse": "El correo electrónico ya está en uso",
+    "@emailAlreadyInUse": {
+        "description": "Mensaje de error de correo electrónico en uso"
+    },
+    "wrongPassword": "Contraseña incorrecta",
+    "@wrongPassword": {
+        "description": "Mensaje de error de contraseña incorrecta"
+    },
+    "userNotFound": "Usuario no encontrado",
+    "@userNotFound": {
+        "description": "Mensaje de error de usuario no encontrado"
+    },
+    "weakPassword": "Contraseña débil",
+    "@weakPassword": {
+        "description": "Mensaje de error de contraseña débil"
+    },
+    "invalidLoginCredentials": "Credenciales inválidas",
+    "@invalidLoginCredentials": {
+        "description": "Mensaje de error de credenciales inválidas"
+    },
+    "toManyRequests": "Demasiadas solicitudes",
+    "@toManyRequests": {
+        "description": "Mensaje de error de demasiadas solicitudes"
+    },
+    "resetPasswordEmailSent": "Correo electrónico de restablecimiento de contraseña enviado",
+    "@resetPasswordEmailSent": {
+        "description": "Mensaje de correo electrónico de restablecimiento de contraseña enviado"
+    },
+    "allowPermissions": "Gebesa Desk Control necesita permisos para controlar tu escritorio",
+    "@allowPermissions": {
+        "description": "Mensaje de permisos necesarios"
+    },
+    "goToSettings": "Ir a configuración",
+    "@goToSettings": {
+        "description": "Botón para ir a configuración"
+    },
+    "permissions": "Permisos requeridos",
+    "@permissions": {
+        "description": "Título de permisos requeridos"
+    },
+    "noDevicesFound": "No se encontraron dispositivos",
+    "@noDevicesFound": {
+        "description": "Mensaje de no dispositivos encontrados"
+    },
+    "validateEmail": "Por favor, ingresa un correo electrónico válido",
+    "@validateEmail": {
+        "description": "Mensaje de error de correo electrónico inválido"
+    },
+    "enterEmailValidation": "Por favor, ingresa tu correo electrónico",
+    "@enterEmailValidation": {
+        "description": "Marcador de posición de entrada de correo electrónico"
+    },
+    "validPassword": "Ingresa una contraseña válida (mínimo 6 caracteres)",
+    "@validPassword": {
+        "description": "Mensaje de error de contraseña inválida"
+    },
+    "enterPasswordValidation": "Por favor, ingresa tu contraseña",
+    "@enterPasswordValidation": {
+        "description": "Marcador de posición de entrada de contraseña"
+    },
+    "enterUsernameValidation": "Por favor, ingresa tu nombre de usuario",
+    "@enterUsernameValidation": {
+        "description": "Marcador de posición de entrada de nombre de usuario"
+    },
+    "enterNameValidation": "Por favor, ingresa un nombre válido",
+    "@enterNameValidation": {
+        "description": "Marcador de posición de entrada de nombre"
+    },
+    "passwordsDoNotMatch": "Las contraseñas no coinciden",
+    "@passwordsDoNotMatch": {
+        "description": "Mensaje de error de contraseñas no coinciden"
+    },
+    "enterPasswordAgain": "Por favor, ingresa tu contraseña de nuevo",
+    "@enterPasswordAgain": {
+        "description": "Marcador de posición de entrada de contraseña"
+    },
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "@signInWithGoogle": {
+        "description": "Botón para iniciar sesión con Google"
+    },
+    "signInWithApple": "Iniciar sesión con Apple",
+    "@signInWithApple": {
+        "description": "Botón para iniciar sesión con Apple"
+    },
+    "enterHeight": "Por favor, ingresa tu altura",
+    "@enterHeight": {
+        "description": "Marcador de posición de entrada de altura"
+    },
+    "enterWeight": "Por favor, ingresa tu peso",
+    "@enterWeight": {
+        "description": "Marcador de posición de entrada de peso"
+    },
+    "moveToHeight": "Altura especifica",
+    "@moveToHeight": {
+        "description": "Mensaje para mover a la altura"
+    },
+    "height": "Altura",
+    "@height": {
+        "description": "Etiqueta de altura"
+    },
+    "heightOutOfRange": "La altura está fuera de rango",
+    "@heightOutOfRange": {
+        "description": "Mensaje de error de altura fuera de rango"
+    },
+    "heightNotEmpty": "La altura no puede estar vacía",
+    "@heightNotEmpty": {
+        "description": "Mensaje de error de altura vacía"
+    },
+    "sessionExpired": "Sesión expirada",
+    "@sessionExpired": {
+        "description": "Mensaje de sesión expirada"
+    },
+    "connectionError": "Error de conexión",
+    "@connectionError": {
+        "description": "Mensaje de error de conexión"
+    },
+    "connectionErrorMessageBT": "Ha ocurrido un error al conectar con el dispositivo Bluetooth, por favor intenta de nuevo.",
+    "@connectionErrorMessageBT": {
+        "description": "Mensaje de error de conexión Bluetooth"
+    },
+    "tryAgain": "Intentar de nuevo",
+    "@tryAgain": {
+        "description": "Botón para intentar de nuevo"
+    },
+    "close": "Cerrar",
+    "@close": {
+        "description": "Botón para cerrar"
+    },
+    "connecting": "Conectando...",
+    "@connecting": {
+        "description": "Mensaje de conectando"
+    },
+    "fortyMinutes": "40 mins",
+    "@fortyMinutes": {
+        "description": "Etiqueta para 40 minutos"
+    },
+    "oneHour": "1 hora",
+    "@oneHour": {
+        "description": "Etiqueta para 1 hora"
+    },
+    "twoHours": "2 horas",
+    "@twoHours": {
+        "description": "Etiqueta para 2 horas"
+    },
+    "threeHours": "3 horas",
+    "@threeHours": {
+        "description": "Etiqueta para 3 horas"
+    },
+    "fourHours": "4 horas",
+    "@fourHours": {
+        "description": "Etiqueta para 4 horas"
+    },
+    "eightHours": "8 horas",
+    "@eightHours": {
+        "description": "Etiqueta para 8 horas"
+    },
+    "hours": "horas",
+    "@hours": {
+        "description": "Etiqueta para horas"
+    },
+    "minutes": "minutos",
+    "@minutes": {
+        "description": "Etiqueta para minutos"
+    },
+    "createRoutine": "Crear rutina",
+    "@createRoutine": {
+        "description": "Botón para crear rutina"
+    },
+    "routinesDescription": "Las rutinas son una forma de recordarte cambiar de posición cada cierto tiempo",
+    "@routinesDescription": {
+        "description": "Descripción de las rutinas"
+    },
+    "initRoutine": "Iniciar rutina",
+    "@initRoutine": {
+        "description": "Botón para iniciar rutina"
+    },
+    "stopRoutine": "Detener rutina",
+    "@stopRoutine": {
+        "description": "Botón para detener rutina"
+    },
+    "routineDescription": "Las rutinas te proporcionarán indicadores de calorías y tiempos de actividad",
+    "@routineDescription": {
+        "description": "Descripción de las rutinas"
+    },
+    "shortcuts": "Accesos rápidos",
+    "@shortcuts": {
+        "description": "Etiqueta de accesos rápidos"
+    },
+    "configureHeightAndWeight": "Configura tu peso y altura para poder crear una rutina personalizada.",
+    "@configureHeightAndWeight": {
+        "description": "Instrucción para configurar peso y altura"
+    },
+    "configure": "Configurar",
+    "@configure": {
+        "description": "Botón para configurar"
+    },
+    "wait": "Espera...",
+    "@wait": {
+        "description": "Mensaje de espera"
+    },
+    "routineSaved": "Rutina guardada",
+    "@routineSaved": {
+        "description": "Mensaje de rutina guardada"
+    },
+    "goals": "Metas",
+    "@goals": {
+        "description": "Etiqueta de metas"
+    },
+    "timeSitQuestion": "¿Cuánto tiempo quieres estar sentado?",
+    "@timeSitQuestion": {
+        "description": "Pregunta sobre el tiempo sentado"
+    },
+    "timeStandQuestion": "¿Cuánto tiempo quieres estar de pie?",
+    "@timeStandQuestion": {
+        "description": "Pregunta sobre el tiempo de pie"
+    },
+    "caloriesQuestion": "¿Cuántas calorías quieres quemar?",
+    "@caloriesQuestion": {
+        "description": "Pregunta sobre las calorías"
+    },
+    "saveGoals": "Guardar metas",
+    "@saveGoals": {
+        "description": "Botón para guardar metas"
+    },
+    "dataPerDay": "Datos por día",
+    "@dataPerDay": {
+        "description": "Datos por día"
+    },
+    "calories": "calorías",
+    "@calories": {
+        "description": "Etiqueta de calorías"
+    },
+    "completeData": "Todos los campos deben ser mayores a cero.",
+    "@completeData": {
+        "description": "Mensaje de completar datos"
+    },
+    "goalsSaved": "Metas guardadas",
+    "@goalsSaved": {
+        "description": "Mensaje de metas guardadas"
+    },
+    "routineStarted": "Rutina iniciada",
+    "@routineStarted": {
+        "description": "Mensaje de rutina iniciada"
+    },
+    "routineStopped": "Rutina detenida",
+    "@routineStopped": {
+        "description": "Mensaje de rutina detenida"
+    },
+    "invalidRoutine": "La duración de la rutina debe ser mayor a 0",
+    "@invalidRoutine": {
+        "description": "Mensaje de rutina inválida"
+    },
+    "confirmStopRoutine": "¿Estás seguro de que deseas detener la rutina?",
+    "@confirmStopRoutine": {
+        "description": "Pregunta para detener la rutina"
+    },
+    "stop": "Detener",
+    "@stop": {
+        "description": "Botón para detener"
+    },
+    "heightControls": "Controles de altura",
+    "@heightControls": {
+        "description": "Título para los controles de ajuste de altura"
+    },
+    "adjustHeightDescription": "Ajusta la altura de tu escritorio usando estos botones o ingresando una altura específica.",
+    "@adjustHeightDescription": {
+        "description": "Descripción para ajustar la altura del escritorio usando botones o entrada"
+    },
+    "setMemoryPosition": "Establecer posición de memoria",
+    "@setMemoryPosition": {
+        "description": "Título para establecer una posición de memoria"
+    },
+    "saveMemoryPositionDescription": "Guarda la altura de tu escritorio en una de las tres posiciones de memoria.",
+    "@saveMemoryPositionDescription": {
+        "description": "Descripción para guardar la altura del escritorio en posiciones de memoria"
+    },
+    "memoryPositions": "Posiciones de memoria",
+    "@memoryPositions": {
+        "description": "Título para la función de posiciones de memoria"
+    },
+    "memoryPositionsDescription": "Ajuste de altura con un solo toque usando las posiciones de memoria.",
+    "@memoryPositionsDescription": {
+        "description": "Descripción para usar posiciones de memoria para ajustar la altura"
+    },
+    "routines": "Rutinas",
+    "@routines": {
+        "description": "Título para la sección de rutinas"
+    },
+    "routinesDescription2": "Las rutinas te proporcionarán indicadores de calorías y tiempos de actividad",
+    "@routinesDescription2": {
+        "description": "Descripción para la función de rutinas"
+    },
+    "controlStatsSettings": "Control, Estadísticas y Ajustes",
+    "@controlStatsSettings": {
+        "description": "Título para el menú principal"
+    },
+    "controlStatsSettingsDescription": "Este es el menú principal. Puedes navegar dando clic en cada uno de los íconos para ver las diferentes pantallas.",
+    "@controlStatsSettingsDescription": {
+        "description": "Descripción de la funcionalidad del menú principal"
+    },
+    "statistics": "Estadísticas",
+    "@statistics": {
+        "description": "Título para la sección de estadísticas"
+    },
+    "caloriesBurned": "Calorías quemadas",
+    "@caloriesBurned": {
+        "description": "Etiqueta de calorías quemadas"
+    },
+    "timeSitting": "Tiempo sentado",
+    "@timeSitting": {
+        "description": "Etiqueta de tiempo sentado"
+    },
+    "timeRest": "Tiempo de descanso",
+    "@timeRest": {
+        "description": "Etiqueta de tiempo de descanso"
+    },
+    "timeStanding": "Tiempo de pie",
+    "@timeStanding": {
+        "description": "Etiqueta de tiempo de pie"
+    },
+    "mostUsedMemoryPosition": "Posición de memoria más usada",
+    "@mostUsedMemoryPosition": {
+        "description": "Etiqueta de posición de memoria más usada"
+    },
+    "times": "veces",
+    "@times": {
+        "description": "Etiqueta de veces"
+    },
+    "configureGoals": "Establece tus metas para personalizar tu experiencia y comenzar tus rutinas de manera efectiva.",
+    "@configureGoals": {
+        "description": "Instrucción para configurar metas"
+    },
+    "noGoals": "Configura tus metas para empezar",
+    "@noGoals": {
+        "description": "Mensaje de no metas configuradas"
+    },
+    "configureGoalsButton": "Configurar metas",
+    "@configureGoalsButton": {
+        "description": "Botón para configurar metas"
+    },
+    "scanning": "Escaneando...",
+    "@scanning": {
+        "description": "Mensaje de escaneando"
+    },
+    "physicalSettings": "Configuración física",
+    "@physicalSettings": {
+        "description": "Título para la configuración física"
+    },
+    "memoriesMissing": "Falta configurar las posiciones de memoria: ",
+    "@memoriesMissing": {
+        "description": "Mensaje de posiciones de memoria faltantes"
+    },
+    "deleteAccount": "Eliminar cuenta",
+    "@deleteAccount": {
+        "description": "Botón para eliminar la cuenta"
+    },
+    "deleteAccountTitle": "¿Estás seguro de que deseas eliminar tu cuenta?",
+    "@deleteAccountTitle": {
+        "description": "Confirmación para eliminar la cuenta"
+    },
+    "deleteAccountDescription": "Esta acción es irreversible y tus datos se eliminarán permanentemente.\n\nNecesitas reautenticarte para continuar.",
+    "@deleteAccountDescription": {
+        "description": "Confirmación para eliminar la cuenta"
+    },
+    "totalControl": "Control Total",
+    "@totalControl": {
+        "description": "Título para la función de control total"
+    },
+    "totalControlDescription": "Controla la altura de tu escritorio. Toca el escritorio para establecer una altura específica o arrástralo para ajustarla.",
+    "@totalControlDescription": {
+        "description": "Descripción para la función de control total"
+    },
+    "connectDesk": "Conectate a tu escritorio",
+    "@connectDesk": {
+        "description": "Mensaje para conectar el escritorio"
+    },
+    "skip": "Omitir",
+    "@skip": {
+        "description": "Botón para saltar la acción"
+    },
+    "nameChanged": "Nombre cambiado",
+    "@nameChanged": {
+        "description": "Mensaje de nombre cambiado"
+    },
+    "memoryNotConfigured": "La memoria no está configurada en la app. Por favor, configúrala manualmente en la app para habilitar las estadísticas y comenzar tus rutinas correctamente.",
+    "@memoryNotConfigured": {
+        "description": "Instrucción para configurar la memoria"
+    },
+    "routinesTitle": "Rutinas",
+    "@routinesTitle": {
+        "description": "Título para la sección de rutinas"
+    },
+    "routinesSteps": "Las rutinas te permiten calcular las calorías quemadas y analizar el tiempo que pasas en las tres alturas: descanso, sentado y de pie.\nEs necesario configurar algunas cosas para iniciar tus rutinas:",
+    "@routinesSteps": {
+        "description": "Pasos para iniciar las rutinas"
+    },
+    "step1Title": "1. Configura las memorias en la app",
+    "@step1Title": {
+        "description": "Título para el paso 1"
+    },
+    "step1Description": "Presionando el botón con la letra M puedes configurar la altura de cada botón. Los íconos corresponden a los números 1, 2 y 3 del control de tu escritorio.",
+    "@step1Description": {
+        "description": "Descripción para el paso 1"
+    },
+    "step2Title": "2. Configura tu altura y peso",
+    "@step2Title": {
+        "description": "Título para el paso 2"
+    },
+    "step2Description": "En la sección de configuración, entra a la Configuración Física para establecer tu peso y altura. Esto nos ayudará a calcular las calorías quemadas.",
+    "@step2Description": {
+        "description": "Descripción para el paso 2"
+    },
+    "step3Title": "3. Configura tus metas",
+    "@step3Title": {
+        "description": "Título para el paso 3"
+    },
+    "step3Description": "En la sección de estadísticas, encontrarás una leyenda y un botón que te indicará que debes configurar las metas de tiempo sentado y de pie que deseas pasar al día, además de las calorías que quisieras quemar.",
+    "@step3Description": {
+        "description": "Descripción para el paso 3"
+    },
+    "finalNote": "Después de tener configurado todo correctamente,\npodrás iniciar tus rutinas.",
+    "@finalNote": {
+        "description": "Nota final para iniciar las rutinas"
+    },
+    "reauthenticate": "Reautenticar",
+    "@reauthenticate": {
+        "description": "Botón para reautenticar"
+    }
+}

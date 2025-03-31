@@ -1,0 +1,774 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "The conventional newborn programmer greeting"
+    },
+    "start": "Start",
+    "@start": {
+        "description": "Start configuration"
+    },
+    "next": "Next",
+    "@next": {
+        "description": "Next step"
+    },
+    "connect": "Connect",
+    "@connect": {
+        "description": "Connect to the device"
+    },
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign in to the app"
+    },
+    "signUp": "Sign Up",
+    "@signUp": {
+        "description": "Sign up to the app"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Email input label"
+    },
+    "enterEmail": "Enter your email",
+    "@enterEmail": {
+        "description": "Email input placeholder"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "Password input label"
+    },
+    "enterPassword": "Enter your password",
+    "@enterPassword": {
+        "description": "Password input placeholder"
+    },
+    "forgotPassword": "Forgot password?",
+    "@forgotPassword": {
+        "description": "Forgot password link"
+    },
+    "turnOnBluetooth": "Turn on Bluetooth of your device",
+    "@turnOnBluetooth": {
+        "description": "Instruction to turn on Bluetooth"
+    },
+    "bluetoothEnabled": "Bluetooth is enabled, continue to the next step",
+    "@bluetoothEnabled": {
+        "description": "Confirmation that Bluetooth is enabled"
+    },
+    "enableBluetooth": "Enable Bluetooth",
+    "@enableBluetooth": {
+        "description": "Button to enable Bluetooth"
+    },
+    "connectDeskTitle": "Make sure your desk is connected to electricity and turned on",
+    "@connectDeskTitle": {
+        "description": "Title for connecting the desk"
+    },
+    "blueToothDeskInstalled": "Make sure your desk has the Gebesa Bluetooth device installed",
+    "@blueToothDeskInstalled": {
+        "description": "Instruction to check if the desk has the Bluetooth device installed"
+    },
+    "welcome": "Welcome to",
+    "@welcome": {
+        "description": "Welcome message"
+    },
+    "termsAndConditions": "By continuing, you agree to the terms of use and privacy policy of Gebesa App.",
+    "@termsAndConditions": {
+        "description": "Terms and conditions message"
+    },
+    "step1": "1. Make sure your desk is turned on and Bluetooth is enabled.",
+    "@step1": {
+        "description": "First step to connect the desk"
+    },
+    "step2": "2. Make sure your desk has the Bluetooth device installed.",
+    "@step2": {
+        "description": "Second step to connect the desk"
+    },
+    "username": "What is your username?",
+    "@username": {
+        "description": "Username input label"
+    },
+    "enterUsername": "Enter your username",
+    "@enterUsername": {
+        "description": "Username input placeholder"
+    },
+    "email2": "What is your email?",
+    "@email2": {
+        "description": "Email input label"
+    },
+    "enterEmail2": "Enter your email",
+    "@enterEmail2": {
+        "description": "Email input placeholder"
+    },
+    "password2": "What is your password?",
+    "@password2": {
+        "description": "Password input label"
+    },
+    "enterPassword2": "Enter your password",
+    "@enterPassword2": {
+        "description": "Password input placeholder"
+    },
+    "confirmPassword": "Confirm your password",
+    "@confirmPassword": {
+        "description": "Password confirmation input label"
+    },
+    "enterConfirmPassword": "Enter your password again",
+    "@enterConfirmPassword": {
+        "description": "Password confirmation input placeholder"
+    },
+    "changeName": "Change device name",
+    "@changeName": {
+        "description": "Button to change device name"
+    },
+    "disconnect": "Disconnect",
+    "@disconnect": {
+        "description": "Button to disconnect the device"
+    },
+    "open": "Open",
+    "@open": {
+        "description": "Button to open the desk"
+    },
+    "notConnectable": "N/A",
+    "@notConnectable": {
+        "description": "No connectable device"
+    },
+    "pairing": "Pairing in progress...",
+    "@pairing": {
+        "description": "Pairing in progress message"
+    },
+    "disconnectQ": "Do you want to disconnect with",
+    "@disconnectQ": {
+        "description": "Button to disconnect the device"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Button to cancel the action"
+    },
+    "confirm": "Confirm",
+    "@confirm": {
+        "description": "Button to confirm the action"
+    },
+    "save": "Save",
+    "@save": {
+        "description": "Button to save the action"
+    },
+    "nameNotEmpty": "Name cannot be empty",
+    "@nameNotEmpty": {
+        "description": "Error message for empty name"
+    },
+    "invalidName": "Invalid name device",
+    "@invalidName": {
+        "description": "Error message for invalid name"
+    },
+    "notConnected": "Not connected",
+    "@notConnected": {
+        "description": "Not connected device"
+    },
+    "connectYourDesk": "Connect your desk again",
+    "@connectYourDesk": {
+        "description": "Instruction to connect the desk again"
+    },
+    "findDevices": "Find devices",
+    "@findDevices": {
+        "description": "Button to find devices"
+    },
+    "saveCurrentHeight": "Save the current height as",
+    "@saveCurrentHeight": {
+        "description": "Button to save the current height"
+    },
+    "standing": "Standing height",
+    "@standing": {
+        "description": "Standing height label"
+    },
+    "sitting": "Sitting height",
+    "@sitting": {
+        "description": "Sitting height label"
+    },
+    "standingMemory": "Standing",
+    "@standingMemory": {
+        "description": "Standing memory label"
+    },
+    "sittingMemory": "Sitting",
+    "@sittingMemory": {
+        "description": "Sitting memory label"
+    },
+    "restMemory": "Rest",
+    "@restMemory": {
+        "description": "Rest memory label"
+    },
+    "rest": "Rest height",
+    "@rest": {
+        "description": "Rest height label"
+    },
+    "bluetoothDisabled": "Bluetooth is disabled",
+    "@bluetoothDisabled": {
+        "description": "Bluetooth is disabled message"
+    },
+    "messageTurnOnBluetooth": "Mobile device's Bluetooth is disabled. Please enable it to continue",
+    "@messageTurnOnBluetooth": {
+        "description": "Instruction to enable Bluetooth"
+    },
+    "enableBluetooth2": "Enable Bluetooth",
+    "@enableBluetooth2": {
+        "description": "Button to enable Bluetooth"
+    },
+    "preferencesButton": "User preferences",
+    "@preferencesButton": {
+        "description": "Button to open preferences"
+    },
+    "darkMode": "Dark mode",
+    "@darkMode": {
+        "description": "Dark mode switch"
+    },
+    "language": "Language",
+    "@language": {
+        "description": "Language selection"
+    },
+    "english": "English",
+    "@english": {
+        "description": "English language"
+    },
+    "spanish": "Spanish",
+    "@spanish": {
+        "description": "Spanish language"
+    },
+    "unitOfMeasure": "Unit of measure",
+    "@unitOfMeasure": {
+        "description": "Unit of measure selection"
+    },
+    "metric": "Metric system",
+    "@metric": {
+        "description": "Metric unit of measure"
+    },
+    "imperial": "Imperial system",
+    "@imperial": {
+        "description": "Imperial unit of measure"
+    },
+    "metricUnits": "cm, kg",
+    "@metricUnits": {
+        "description": "Metric units"
+    },
+    "imperialUnits": "in, lb",
+    "@imperialUnits": {
+        "description": "Imperial units"
+    },
+    "healthyReminders": "Healthy reminders",
+    "@healthyReminders": {
+        "description": "Healthy reminders label"
+    },
+    "notifications": "Receive notifications",
+    "@notifications": {
+        "description": "Notifications switch"
+    },
+    "sedenataryReminder": "Sedentary reminder",
+    "@sedenataryReminder": {
+        "description": "Sedentary reminder switch"
+    },
+    "turnOnNotifications": "Notifications are disabled, please enable them. This will allow you to receive reminders and updates",
+    "@turnOnNotifications": {
+        "description": "Instruction to enable notifications"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Settings label"
+    },
+    "deskSettings": "Desk settings",
+    "@deskSettings": {
+        "description": "Desk settings label"
+    },
+    "myWeight": "My weight",
+    "@myWeight": {
+        "description": "My weight label"
+    },
+    "myHeight": "My height",
+    "@myHeight": {
+        "description": "My height label"
+    },
+    "recommendedHeight": "Use the recommended height",
+    "@recommendedHeight": {
+        "description": "Button to use the recommended height"
+    },
+    "recomedation": "Gebesa's recommended sitting and standing heights",
+    "@recomedation": {
+        "description": "Gebesa's recommended heights"
+    },
+    "changeMeasure": "If you want to change the measure system, go to the user preferences",
+    "@changeMeasure": {
+        "description": "Instruction to change the measure system"
+    },
+    "profile": "Profile",
+    "@profile": {
+        "description": "Profile label"
+    },
+    "changePassword": "Change password",
+    "@changePassword": {
+        "description": "Button to change password"
+    },
+    "name": "Name",
+    "@name": {
+        "description": "Name input label"
+    },
+    "textChangePassword": "Enter your email and we will send you a link to reset your password",
+    "@textChangePassword": {
+        "description": "Instruction to change password"
+    },
+    "send": "Send",
+    "@send": {
+        "description": "Button to send the email"
+    },
+    "socketException": "No internet connection",
+    "@socketException": {
+        "description": "No internet connection message"
+    },
+    "socketExceptionMessage": "Please check your internet connection and try again",
+    "@socketExceptionMessage": {
+        "description": "Instruction to check the internet connection"
+    },
+    "timeOutException": "Connection timeout",
+    "@timeOutException": {
+        "description": "Connection timeout message"
+    },
+    "timeOutExceptionMessage": "Please check your internet connection and try again",
+    "@timeOutExceptionMessage": {
+        "description": "Instruction to check the internet connection"
+    },
+    "formatException": "Invalid data",
+    "@formatException": {
+        "description": "Invalid data message"
+    },
+    "formatExceptionMessage": "Please check the data and try again",
+    "@formatExceptionMessage": {
+        "description": "Instruction to check the data"
+    },
+    "unknownException": "Unknown error",
+    "@unknownException": {
+        "description": "Unknown error message"
+    },
+    "unknownExceptionMessage": "An unknown error has occurred, please try again",
+    "@unknownExceptionMessage": {
+        "description": "Instruction to try again"
+    },
+    "emailAlreadyInUse": "Email already in use",
+    "@emailAlreadyInUse": {
+        "description": "Email already in use message"
+    },
+    "wrongPassword": "Wrong password",
+    "@wrongPassword": {
+        "description": "Wrong password message"
+    },
+    "userNotFound": "User not found",
+    "@userNotFound": {
+        "description": "User not found message"
+    },
+    "weakPassword": "Weak password",
+    "@weakPassword": {
+        "description": "Weak password message"
+    },
+    "invalidLoginCredentials": "Invalid login credentials",
+    "@invalidLoginCredentials": {
+        "description": "Invalid login credentials message"
+    },
+    "toManyRequests": "Too many requests",
+    "@toManyRequests": {
+        "description": "Too many requests message"
+    },
+    "resetPasswordEmailSent": "Reset password email sent, check your inbox",
+    "@resetPasswordEmailSent": {
+        "description": "Reset password email sent message"
+    },
+    "allowPermissions": "Gebesa App needs permissions to continue, allow them in the settings",
+    "@allowPermissions": {
+        "description": "Button to allow permissions"
+    },
+    "goToSettings": "Go to settings",
+    "@goToSettings": {
+        "description": "Button to go to settings"
+    },
+    "permissions": "Permissions needed",
+    "@permissions": {
+        "description": "Permissions needed message"
+    },
+    "noDevicesFound": "No devices found",
+    "@noDevicesFound": {
+        "description": "No devices found message"
+    },
+    "validateEmail": "Enter a valid email",
+    "@validateEmail": {
+        "description": "Error message for invalid email"
+    },
+    "enterEmailValidation": "Please enter your email",
+    "@enterEmailValidation": {
+        "description": "Error message for empty email"
+    },
+    "validPassword": "Enter a valid password (at least 6 characters)",
+    "@validPassword": {
+        "description": "Error message for invalid password"
+    },
+    "enterPasswordValidation": "Please enter your password",
+    "@enterPasswordValidation": {
+        "description": "Error message for empty password"
+    },
+    "enterUsernameValidation": "Please enter your username",
+    "@enterUsernameValidation": {
+        "description": "Error message for empty username"
+    },
+    "enterNameValidation": "Please enter a valid username",
+    "@enterNameValidation": {
+        "description": "Error message for invalid username"
+    },
+    "passwordsDoNotMatch": "Passwords do not match",
+    "@passwordsDoNotMatch": {
+        "description": "Error message for different passwords"
+    },
+    "enterPasswordAgain": "Please enter your password again",
+    "@enterPasswordAgain": {
+        "description": "Error message for empty password confirmation"
+    },
+    "signInWithGoogle": "Sign in with Google",
+    "@signInWithGoogle": {
+        "description": "Button to sign in with Google"
+    },
+    "signInWithApple": "Sign in with Apple",
+    "@signInWithApple": {
+        "description": "Button to sign in with Apple"
+    },
+    "enterHeight": "Please enter your height",
+    "@enterHeight": {
+        "description": "Error message for empty height"
+    },
+    "enterWeight": "Please enter your weight",
+    "@enterWeight": {
+        "description": "Error message for empty weight"
+    },
+    "moveToHeight": "Specified height",
+    "@moveToHeight": {
+        "description": "Instruction to move to the desired height"
+    },
+    "height": "Height",
+    "@height": {
+        "description": "Height label"
+    },
+    "heightOutOfRange": "Height out of range",
+    "@heightOutOfRange": {
+        "description": "Error message for height out of range"
+    },
+    "heightNotEmpty": "Height cannot be empty",
+    "@heightNotEmpty": {
+        "description": "Error message for empty height"
+    },
+    "sessionExpired": "Session expired",
+    "@sessionExpired": {
+        "description": "Session expired message"
+    },
+    "connectionError": "Connection error",
+    "@connectionError": {
+        "description": "Connection error message"
+    },
+    "connectionErrorMessageBT": "An error occurred while connecting to the device, please try again.",
+    "@connectionErrorMessageBT": {
+        "description": "Instruction to try again"
+    },
+    "tryAgain": "Try again",
+    "@tryAgain": {
+        "description": "Button to try again"
+    },
+    "close": "Close",
+    "@close": {
+        "description": "Button to close the action"
+    },
+    "connecting": "Connecting...",
+    "@connecting": {
+        "description": "Connecting message"
+    },
+    "fortyMinutes": "40 mins",
+    "@fortyMinutes": {
+        "description": "40 minutes label"
+    },
+    "oneHour": "1 hour",
+    "@oneHour": {
+        "description": "1 hour label"
+    },
+    "twoHours": "2 hours",
+    "@twoHours": {
+        "description": "2 hours label"
+    },
+    "threeHours": "3 hours",
+    "@threeHours": {
+        "description": "3 hours label"
+    },
+    "fourHours": "4 hours",
+    "@fourHours": {
+        "description": "4 hours label"
+    },
+    "eightHours": "8 hours",
+    "@eightHours": {
+        "description": "8 hours label"
+    },
+    "hours": "hours",
+    "@hours": {
+        "description": "Hours label"
+    },
+    "minutes": "minutes",
+    "@minutes": {
+        "description": "Minutes label"
+    },
+    "createRoutine": "Create routine",
+    "@createRoutine": {
+        "description": "Button to create routine"
+    },
+    "routinesDescription": "Routines it's a way to remind you to change your position every certain time",
+    "@routinesDescription": {
+        "description": "Routines description"
+    },
+    "initRoutine": "Start routine",
+    "@initRoutine": {
+        "description": "Button to start routine"
+    },
+    "stopRoutine": "Stop routine",
+    "@stopRoutine": {
+        "description": "Button to stop routine"
+    },
+    "routineDescription": "Routines will provide you with calorie indicators and activity times",
+    "@routineDescription": {
+        "description": "Routine description"
+    },
+    "shortcuts": "Shortcut options",
+    "@shortcuts": {
+        "description": "Shortcut options label"
+    },
+    "configureHeightAndWeight": "Please set up your weight and height first to create a personalized routine.",
+    "@configureHeightAndWeight": {
+        "description": "Instruction to set up weight and height"
+    },
+    "configure": "Configure",
+    "@configure": {
+        "description": "Button to configure"
+    },
+    "wait": "Wait...",
+    "@wait": {
+        "description": "Wait message"
+    },
+    "routineSaved": "Routine saved",
+    "@routineSaved": {
+        "description": "Routine saved message"
+    },
+    "goals": "Goals",
+    "@goals": {
+        "description": "Goals label"
+    },
+    "timeSitQuestion": "How long do you want to sit?",
+    "@timeSitQuestion": {
+        "description": "Question about sitting time"
+    },
+    "timeStandQuestion": "How long do you want to stand?",
+    "@timeStandQuestion": {
+        "description": "Question about standing time"
+    },
+    "caloriesQuestion": "How many calories do you want to burn?",
+    "@caloriesQuestion": {
+        "description": "Question about calories"
+    },
+    "saveGoals": "Save goals",
+    "@saveGoals": {
+        "description": "Button to save goals"
+    },
+    "dataPerDay": "Data per day",
+    "@dataPerDay": {
+        "description": "Data per day label"
+    },
+    "calories": "calories",
+    "@calories": {
+        "description": "Calories label"
+    },
+    "completeData": "All fields must be greater than zero.",
+    "@completeData": {
+        "description": "Instruction to complete all the fields"
+    },
+    "goalsSaved": "Goals saved",
+    "@goalsSaved": {
+        "description": "Goals saved message"
+    },
+    "routineStarted": "Routine started",
+    "@routineStarted": {
+        "description": "Routine started message"
+    },
+    "routineStopped": "Routine stopped",
+    "@routineStopped": {
+        "description": "Routine stopped message"
+    },
+    "invalidRoutine": "Routine time must be greater than zero",
+    "@invalidRoutine": {
+        "description": "Error message for invalid routine"
+    },
+    "confirmStopRoutine": "Do you want to stop the routine?",
+    "@confirmStopRoutine": {
+        "description": "Button to stop the routine"
+    },
+    "stop": "Stop",
+    "@stop": {
+        "description": "Button to stop the action"
+    },
+    "heightControls": "Height controls",
+    "@heightControls": {
+        "description": "Title for height adjustment controls"
+    },
+    "adjustHeightDescription": "Adjust the height of your desk using these buttons or by entering a specific height.",
+    "@adjustHeightDescription": {
+        "description": "Description for adjusting desk height using buttons or input"
+    },
+    "setMemoryPosition": "Set memory position",
+    "@setMemoryPosition": {
+        "description": "Title for setting a memory position"
+    },
+    "saveMemoryPositionDescription": "Save the height of your desk in one of the three memory positions.",
+    "@saveMemoryPositionDescription": {
+        "description": "Description for saving desk height in memory positions"
+    },
+    "memoryPositions": "Memory positions",
+    "@memoryPositions": {
+        "description": "Title for memory positions feature"
+    },
+    "memoryPositionsDescription": "One-touch height adjustment with the memory positions.",
+    "@memoryPositionsDescription": {
+        "description": "Description for using memory positions to adjust height"
+    },
+    "routines": "Routines",
+    "@routines": {
+        "description": "Title for routines section"
+    },
+    "routinesDescription2": "Routines provide you with calorie and activity time indicators.",
+    "@routinesDescription2": {
+        "description": "Description for routines feature"
+    },
+    "controlStatsSettings": "Control, Statistics, and Settings",
+    "@controlStatsSettings": {
+        "description": "Title for the main menu"
+    },
+    "controlStatsSettingsDescription": "This is the main menu. You can navigate by clicking on each icon to view the different screens.",
+    "@controlStatsSettingsDescription": {
+        "description": "Description for main menu functionality"
+    },
+    "statistics": "Statistics",
+    "@statistics": {
+        "description": "Title for statistics section"
+    },
+    "caloriesBurned": "Calories burned",
+    "@caloriesBurned": {
+        "description": "Calories burned label"
+    },
+    "timeSitting": "Sitting time",
+    "@timeSitting": {
+        "description": "Time sitting label"
+    },
+    "timeRest": "Rest time",
+    "@timeRest": {
+        "description": "Time rest label"
+    },
+    "timeStanding": "Standing time",
+    "@timeStanding": {
+        "description": "Time standing label"
+    },
+    "mostUsedMemoryPosition": "Most used memory position",
+    "@mostUsedMemoryPosition": {
+        "description": "Most used memory position label"
+    },
+    "times": "times",
+    "@times": {
+        "description": "Times label"
+    },
+    "configureGoals": "Set your goals to personalize your experience and start your routines effectively.",
+    "@configureGoals": {
+        "description": "Button to configure goals"
+    },
+    "noGoals": "Set your goals to get started",
+    "@noGoals": {
+        "description": "No goals set message"
+    },
+    "configureGoalsButton": "Configure goals",
+    "@configureGoalsButton": {
+        "description": "Button to configure goals"
+    },
+    "scanning": "Scanning...",
+    "@scanning": {
+        "description": "Scanning message"
+    },
+    "physicalSettings": "Physical settings",
+    "@physicalSettings": {
+        "description": "Physical settings label"
+    },
+    "memoriesMissing": "Some memory positions are not set: ",
+    "@memoriesMissing": {
+        "description": "Error message for missing memory positions"
+    },
+    "deleteAccount": "Delete account",
+    "@deleteAccount": {
+        "description": "Button to delete account"
+    },
+    "deleteAccountTitle": "Are you sure you want to delete your account?",
+    "@deleteAccountTitle": {
+        "description": "Confirmation to delete account"
+    },
+    "deleteAccountDescription": "This action is irreversible and your data be permanently deleted.\n\nYou need to reauthenticate to continue.",
+    "@deleteAccountDescription": {
+        "description": "Confirmation to delete account"
+    },
+    "totalControl": "Total Control",
+    "@totalControl": {
+        "description": "Title for the total control feature"
+    },
+    "totalControlDescription": "Control your desk's height. Press the desk to set a specific height or drag the desk to adjust it.",
+    "@totalControlDescription": {
+        "description": "Description for the total control feature"
+    },
+    "connectDesk": "Connect your desk first",
+    "@connectDesk": {
+        "description": "Instruction to connect the desk"
+    },
+    "skip": "Skip",
+    "@skip": {
+        "description": "Button to skip the action"
+    },
+    "nameChanged": "Name changed",
+    "@nameChanged": {
+        "description": "Name changed message"
+    },
+    "memoryNotConfigured": "The memory is not configured in the app. Please set it manually in the app to enable statistics and start your routines properly.",
+    "@memoryNotConfigured": {
+        "description": "Instruction to configure the memory"
+    },
+    "routinesTitle": "Routines",
+    "@routinesTitle": {
+        "description": "Title for the routines section"
+    },
+    "routinesSteps": "Routines let you calculate burned calories and track the time spent at the three heights: rest, sitting, and standing.\nYou need to set up a few things to start your routines:",
+    "@routinesSteps": {
+        "description": "Description for setting up routines"
+    },
+    "step1Title": "1. Set up the memory buttons in the app",
+    "@step1Title": {
+        "description": "Title for setting up the memory buttons"
+    },
+    "step1Description": "By pressing the button with the letter M, you can configure the height for each button. The icons correspond to numbers 1, 2, and 3 on your desk control.",
+    "@step1Description": {
+        "description": "Description for setting up the memory buttons"
+    },
+    "step2Title": "2. Set up your height and weight",
+    "@step2Title": {
+        "description": "Title for setting up height and weight"
+    },
+    "step2Description": "In the settings section, go to Physical Settings to set your weight and height. This will help us calculate burned calories.",
+    "@step2Description": {
+        "description": "Description for setting up height and weight"
+    },
+    "step3Title": "3. Set up your goals",
+    "@step3Title": {
+        "description": "Title for setting up goals"
+    },
+    "step3Description": "In the statistics section, you will find a message and a button indicating that you need to configure your goals for sitting and standing time per day, as well as the calories you want to burn.",
+    "@step3Description": {
+        "description": "Description for setting up goals"
+    },
+    "finalNote": "Once everything is correctly configured,\nyou can start your routines.",
+    "@finalNote": {
+        "description": "Final note for setting up goals"
+    },
+    "reauthenticate": "Reauthenticate",
+    "@reauthenticate": {
+        "description": "Button to reauthenticate"
+    }
+}

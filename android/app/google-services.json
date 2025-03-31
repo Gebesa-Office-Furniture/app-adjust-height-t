@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "13709382143",
+    "project_id": "gebesa-desk-controller",
+    "storage_bucket": "gebesa-desk-controller.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13709382143:android:34c020b6350019476017ca",
+        "android_client_info": {
+          "package_name": "app.gebesa.controller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13709382143-4josj38gfa3ok4gcbi3nn3lbtspla1p6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.gebesa.controller",
+            "certificate_hash": "fe3511da380ffee39f062880a7b93c4532c98084"
+          }
+        },
+        {
+          "client_id": "13709382143-ae2j629hs2ddd3ui98nb8rssmh1g91dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi2CZdWIsjVJx2WIf7B8LY4X3QIbmZP6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13709382143-ae2j629hs2ddd3ui98nb8rssmh1g91dl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "13709382143-d07cuui11j19a04m7mu4shvl4ehk7jh8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "app.gebesa.controller"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
