@@ -12,6 +12,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../controllers/desk/desk_service_config.dart';
 import '../home/home_screen.dart';
 
 class ScanScreen extends StatefulWidget {
@@ -29,6 +30,37 @@ class _ScanScreenState extends State<ScanScreen> {
   BluetoothAdapterState? _adapterState;
   final bool _isConnecting = false;
   late StreamSubscription<bool> _isScanningSubscription;
+
+  bool _hasValidServices(ScanResult result) {
+    var services = result.advertisementData.serviceUuids;
+
+    if (services.isEmpty) return false;
+
+    for (var service in services) {
+      // Normalizar el UUID completo
+      String fullUuid = service.str;
+      // Extraer solo los 4 caracteres significativos del UUID
+      final normalized =
+          DeskServiceConfig.standardizeUuid(fullUuid.toLowerCase());
+
+      if (normalized.endsWith('00805f9b34fb')) {
+        // Verificar si es uno de nuestros servicios conocidos de escritorio
+
+        if (DeskServiceConfig.configurations
+            .any((config) => config.serviceUuid == fullUuid)) {
+          print('\n📱 Device: ${result.device.advName}');
+          print('✅ Found desk service: $fullUuid');
+          print('Available services:');
+          for (var uuid in result.advertisementData.serviceUuids) {
+            print('  - ${uuid.toString()}');
+          }
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
 
   @override
   void initState() {
@@ -50,8 +82,10 @@ class _ScanScreenState extends State<ScanScreen> {
 
       // Suscripción a resultados del escaneo
       _scanResultsSubscription = FlutterBluePlus.scanResults.listen((results) {
-        _scanResults =
-            results.where((r) => r.device.advName.isNotEmpty).toList();
+        _scanResults = results
+            .where((r) => _hasValidServices(r) && r.device.advName.isNotEmpty)
+            .toList();
+
         if (mounted) {
           setState(() {});
         }
@@ -153,16 +187,18 @@ class _ScanScreenState extends State<ScanScreen> {
       print("System Devices Error: $e");
       showErrorDialog(AppLocalizations.of(context)!.allowPermissions);
     }
+
     try {
+      // Opción 1: Escaneo con filtro directo
       await FlutterBluePlus.startScan(
         timeout: const Duration(seconds: 4),
-        withServices: [
-          Guid("ff12"),
-        ],
       );
+
+      // Filtro adicional por si acaso
+      _scanResults =
+          _scanResults.where((result) => _hasValidServices(result)).toList();
     } catch (e) {
       print("Start Scan Error: $e");
-      // showErrorDialog(AppLocalizations.of(context)!.allowPermissions);
     }
     if (mounted) {
       setState(() {});
@@ -437,25 +473,6 @@ class _ScanResultTileState extends State<ScanResultTile> {
     super.dispose();
   }
 
-  String getNiceHexArray(List<int> bytes) {
-    return '[${bytes.map((i) => i.toRadixString(16).padLeft(2, '0')).join(', ')}]';
-  }
-
-  String getNiceManufacturerData(List<List<int>> data) {
-    return data.map((val) => getNiceHexArray(val)).join(', ').toUpperCase();
-  }
-
-  String getNiceServiceData(Map<Guid, List<int>> data) {
-    return data.entries
-        .map((v) => '${v.key}: ${getNiceHexArray(v.value)}')
-        .join(', ')
-        .toUpperCase();
-  }
-
-  String getNiceServiceUuids(List<Guid> serviceUuids) {
-    return serviceUuids.join(', ').toUpperCase();
-  }
-
   bool get isConnected {
     return _connectionState == BluetoothConnectionState.connected;
   }
@@ -517,7 +534,7 @@ class _ScanResultTileState extends State<ScanResultTile> {
 
   @override
   Widget build(BuildContext context) {
-    // var adv = widget.result.advertisementData;
+    var adv = widget.result.advertisementData;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: Container(
@@ -525,26 +542,10 @@ class _ScanResultTileState extends State<ScanResultTile> {
           color: Colors.grey.withOpacity(0.1),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: ListTile(
+        child: ExpansionTile(
           title: _buildTitle(context),
-          // leading: Text(widget.result.rssi.toString()),
+          //leading: Text(widget.result.rssi.toString()),
           trailing: _buildConnectButton(context),
-          // children: <Widget>[
-          // if (adv.txPowerLevel != null)
-          //   _buildAdvRow(context, 'Tx Power Level', '${adv.txPowerLevel}'),
-          // if ((adv.appearance ?? 0) > 0)
-          //   _buildAdvRow(
-          //       context, 'Appearance', '0x${adv.appearance!.toRadixString(16)}'),
-          // if (adv.msd.isNotEmpty)
-          //   _buildAdvRow(
-          //       context, 'Manufacturer Data', getNiceManufacturerData(adv.msd)),
-          // if (adv.serviceUuids.isNotEmpty)
-          //   _buildAdvRow(
-          //       context, 'Service UUIDs', getNiceServiceUuids(adv.serviceUuids)),
-          // if (adv.serviceData.isNotEmpty)
-          //   _buildAdvRow(
-          //       context, 'Service Data', getNiceServiceData(adv.serviceData)),
-          // ],
         ),
       ),
     );

@@ -9,6 +9,8 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+import '../../api/user_api.dart';
+
 class RemindersScreen extends StatefulWidget {
   const RemindersScreen({super.key});
 
@@ -28,19 +30,18 @@ class _RemindersScreenState extends State<RemindersScreen> {
 
   Future<void> _checkPermissionsAndPreferences() async {
     final prefs = await SharedPreferences.getInstance();
-    final notificationsEnabled = prefs.getBool('notificationsEnabled') ?? false;
+    final notificationsEnabled =
+        prefs.getBool('sedentaryNotification') ?? false;
 
     final status = await Permission.notification.status;
-    if (status.isGranted) {
+    if (status.isGranted && notificationsEnabled) {
       setState(() {
         _notificationsEnabled = notificationsEnabled;
       });
-      prefs.setBool('notificationsEnabled', notificationsEnabled);
     } else {
       setState(() {
         _notificationsEnabled = false;
       });
-      prefs.setBool('notificationsEnabled', false);
     }
 
     if (status.isPermanentlyDenied) {
@@ -48,6 +49,21 @@ class _RemindersScreenState extends State<RemindersScreen> {
         _permamentlyDenied = true;
       });
     }
+  }
+
+  Future<void> setNoti(bool noti) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    var height = prefs.getDouble('height') ?? 0;
+    var weight = prefs.getDouble('weight') ?? 0;
+    var language = prefs.getInt('language') ?? 1;
+    var themeMode = prefs.getInt('themeMode') ?? 1;
+    var unit = prefs.getInt('measurementUnit') ?? 0;
+
+    prefs.setBool('sedentaryNotification', noti);
+
+    await UserApi.updateUserData(
+        unit, height, weight, noti, language, themeMode);
   }
 
   Future<void> _updatePreferences(String key, bool value) async {
@@ -124,6 +140,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                         }
                       }
                       if (status.isGranted) {
+                        await setNoti(value);
                         context
                             .read<AuthController>()
                             .initializeNotifications(context);
@@ -134,6 +151,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                         await _updatePreferences('notificationsEnabled', value);
                       }
                     } else {
+                      await setNoti(value);
                       setState(() {
                         _notificationsEnabled = value;
                       });

@@ -20,6 +20,14 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import '../../../routes/settings_routes.dart';
 import '../../widgets/toast_service.dart';
 
+/// Controlador encargado de manejar toda la autenticación y gestión de usuarios.
+///
+/// Provee funcionalidades para:
+/// * Registro e inicio de sesión con email/password
+/// * Autenticación con Google y Apple
+/// * Gestión del perfil de usuario
+/// * Manejo de tokens y datos de sesión
+/// * Gestión de notificaciones push
 class AuthController with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -36,7 +44,14 @@ class AuthController with ChangeNotifier {
   String? get token => _token;
 
   //notifications
-  // Método para inicializar notificaciones
+  /// Inicializa las notificaciones push para el usuario.
+  ///
+  /// Solicita permisos y configura los handlers para diferentes estados:
+  /// * Primer plano (onMessage)
+  /// * App abierta desde notificación (onMessageOpenedApp)
+  /// * Segundo plano (onBackgroundMessage)
+  ///
+  /// [context] Contexto necesario para mostrar mensajes al usuario
   Future<void> initializeNotifications(BuildContext context) async {
     FirebaseMessaging messaging = FirebaseMessaging.instance;
 
@@ -68,22 +83,32 @@ class AuthController with ChangeNotifier {
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
         print('Mensaje recibido en primer plano: ${message.notification}');
         HapticFeedback.vibrate();
-        context.read<RoutineController>().stopRoutine();
-        ToastService.showInfo(context, message.notification!.title!,
-            description: message.notification!.body!,
-            alignment: Alignment.topCenter,
-            duration: const Duration(seconds: 10));
+        if (message.notification!.title == 'Sedentarismo' ||
+            message.notification!.title == 'Sedentary') {
+          //No hacer nada
+        } else {
+          context.read<RoutineController>().stopRoutine();
+          ToastService.showInfo(context, message.notification!.title!,
+              description: message.notification!.body!,
+              alignment: Alignment.topCenter,
+              duration: const Duration(seconds: 2));
+        }
       });
 
       //onMessageOpenedApp
       FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
         print('Mensaje recibido al abrir la app: ${message.notification}');
         HapticFeedback.vibrate();
-        context.read<RoutineController>().stopRoutine();
-        ToastService.showInfo(context, message.notification!.title!,
-            description: message.notification!.body!,
-            alignment: Alignment.topCenter,
-            duration: const Duration(seconds: 2));
+        if (message.notification!.title == 'Sedentarismo' ||
+            message.notification!.title == 'Sedentary') {
+          //No hacer nada
+        } else {
+          context.read<RoutineController>().stopRoutine();
+          ToastService.showInfo(context, message.notification!.title!,
+              description: message.notification!.body!,
+              alignment: Alignment.topCenter,
+              duration: const Duration(seconds: 2));
+        }
       });
 
       //onBackgroundMessage
@@ -96,7 +121,7 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  // Handler para mensajes en segundo plano
+  /// Manejador de mensajes recibidos cuando la app está en segundo plano
   Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
     print('Mensaje recibido en segundo plano: ${message.messageId}');
   }
@@ -128,6 +153,14 @@ class AuthController with ChangeNotifier {
   }
 
   /// Guarda los datos del usuario en `SharedPreferences`
+  ///
+  /// Almacena en SharedPreferences:
+  /// * Datos básicos del usuario (id, nombre, email)
+  /// * Preferencias (unidades, idioma, tema)
+  /// * Tokens de autenticación
+  /// * Datos de rutinas y memorias
+  ///
+  /// [user] Respuesta del servidor con los datos del usuario
   Future<void> _saveUserData(UserResponse user) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt('id', user.user!.id!);
@@ -136,6 +169,10 @@ class AuthController with ChangeNotifier {
     await prefs.setDouble('weight', user.user!.weight ?? 0);
     await prefs.setDouble('height', user.user!.height ?? 0);
     await prefs.setInt('measurementUnit', user.user!.idMeasureType ?? 0);
+    await prefs.setInt('language', user.user!.iIdLanguage ?? 1);
+    await prefs.setInt('themeMode', user.user!.iViewMode ?? 1);
+    await prefs.setBool(
+        'sedentaryNotification', user.user!.bSedentaryNotification ?? false);
     _userInfo = user.user;
     if (user.token != null && user.refreshToken != null) {
       await TokenManager.saveTokens(
@@ -183,7 +220,9 @@ class AuthController with ChangeNotifier {
     notifyListeners();
   }
 
-  //update name
+  /// Actualiza el nombre del usuario en el almacenamiento local.
+  ///
+  /// [name] Nuevo nombre del usuario
   Future<void> updateName(String name) async {
     _userInfo!.name = name;
     final prefs = await SharedPreferences.getInstance();
@@ -201,6 +240,13 @@ class AuthController with ChangeNotifier {
   }
 
   /// Registro con email y contraseña en Firebase
+  ///
+  /// [email] Email del usuario
+  /// [password] Contraseña del usuario
+  /// [name] Nombre del usuario
+  /// [context] Contexto para mostrar mensajes
+  ///
+  /// Retorna true si el registro fue exitoso
   Future<bool> signUp(
       String email, String password, String name, BuildContext context) async {
     try {
@@ -238,6 +284,12 @@ class AuthController with ChangeNotifier {
   }
 
   /// Inicio de sesión con email y contraseña en Firebase
+  ///
+  /// [email] Email del usuario
+  /// [password] Contraseña del usuario
+  /// [context] Contexto para mostrar mensajes
+  ///
+  /// Retorna true si el inicio de sesión fue exitoso
   Future<bool> login(
       String email, String password, BuildContext context) async {
     try {
@@ -278,7 +330,11 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  //sign in with google package
+  /// Realiza autenticación usando la cuenta de Google.
+  ///
+  /// [context] Contexto para mostrar mensajes
+  ///
+  /// Retorna true si la autenticación fue exitosa
   Future<bool> signInWithGoogle(BuildContext context) async {
     try {
       _setLoading(true);
@@ -350,7 +406,11 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  //apple sign in
+  /// Realiza autenticación usando la cuenta de Apple.
+  ///
+  /// [context] Contexto para mostrar mensajes
+  ///
+  /// Retorna true si la autenticación fue exitosa
   Future<bool> signInWithApple(BuildContext context) async {
     try {
       _setLoading(true);
@@ -435,13 +495,18 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  /// Cerrar sesión
+  /// Cierra la sesión del usuario actual.
+  ///
+  /// Limpia los datos locales y cierra sesión en Firebase.
   Future<void> logout() async {
     await _clearUserData();
     await _auth.signOut();
   }
 
-  /// Cambiar el nombre del usuario
+  /// Cambia el nombre del usuario actual.
+  ///
+  /// [newName] Nuevo nombre del usuario
+  /// [context] Contexto para mostrar mensajes
   Future<void> changeName(String newName, BuildContext context) async {
     try {
       _setLoading(true);
@@ -462,7 +527,10 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  /// Enviar correo para restablecer contraseña
+  /// Envía un email para restablecer la contraseña.
+  ///
+  /// [email] Email del usuario
+  /// [context] Contexto para mostrar mensajes
   Future<void> sendPasswordResetEmail(
       String email, BuildContext context) async {
     try {
@@ -478,7 +546,11 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  //Delete account
+  /// Elimina la cuenta del usuario actual.
+  ///
+  /// [context] Contexto para mostrar mensajes
+  ///
+  /// Retorna true si la eliminación fue exitosa
   Future<bool> deleteAccount(BuildContext context) async {
     try {
       _setDeleting(true);
@@ -499,7 +571,12 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  /// Manejo de errores de Firebase Auth
+  /// Traduce los códigos de error de Firebase a mensajes legibles.
+  ///
+  /// [code] Código de error de Firebase
+  /// [context] Contexto para obtener traducciones
+  ///
+  /// Retorna el mensaje de error traducido
   String _firebaseAuthErrorMessage(String code, BuildContext context) {
     switch (code) {
       case 'email-already-in-use':

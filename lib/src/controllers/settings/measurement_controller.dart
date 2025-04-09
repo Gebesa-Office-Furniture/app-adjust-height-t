@@ -40,6 +40,9 @@ class MeasurementController with ChangeNotifier {
     //get height and weight from shared preferences
     var height = prefs.getDouble('height') ?? 0;
     var weight = prefs.getDouble('weight') ?? 0;
+    var language = prefs.getInt('language') ?? 1;
+    var themeMode = prefs.getInt('themeMode') ?? 1;
+    var sedentaryNotification = prefs.getBool('sedentaryNotification') ?? false;
 
     //convert height and weight to the new unit
     if (unit == MeasurementUnit.metric) {
@@ -54,9 +57,8 @@ class MeasurementController with ChangeNotifier {
     await prefs.setDouble('height', height);
     await prefs.setDouble('weight', weight);
 
-    if (await InternetConnection().hasInternetAccess) {
-      UserApi.updateUserData(unit.index, height, weight);
-    }
+    UserApi.updateUserData(
+        unit.index, height, weight, sedentaryNotification, language, themeMode);
 
     notifyListeners();
   }

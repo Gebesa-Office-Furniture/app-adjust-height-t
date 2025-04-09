@@ -420,7 +420,19 @@ class _ControlScreenState extends State<ControlScreen>
 
   void _onResume() {
     print("App reanudada");
-    //verifica si hay rutina activa
+
+    // Obtener instancia del DeskController
+    var deskController = context.read<DeskController>();
+
+    // Verificar si el dispositivo existe y está desconectado
+    if (deskController.device != null &&
+        deskController.connectionState != BluetoothConnectionState.connected) {
+      // Intenta reconectar automáticamente
+      deskController.reconnect();
+      print("Intentando reconectar al dispositivo...");
+    }
+
+    // Verifica si hay rutina activa y cancela el timer si es necesario
     var routineController = context.read<RoutineController>();
     if (routineController.isActive) {
       routineController.checkAndCancelTimer();
@@ -494,6 +506,7 @@ class _ControlScreenState extends State<ControlScreen>
                                       key: key,
                                       child: TextFormField(
                                         controller: controller,
+                                        maxLength: 20,
                                         validator: (value) {
                                           var regex =
                                               RegExp(r'^[a-zA-Z0-9 ]+$');
@@ -506,6 +519,12 @@ class _ControlScreenState extends State<ControlScreen>
                                           if (!regex.hasMatch(value)) {
                                             return AppLocalizations.of(context)!
                                                 .invalidName;
+                                          }
+
+                                          //validate 20 characters
+                                          if (value.length > 20) {
+                                            return AppLocalizations.of(context)!
+                                                .nameTooLong;
                                           }
 
                                           return null;

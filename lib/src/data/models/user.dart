@@ -70,6 +70,9 @@ class UserModel {
   List<ObjMemory>? objMemories;
   ObjRoutine? objRoutine;
   LastRoutine? lastRoutine;
+  int? iIdLanguage;
+  int? iViewMode;
+  bool? bSedentaryNotification;
 
   UserModel({
     this.id,
@@ -86,6 +89,9 @@ class UserModel {
     this.objMemories,
     this.objRoutine,
     this.lastRoutine,
+    this.iIdLanguage,
+    this.iViewMode,
+    this.bSedentaryNotification,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -114,6 +120,9 @@ class UserModel {
         lastRoutine: json["lastRoutine"].isEmpty || json["lastRoutine"] == {}
             ? null
             : LastRoutine.fromJson(json["lastRoutine"]),
+        iIdLanguage: json["iIdLanguage"] ?? 0,
+        iViewMode: json["iViewMode"] ?? 0,
+        bSedentaryNotification: json["bSedentaryNotification"] ?? false,
       );
 
   Map<String, dynamic> toJson() => {

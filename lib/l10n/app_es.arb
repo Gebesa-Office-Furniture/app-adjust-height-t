@@ -770,5 +770,9 @@
     "reauthenticate": "Reautenticar",
     "@reauthenticate": {
         "description": "Botón para reautenticar"
+    },
+    "nameTooLong": "El nombre no puede ser mayor a 20 caracteres",
+    "@nameTooLong": {
+        "description": "Mensaje de error para nombre demasiado largo"
     }
 }

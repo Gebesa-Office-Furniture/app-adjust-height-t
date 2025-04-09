@@ -179,6 +179,10 @@ class RoutineController extends ChangeNotifier {
   Future stopRoutine() async {
     _timer?.cancel();
     _resetRoutine();
+    //stop routine preferences
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('routineStartTime');
+    prefs.remove('routineDuration');
     notifyListeners();
   }
 

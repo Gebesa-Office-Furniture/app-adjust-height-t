@@ -9,7 +9,7 @@ import connectivity_plus
 import firebase_auth
 import firebase_core
 import firebase_messaging
-import flutter_blue_plus
+import flutter_blue_plus_darwin
 import google_sign_in_ios
 import path_provider_foundation
 import rive_common

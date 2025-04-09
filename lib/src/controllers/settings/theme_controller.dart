@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../api/user_api.dart';
+
 class ThemeController extends ChangeNotifier {
   // Clave para almacenar la preferencia del tema
-  static const String _themePreferenceKey = 'theme_preference';
 
   // Estado inicial del tema
   ThemeMode _themeMode = ThemeMode.system;
@@ -16,49 +17,46 @@ class ThemeController extends ChangeNotifier {
     _loadThemeFromPreferences(); // Cargar el tema al iniciar
   }
 
+  Future<void> setTheme(int theme) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    var height = prefs.getDouble('height') ?? 0;
+    var weight = prefs.getDouble('weight') ?? 0;
+    var language = prefs.getInt('language') ?? 1;
+    var unit = prefs.getInt('measurementUnit') ?? 0;
+    var noti = prefs.getBool('sedentaryNotification') ?? false;
+
+    prefs.setInt('themeMode', theme);
+
+    await UserApi.updateUserData(unit, height, weight, noti, language, theme);
+  }
+
   // Método para cambiar entre temas (claro y oscuro)
-  void toggleTheme(bool isDarkMode) {
+  void toggleTheme(bool isDarkMode) async {
     _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
-    _saveThemeToPreferences(); // Guardar preferencia del tema
     notifyListeners(); // Notificar a los listeners
+    await setTheme(_themeMode == ThemeMode.dark ? 2 : 1);
   }
 
   // Método para usar el tema del sistema
   void setSystemTheme() {
     _themeMode = ThemeMode.system;
-    _saveThemeToPreferences(); // Guardar la preferencia del tema
     notifyListeners();
   }
 
   // Cargar el tema almacenado en SharedPreferences
   Future<void> _loadThemeFromPreferences() async {
     final prefs = await SharedPreferences.getInstance();
-    final theme = prefs.getString(_themePreferenceKey);
+    final theme = prefs.getInt('themeMode') ?? 1;
 
-    if (theme == 'light') {
+    if (theme == 1) {
       _themeMode = ThemeMode.light;
-    } else if (theme == 'dark') {
+    } else if (theme == 2) {
       _themeMode = ThemeMode.dark;
     } else {
-      _themeMode = ThemeMode.dark;
+      _themeMode = ThemeMode.light;
     }
 
     notifyListeners(); // Notificar a los listeners para aplicar el tema
-  }
-
-  // Guardar el tema en SharedPreferences
-  Future<void> _saveThemeToPreferences() async {
-    final prefs = await SharedPreferences.getInstance();
-    String themeValue;
-
-    if (_themeMode == ThemeMode.light) {
-      themeValue = 'light';
-    } else if (_themeMode == ThemeMode.dark) {
-      themeValue = 'dark';
-    } else {
-      themeValue = 'system';
-    }
-
-    await prefs.setString(_themePreferenceKey, themeValue);
   }
 }

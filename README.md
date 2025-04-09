@@ -4,7 +4,6 @@
 Aplicación Flutter para controlar y gestionar escritorios inteligentes con conectividad **Bluetooth**. La aplicación ofrece control de altura, gestión de rutinas y estadísticas de uso.  
 
 ---
-![image](https://github.com/user-attachments/assets/0dec5b48-9931-4f5e-b114-1b8cd84e92de)
 
 ## **🚀 Funciones Principales**
 
@@ -50,15 +49,7 @@ Aplicación Flutter para controlar y gestionar escritorios inteligentes con cone
 - **Plataformas soportadas**:  
   - **iOS**: `12.0+`  
   - **Android**: `8.0+ (API 26+)`  
-
----
-
-## **Configuración**
-La aplicación requiere las siguientes configuraciones:
-- Configuración de Firebase  
-- Permisos de Bluetooth (ubicación en Android)
-- Conectividad a Internet  
-- Permisos de notificaciones push  
+  - **Web**: Funcionalidad limitada  
 
 ---
 
@@ -106,7 +97,7 @@ Este comando generará las clases necesarias para usar los textos traducidos en 
 
 ### **Persistencia de Datos**
 - **SharedPreferences:** Almacenamiento local  
-- **Firebase:** Auth  
+- **Firebase:** Backend  
 - **Autenticación basada en tokens**  
 
 ---
@@ -134,33 +125,44 @@ Si necesitas depurar la conexión Bluetooth, puedes usar estas herramientas:
 
 ---
 
-## **Protocolo Bluetooth**
+# Documentación del Controlador de Escritorio Bluetooth BLE
 
-### **Dispositivos Compatibles**
-Esta rama soporta exclusivamente dispositivos con el servicio FF12, utilizando las siguientes características:
-- **FF01:** Característica de control (envío de comandos)
-- **FF02:** Característica de reporte (recepción de notificaciones de altura)
-- **FF06:** Característica de información del dispositivo (cambio de nombre)
+## Descripción General
 
-### **Comandos Principales**
+Este proyecto implementa un controlador para un escritorio ajustable en altura que utiliza tecnología Bluetooth Low Energy (BLE) para la comunicación. El controlador permite ajustar la altura del escritorio, guardar posiciones en memoria, monitorear la altura actual y personalizar el nombre del dispositivo.
 
-#### Comando Inicial (Handshake)
+## Conexión Bluetooth BLE
+
+La conexión con el dispositivo se realiza mediante la biblioteca `flutter_blue_plus`. El proceso de conexión incluye:
+
+1. **Descubrimiento del dispositivo**: Se buscan dispositivos BLE cercanos.
+2. **Establecimiento de conexión**: Se conecta al dispositivo seleccionado.
+3. **Descubrimiento de servicios**: Se identifican los servicios disponibles en el dispositivo.
+4. **Identificación de características**: Se localizan las características específicas para controlar el escritorio.
+
 ```dart
-void _sendInitialCommand() {
-  targetCharacteristic
-      ?.write([0xF1, 0xF1, 0x07, 0x00, 0x07, 0x7E], withoutResponse: true);
+Future<void> _discoverServices(BuildContext context) async {
+  isDiscoveringServices = true;
+  notifyListeners();
+
+  final discoveredServices = await device!.discoverServices();
+  // Identificación de servicios y características compatibles
+  // ...
 }
 ```
 
-#### Solicitar Rango de Altura
-```dart
-void requestHeightRange() {
-  List<int> command = [0xF1, 0xF1, 0x0C, 0x00, 0x0C, 0x7E];
-  targetCharacteristic!.write(command, withoutResponse: true);
-}
-```
+## Comunicación con el Dispositivo
+
+La comunicación se realiza mediante el envío de comandos específicos a través de características Bluetooth. El dispositivo utiliza tres características principales:
+
+1. **targetCharacteristic**: Para enviar comandos de movimiento.
+2. **reportCharacteristic**: Para recibir notificaciones sobre el estado actual.
+3. **deviceInfoCharacteristic**: Para configurar información del dispositivo.
+
+### Control de Movimiento
 
 #### Mover Hacia Arriba
+
 ```dart
 void moveUp() {
   final data = [0xF1, 0xF1, 0x01, 0x00, 0x01, 0x7E];
@@ -168,7 +170,10 @@ void moveUp() {
 }
 ```
 
+El comando `[0xF1, 0xF1, 0x01, 0x00, 0x01, 0x7E]` indica al escritorio que debe moverse hacia arriba. Este comando se envía repetidamente mientras se mantiene presionado el botón correspondiente.
+
 #### Mover Hacia Abajo
+
 ```dart
 void moveDown() {
   final data = [0xF1, 0xF1, 0x02, 0x00, 0x02, 0x7E];
@@ -176,332 +181,408 @@ void moveDown() {
 }
 ```
 
-#### Detener Movimiento
-```dart
-void sendStopCommand() {
-  List<int> data = [0xF1, 0xF1, 0x0A, 0x00, 0x0A, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-}
-```
+Similar al movimiento hacia arriba, este comando indica al escritorio que debe moverse hacia abajo.
 
-#### Configurar Memoria 1
-```dart
-void setupMemory1() async {
-  final data = [0xF1, 0xF1, 0x03, 0x00, 0x03, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memory1Configured = true;
-  notifyListeners();
-  
-  // Guardar en SharedPreferences y API
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setDouble('memory1', heightIN!);
-  
-  if (await InternetConnection().hasInternetAccess) {
-    DeskApi.saveMemoryDesk(1, heightIN!);
-  }
-  
-  // Resetear el indicador después de 2 segundos
-  Future.delayed(const Duration(seconds: 2), () {
-    memory1Configured = false;
-    notifyListeners();
-  });
-}
-```
+#### Mover a una Altura Específica
 
-#### Configurar Memoria 2
-```dart
-void setupMemory2() async {
-  final data = [0xF1, 0xF1, 0x04, 0x00, 0x04, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memory2Configured = true;
-  notifyListeners();
-  
-  // Guardar en SharedPreferences y API
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setDouble('memory2', heightIN!);
-  
-  if (await InternetConnection().hasInternetAccess) {
-    DeskApi.saveMemoryDesk(2, heightIN!);
-  }
-  
-  // Resetear el indicador después de 2 segundos
-  Future.delayed(const Duration(seconds: 2), () {
-    memory2Configured = false;
-    notifyListeners();
-  });
-}
-```
-
-#### Configurar Memoria 3
-```dart
-void setupMemory3() async {
-  final data = [0xF1, 0xF1, 0x25, 0x00, 0x25, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memory3Configured = true;
-  notifyListeners();
-  
-  // Guardar en SharedPreferences y API
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setDouble('memory3', heightIN!);
-  
-  if (await InternetConnection().hasInternetAccess) {
-    DeskApi.saveMemoryDesk(3, heightIN!);
-  }
-  
-  // Resetear el indicador después de 2 segundos
-  Future.delayed(const Duration(seconds: 2), () {
-    memory3Configured = false;
-    notifyListeners();
-  });
-}
-```
-
-#### Mover a Memoria 1
-```dart
-void moveMemory1() {
-  final data = [0xF1, 0xF1, 0x05, 0x00, 0x05, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memorySlot = 1;
-  notifyListeners();
-}
-```
-
-#### Mover a Memoria 2
-```dart
-void moveMemory2() {
-  final data = [0xF1, 0xF1, 0x06, 0x00, 0x06, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memorySlot = 2;
-  notifyListeners();
-}
-```
-
-#### Mover a Memoria 3
-```dart
-void moveMemory3() {
-  final data = [0xF1, 0xF1, 0x27, 0x00, 0x27, 0x7E];
-  targetCharacteristic!.write(data, withoutResponse: true);
-  memorySlot = 3;
-  notifyListeners();
-}
-```
-
-#### Mover a Altura Específica
 ```dart
 void moveToHeight(int mm) async {
   if (targetCharacteristic != null) {
-    // Generar el comando con la altura deseada
+    // Convertir la altura deseada a formato hexadecimal
     String hexStr = mm.toRadixString(16).padLeft(4, '0');
-
     List<int> bytes = [];
     for (int i = 0; i < hexStr.length; i += 2) {
       bytes.add(int.parse(hexStr.substring(i, i + 2), radix: 16));
     }
-
+    
+    // Generar el comando completo
     List<int> command = periferial(bytes);
-
-    // Enviar el comando al targetCharacteristic
-    await targetCharacteristic!
-        .write(command, withoutResponse: true, allowLongWrite: false);
-  }
-}
-
-List<int> periferial(List<int> hexValue) {
-  List<int> periferialCommand = List.filled(8, 0);
-  int checkSum = 0x00;
-
-  periferialCommand[0] = 0xF1;
-  periferialCommand[1] = 0xF1;
-  periferialCommand[2] = 0x1B;
-  periferialCommand[3] = 0x02;
-
-  int highByte = hexValue[0];
-  int lowByte = hexValue[1];
-
-  periferialCommand[4] = highByte;
-  periferialCommand[5] = lowByte;
-
-  // Calcular el checksum
-  for (int i = 2; i < 6; i++) {
-    checkSum += periferialCommand[i];
-  }
-  periferialCommand[6] = checkSum & 0xFF;
-  periferialCommand[7] = 0x7E;
-
-  return periferialCommand;
-}
-```
-
-### **Cambio de Nombre del Dispositivo**
-
-```dart
-List<int> convertNameToHex(String name) {
-  // Crear una lista de enteros con la longitud del nombre
-  List<int> hexArray = List<int>.filled(name.length, 0);
-
-  // Recorrer cada letra del nombre
-  for (int i = 0; i < name.length; i++) {
-    hexArray[i] = name.codeUnitAt(i);
-  }
-
-  return hexArray;
-}
-
-Future<void> changeName(String name) async {
-  if (deviceInfoCharacteristic != null) {
-    // Convertir el nombre a bytes ASCII
-    List<int> hexArray = convertNameToHex(name);
-
-    print("Nombre convertido a hex: $hexArray");
-
-    // Crear el comando con la longitud adecuada
-    List<int> command = [];
-
-    // Copiar el nombre en el comando
-    command.addAll(hexArray);
-
-    print("Comando final: $command");
-
-    // Enviar el comando al dispositivo
-    await deviceInfoCharacteristic!.write(command, withoutResponse: false);
-
-    // Save name to SharedPreferences
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('device_name', name);
-
-    deviceName = name;
-    notifyListeners();
+    
+    // Enviar el comando
+    await targetCharacteristic!.write(command, withoutResponse: true, allowLongWrite: false);
   }
 }
 ```
 
-### **Escucha de Notificaciones**
+Este método permite mover el escritorio a una altura específica en milímetros. El proceso incluye:
+1. Convertir la altura a formato hexadecimal
+2. Generar el comando con el formato adecuado
+3. Enviar el comando al dispositivo
+
+### Monitoreo de Altura
+
+Para recibir actualizaciones sobre la altura actual del escritorio, se configura una suscripción a las notificaciones del dispositivo:
 
 ```dart
 Future<void> _listenForNotifications(BuildContext context) async {
   if (reportCharacteristic != null) {
     await reportCharacteristic!.setNotifyValue(true);
     reportCharacteristic!.onValueReceived.listen((event) async {
-      // Resetear temporizadores
-      _resetNoDataTimer(context);
-      _resetStableTimer();
-
-      // Procesar datos de rango de altura
-      if (event[0] == 0xF2 && event[1] == 0xF2 && event[2] == 0x07) {
-        // Extraer los valores
-        int max = (event[4] << 8) | event[5]; // Altura máxima en mm
-        int min = (event[6] << 8) | event[7]; // Altura mínima en mm
-
-        minHeightMM = min.toDouble();
-        maxHeightMM = max.toDouble();
-
-        heightMM = inchesToMm(heightIN!);
-
-        print('Altura máxima: ${max / 25.4} in');
-        print('Altura mínima: ${min / 25.4} in');
-
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        prefs.setDouble('maxHeightDesk', max / 25.4);
-        prefs.setDouble('minHeightDesk', min / 25.4);
-
-        maxHeight = max / 25.4;
-        minHeight = min / 25.4;
-
-        progress = calculateProgressPercentage(heightIN!, minHeight, maxHeight);
-
-        firstConnection = false;
-        notifyListeners();
-        return;
-      }
-
-      // Procesar datos de altura actual
+      // Procesar los datos recibidos
+      // ...
+      
+      // Extraer la altura actual
       final dataH = event[4];
       final dataL = event[5];
-
-      // Convertir a hexadecimal y luego a decimal
-      final hex = dataH.toRadixString(16).padLeft(2, '0') +
-          dataL.toRadixString(16).padLeft(2, '0');
+      final hex = dataH.toRadixString(16).padLeft(2, '0') + 
+                 dataL.toRadixString(16).padLeft(2, '0');
       final decimal = int.parse(hex, radix: 16);
-
-      // Convertir a pulgadas
-      final distance = decimal / 10;
-
-      // Actualizar altura
-      heightIN = distance;
-      heightHex = [dataH, dataL];
-
-      // Verificar si la altura está dentro del rango esperado
-      if (heightIN! < minHeight || heightIN! > maxHeight) {
-        return;
-      }
-
+      
+      // Actualizar la altura actual
+      heightIN = decimal / 10;
       heightMM = inchesToMm(heightIN!);
-
-      print("Altura actual: $heightIN pulgadas");
-      print("Altura actual: $heightMM mm");
-
+      
+      // Calcular el progreso
       progress = calculateProgressPercentage(heightIN!, minHeight, maxHeight);
-
+      
       notifyListeners();
     });
   }
 }
 ```
 
-### **Conversión de Unidades**
+Este método:
+1. Activa las notificaciones en la característica de reporte
+2. Configura un listener para procesar los datos recibidos
+3. Extrae la información de altura de los datos
+4. Actualiza las variables de estado y notifica a los oyentes
+
+### Cambio de Nombre del Dispositivo
+
+El controlador soporta dos tipos de dispositivos con diferentes protocolos para cambiar el nombre:
+
+#### Dispositivos con servicio FF12 (característica FF06)
 
 ```dart
-double hexToCm(int mm1, int mm2) {
-  int heightMm = (mm1 << 8) | mm2;
-  return heightMm / 10.0;
-}
+Future<void> changeName(String name) async {
+  if (deviceInfoCharacteristic != null) {
+    // Convertir el nombre a bytes ASCII
+    List<int> hexArray = List<int>.filled(name.length, 0);
+    for (int i = 0; i < name.length; i++) {
+      hexArray[i] = name.codeUnitAt(i);
+    }
 
-double hexToInches(int mm1, int mm2) {
-  int heightMm = (mm1 << 8) | mm2;
-  return heightMm / 25.4;
-}
-
-int cmToMm(double cm) {
-  return (cm * 10).round();
-}
-
-double inchesToMm(double inches) {
-  return inches * 25.4; // 1 inch = 25.4 mm (exact conversion)
-}
-
-int hexToMm(int dataH, int dataL) {
-  return (dataH << 8) | dataL;
-}
-
-double mmToInches(double mm) {
-  return mm / 25.4;
-}
-
-double mmToCm(double mm) {
-  return mm / 10;
+    // Crear el comando (envío directo de los bytes del nombre)
+    List<int> command = [];
+    command.addAll(hexArray);
+    
+    // Enviar el comando al dispositivo
+    await deviceInfoCharacteristic!.write(command, withoutResponse: false);
+    
+    // Guardar el nombre en SharedPreferences
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('device_name', name);
+    
+    deviceName = name;
+    notifyListeners();
+  }
 }
 ```
 
+Para dispositivos con servicio FF12, el proceso es simple:
+1. Convierte el nombre a una secuencia de bytes ASCII
+2. Envía estos bytes directamente al dispositivo a través de la característica FF06
+3. Guarda el nombre en las preferencias compartidas para futuras sesiones
+
+#### Dispositivos con servicio FE60 (característica FE63)
+
+```dart
+Future<void> changeName(String name) async {
+  if (deviceInfoCharacteristic != null) {
+    // Validar longitud del nombre
+    List<int> nameBytes = name.codeUnits;
+    if (nameBytes.isEmpty || nameBytes.length > 20) {
+      throw Exception('El nombre debe tener entre 1 y 20 bytes.');
+    }
+
+    // Construir el comando:
+    // 0x01: Símbolo de inicio
+    // 0xFC: ID fijo
+    // 0x07: Comando para cambiar el nombre
+    // [len]: Longitud del nombre
+    // [Name]: Bytes del nombre
+    List<int> command = [0x01, 0xFC, 0x07, nameBytes.length];
+    command.addAll(nameBytes);
+    
+    // Enviar el comando al dispositivo
+    await deviceInfoCharacteristic!.write(command, withoutResponse: false);
+    
+    // Guardar el nombre en SharedPreferences
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('device_name', name);
+    
+    deviceName = name;
+    notifyListeners();
+  }
+}
+```
+
+Para dispositivos con servicio FE60, el proceso es más estructurado:
+1. Convierte el nombre a bytes y valida que la longitud esté entre 1 y 20 bytes
+2. Construye un comando con formato específico:
+   - Cabecera: 0x01, 0xFC
+   - Comando: 0x07 (cambiar nombre)
+   - Longitud del nombre
+   - Bytes del nombre
+3. Envía el comando a través de la característica FE63
+4. Guarda el nombre en las preferencias compartidas
+
+#### Implementación Unificada
+
+El controlador detecta automáticamente el tipo de dispositivo conectado y utiliza el protocolo adecuado:
+
+```dart
+Future<void> changeName(String name) async {
+  if (deviceInfoCharacteristic == null) return;
+
+  // Determinar qué característica estamos usando
+  String charUuid = deviceInfoCharacteristic!.characteristicUuid.str;
+
+  // Crear el comando según el tipo de característica
+  List<int> command;
+  
+  switch (charUuid) {
+    case 'ff06':
+      command = _createCommandForFF03(name);
+      break;
+    case 'fe63':
+      command = _createCommandForFE63(name);
+      break;
+    default:
+      throw Exception('Característica no soportada: $charUuid');
+  }
+
+  // Enviar el comando
+  await deviceInfoCharacteristic!.write(command, withoutResponse: false);
+
+  // Guardar nombre en SharedPreferences
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setString('device_name', name);
+
+  deviceName = name;
+  notifyListeners();
+}
+```
+
+Esta implementación unificada:
+1. Identifica automáticamente el tipo de dispositivo conectado
+2. Genera el comando adecuado según el protocolo del dispositivo
+3. Envía el comando y actualiza el nombre en la aplicación
+4. Guarda el nombre para futuras sesiones
+
+**Nota importante**: Después de cambiar el nombre en dispositivos FE60, puede ser necesario reiniciar las notificaciones o reconectar el dispositivo para que todos los servicios funcionen correctamente.
+
+## Conversiones de Unidades
+
+El controlador incluye varios métodos para convertir entre diferentes unidades de medida:
+
+- `inchesToMm`: Convierte pulgadas a milímetros
+- `mmToInches`: Convierte milímetros a pulgadas
+- `hexToMm`: Convierte valores hexadecimales a milímetros
+- `mmToCm`: Convierte milímetros a centímetros
+
+Estas conversiones son esenciales para la comunicación precisa con el dispositivo y para mostrar la información correcta al usuario.
+
+## Conclusión
+
+Este controlador proporciona una interfaz completa para interactuar con un escritorio ajustable mediante Bluetooth BLE. Permite controlar el movimiento, monitorear la altura actual y personalizar la configuración del dispositivo, todo ello a través de una API intuitiva y robusta.
+
+## Validación de Dispositivos y Características
+
+### Validación de Dispositivos Compatibles
+
+Durante el escaneo de dispositivos Bluetooth, la aplicación utiliza el método `_hasValidServices` para identificar dispositivos compatibles:
+
+```dart
+bool _hasValidServices(ScanResult result) {
+  var services = result.advertisementData.serviceUuids;
+
+  if (services.isEmpty) return false;
+
+  for (var service in services) {
+    // Normalizar el UUID completo
+    String fullUuid = service.str;
+    // Extraer solo los 4 caracteres significativos del UUID
+    final normalized = DeskServiceConfig.standardizeUuid(fullUuid.toLowerCase());
+
+    if (normalized.endsWith('00805f9b34fb')) {
+      // Verificar si es uno de nuestros servicios conocidos de escritorio
+      if (DeskServiceConfig.configurations
+          .any((config) => config.serviceUuid == fullUuid)) {
+        print('\n📱 Device: ${result.device.advName}');
+        print('✅ Found desk service: $fullUuid');
+        print('Available services:');
+        for (var uuid in result.advertisementData.serviceUuids) {
+          print('  - ${uuid.toString()}');
+        }
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+```
+
+Este método:
+1. Examina los servicios anunciados por el dispositivo durante el escaneo
+2. Normaliza los UUIDs para manejar diferentes formatos (16-bit, 32-bit, 128-bit)
+3. Verifica si alguno de los servicios anunciados coincide con las configuraciones conocidas de escritorios
+4. Registra información detallada sobre los dispositivos compatibles encontrados
+
+La validación se realiza durante el escaneo inicial, filtrando los resultados para mostrar solo dispositivos compatibles:
+
+```dart
+_scanResultsSubscription = FlutterBluePlus.scanResults.listen((results) {
+  _scanResults = results
+      .where((r) => _hasValidServices(r) && r.device.advName.isNotEmpty)
+      .toList();
+
+  if (mounted) {
+    setState(() {});
+  }
+});
+```
+
+### Configuración de Notificaciones en Características
+
+La aplicación configura notificaciones en características específicas para recibir actualizaciones en tiempo real del dispositivo:
+
+#### Configuración de Notificaciones para Altura
+
+```dart
+Future<void> _discoverServices(BuildContext context) async {
+  // ... código existente ...
+  
+  // Asignar característica de reporte de estado (altura)
+  if (config?.reportStateUuids.contains(charUuid) ?? false) {
+    reportCharacteristic = characteristic;
+    if (characteristic.properties.notify) {
+      print('  ℹ️ Setting up notifications...');
+      // Configurar notificaciones para la altura
+      await reportCharacteristic!.setNotifyValue(true);
+      await _listenForNotifications(context);
+    }
+    // ... código existente ...
+  }
+  
+  // Asignar característica de información del dispositivo
+  if (config?.deviceInfoUuids.contains(charUuid) ?? false) {
+    deviceInfoCharacteristic = characteristic;
+    // Configurar notificaciones solo para dispositivos FE60
+    if (charUuid == 'fe63') {
+      await characteristic.setNotifyValue(true);
+    }
+  }
+  
+  // ... código existente ...
+}
+```
+
+Este proceso:
+1. Verifica si la característica tiene la propiedad `notify` antes de intentar configurar notificaciones
+2. Activa las notificaciones con `setNotifyValue(true)`
+3. Configura un listener para procesar los datos recibidos
+4. Para dispositivos con servicio FE60, también configura notificaciones en la característica de información del dispositivo
+
+#### Escucha de Notificaciones
+
+```dart
+Future<void> _listenForNotifications(BuildContext context) async {
+  if (reportCharacteristic != null) {
+    print('🔔 Iniciando escucha de notificaciones');
+    print('🔔 Report characteristic: ${reportCharacteristic!.uuid.str}');
+
+    // Asegurar que las notificaciones estén activadas
+    await reportCharacteristic!.setNotifyValue(true);
+
+    reportCharacteristic!.onValueReceived.listen((event) async {
+      // Procesar datos recibidos
+      // ... código existente ...
+    });
+  }
+}
+```
+
+La escucha de notificaciones:
+1. Registra información de depuración sobre la característica configurada
+2. Asegura que las notificaciones estén activadas
+3. Configura un listener que procesa los datos recibidos en tiempo real
+
+### Manejo de Pérdida de Datos
+
+Para detectar y manejar la pérdida de datos de altura, se implementa un temporizador:
+
+```dart
+void _resetNoDataTimer(BuildContext context) {
+  _noDataTimer?.cancel();
+
+  _noDataTimer = Timer(const Duration(seconds: 5), () async {
+    print("No se ha recibido información de altura en los últimos 5 segundos.");
+
+    // Enviar última altura conocida a la API
+    if (heightIN != 0.0) {
+      await createMovementReport(context);
+    }
+  });
+}
+```
+
+Este mecanismo:
+1. Se reinicia cada vez que se reciben nuevos datos de altura
+2. Si no se reciben datos durante 5 segundos, registra un mensaje de advertencia
+3. Envía la última altura conocida a la API para mantener la sincronización
+
+## Configuraciones de Servicio
+
+La aplicación utiliza una estructura de configuración para manejar diferentes tipos de dispositivos:
+
+```dart
+class DeskServiceConfig {
+  final String serviceUuid;
+  final List<String> normalStateUuids;
+  final List<String> reportStateUuids;
+  final List<String> deviceInfoUuids;
+
+  const DeskServiceConfig({
+    required this.serviceUuid,
+    required this.normalStateUuids,
+    required this.reportStateUuids,
+    required this.deviceInfoUuids,
+  });
+
+  static const List<DeskServiceConfig> configurations = [
+    DeskServiceConfig(
+      serviceUuid: 'ff12',
+      normalStateUuids: ['ff01'],
+      reportStateUuids: ['ff02'],
+      deviceInfoUuids: ['ff06'],
+    ),
+    DeskServiceConfig(
+      serviceUuid: 'fe60',
+      normalStateUuids: ['fe61'],
+      reportStateUuids: ['fe62'],
+      deviceInfoUuids: ['fe63'],
+    ),
+  ];
+  
+  // ... métodos adicionales ...
+}
+```
+
+Esta estructura:
+1. Define las configuraciones para diferentes tipos de dispositivos (FF12 y FE60)
+2. Especifica los UUIDs para diferentes tipos de características:
+   - `normalStateUuids`: Características para enviar comandos de control
+   - `reportStateUuids`: Características para recibir notificaciones de altura
+   - `deviceInfoUuids`: Características para configurar información del dispositivo
+3. Facilita la adición de soporte para nuevos tipos de dispositivos en el futuro
+
+## **📜 Licencia**
+Este proyecto es de código cerrado y no está disponible para distribución pública.
+
 ---
 
-## **Dependencias**
+## **📞 Soporte**
+Si tienes problemas, contacta con el equipo de desarrollo.
 
-### **Dependencias principales:**
-- `flutter_blue_plus`: Conectividad Bluetooth  
-- `firebase_core`: Integración con Firebase  
-- `firebase_auth`: Autenticación  
-- `google_sign_in`: Autenticación con Google  
-- `provider`: Gestión de estado  
-- `shared_preferences`: Almacenamiento local  
-- `http`: Solicitudes API  
-- `toastification`: Notificaciones tipo toast  
-- `permission_handler`: Gestión de permisos
-- `open_settings_plus`: Acceso a configuraciones del sistema
-- `internet_connection_checker_plus`: Verificación de conectividad
-
----
-
-
-## **Limitaciones Actuales**
-- Esta rama solo soporta dispositivos con el servicio FF12
-# app-adjust-height-t

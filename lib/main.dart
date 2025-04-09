@@ -1,3 +1,12 @@
+/// Aplicación Controller - Punto de entrada principal
+/// 
+/// Esta aplicación permite controlar escritorios ajustables mediante Bluetooth
+/// y gestionar rutinas de trabajo. Integra:
+/// - Autenticación con Firebase
+/// - Control Bluetooth de escritorios
+/// - Gestión de rutinas y estadísticas
+/// - Soporte multiidioma
+/// - Temas claro/oscuro
 import 'package:controller/src/controllers/statistics/statistics_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -20,20 +29,40 @@ import 'src/controllers/settings/measurement_controller.dart';
 import 'src/controllers/settings/theme_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+/// Inicializa la aplicación y sus dependencias
+/// 
+/// Configura:
+/// 1. Firebase
+/// 2. Orientación de pantalla
+/// 3. Splash screen nativo
+/// 4. Providers para estado global
 Future<void> main() async {
+  // Inicialización del binding de Flutter
   var binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
+
+  // Configuración de Firebase
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  // Forzar orientación vertical
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  
+  // Delay para mostrar splash
   await Future.delayed(const Duration(seconds: 2));
   FlutterNativeSplash.remove();
+
+  // Iniciar app con providers
   runApp(MultiProvider(
     providers: [
+      // Providers para configuración
       ChangeNotifierProvider(create: (_) => ThemeController()),
       ChangeNotifierProvider(create: (_) => LanguageController()),
+      
+      // Providers para control de escritorio
       ChangeNotifierProvider(create: (_) => BluetoothController()),
       ChangeNotifierProvider(create: (_) => DeskController()),
+      
+      // Providers para funcionalidad principal
       ChangeNotifierProvider(create: (_) => MeasurementController()),
       ChangeNotifierProvider(create: (_) => UserController()),
       ChangeNotifierProvider(create: (_) => AuthController()),

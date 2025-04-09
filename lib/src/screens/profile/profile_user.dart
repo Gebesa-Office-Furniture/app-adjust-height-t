@@ -20,7 +20,7 @@ class AccountSettingsScreen extends StatefulWidget {
 class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  List<String> _tapSequence = [];
+  final List<String> _tapSequence = [];
   Timer? _sequenceTimer;
 
   @override
@@ -144,6 +144,9 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
                   GestureDetector(
                     onTap: () {
                       print('email');
+                      setState(() {
+                        _tapSequence.add('email');
+                      });
                     },
                     child: TextField(
                       controller: _emailController,
@@ -168,6 +171,9 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
                   GestureDetector(
                     onTap: () {
                       print('password');
+                      setState(() {
+                        _tapSequence.add('password');
+                      });
                     },
                     child: TextField(
                       enabled: false,
