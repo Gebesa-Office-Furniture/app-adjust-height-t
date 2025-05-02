@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import '../../../routes/auth_routes.dart';
 import '../../controllers/desk/desk_controller.dart';
 import '../statics/statics_screen.dart';
+import '../agent/agent_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -71,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ControlScreen(),
                 StatisticsScreen(),
                 SettingsScreen(),
+                AgentScreen(),
               ],
             ),
             // if (deskController.deviceReady)
@@ -89,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildCustomNavigationBar() {
     double indicatorPosition = MediaQuery.of(context).size.width * 0.0 +
-        (index * MediaQuery.of(context).size.width * 0.25);
+        (index * MediaQuery.of(context).size.width * 0.2);
 
     return ClipRRect(
       key: menuKey,
@@ -108,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               height: kBottomNavigationBarHeight,
-              width: MediaQuery.of(context).size.width * 0.75,
+              width: MediaQuery.of(context).size.width * 0.8,
               decoration: BoxDecoration(
                 color: Theme.of(context).navigationBarTheme.backgroundColor,
                 borderRadius: BorderRadius.circular(50),
@@ -123,6 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   _buildNavItem(Icons.home, 0),
                   _buildNavItem(Icons.analytics, 1),
                   _buildNavItem(Icons.settings, 2),
+                  _buildNavItem(
+                      Icons.message, 3), // Nuevo botón con ícono de perfil
                 ],
               ),
             ),
@@ -135,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // Indicador que se moverá detrás del ícono seleccionado
   Widget _buildIndicatorBack() {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.25,
+      width: MediaQuery.of(context).size.width * 0.2,
       height: kBottomNavigationBarHeight,
       decoration: BoxDecoration(
         color: Colors.cyan,
@@ -154,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         color: Colors.transparent,
         width: MediaQuery.of(context).size.width /
-            4.1, // Ocupa 1/3 del ancho de la pantalla
+            5.1, // Ocupa 1/4 del ancho de la pantalla
         height: kBottomNavigationBarHeight,
         alignment: Alignment.center,
         child: Icon(

@@ -65,6 +65,7 @@ dependencies:
   tutorial_coach_mark: ^1.2.12
   shimmer: ^3.0.0
   url_launcher: ^6.3.1
+  webview_flutter: ^4.10.0
   
   
 
