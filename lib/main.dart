@@ -1,5 +1,5 @@
 /// Aplicación Controller - Punto de entrada principal
-/// 
+///
 /// Esta aplicación permite controlar escritorios ajustables mediante Bluetooth
 /// y gestionar rutinas de trabajo. Integra:
 /// - Autenticación con Firebase
@@ -29,14 +29,22 @@ import 'src/controllers/settings/measurement_controller.dart';
 import 'src/controllers/settings/theme_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+//
+
+import 'package:permission_handler/permission_handler.dart';
+
 /// Inicializa la aplicación y sus dependencias
-/// 
+///
 /// Configura:
 /// 1. Firebase
 /// 2. Orientación de pantalla
 /// 3. Splash screen nativo
 /// 4. Providers para estado global
 Future<void> main() async {
+  // Inicialización de permisos
+  WidgetsFlutterBinding.ensureInitialized();
+  await Permission.camera.request();
+  await Permission.microphone.request();
   // Inicialización del binding de Flutter
   var binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
@@ -46,7 +54,7 @@ Future<void> main() async {
 
   // Forzar orientación vertical
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  
+
   // Delay para mostrar splash
   await Future.delayed(const Duration(seconds: 2));
   FlutterNativeSplash.remove();
@@ -57,11 +65,11 @@ Future<void> main() async {
       // Providers para configuración
       ChangeNotifierProvider(create: (_) => ThemeController()),
       ChangeNotifierProvider(create: (_) => LanguageController()),
-      
+
       // Providers para control de escritorio
       ChangeNotifierProvider(create: (_) => BluetoothController()),
       ChangeNotifierProvider(create: (_) => DeskController()),
-      
+
       // Providers para funcionalidad principal
       ChangeNotifierProvider(create: (_) => MeasurementController()),
       ChangeNotifierProvider(create: (_) => UserController()),
