@@ -11,6 +11,7 @@ import 'package:controller/src/widgets/backround_blur.dart';
 import 'package:provider/provider.dart';
 import '../../../routes/auth_routes.dart';
 import '../../controllers/desk/desk_controller.dart';
+import '../../controllers/agent/agent_controller.dart';
 import '../statics/statics_screen.dart';
 import '../agent/agent_screen.dart';
 
@@ -25,10 +26,19 @@ class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
   late StreamSubscription<User?> _authStateSubscription;
   PageController pageController = PageController();
+  final GlobalKey menuKey = GlobalKey();
 
   changeIndex(int newIndex) {
-    index = newIndex;
-    setState(() {});
+    // Verificar que el newIndex sea válido (no mayor que el número de pantallas disponibles)
+    final bool isAgentAvailable =
+        context.read<AgentController>().isAgentAvailable;
+    final int maxIndex = isAgentAvailable ? 3 : 2;
+
+    if (newIndex <= maxIndex) {
+      setState(() {
+        index = newIndex;
+      });
+    }
   }
 
   @override
@@ -37,6 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
     context.read<BluetoothController>().listenToAdapterState();
     _listenToAuthState();
     context.read<AuthController>().initializeNotifications(context);
+    // Verifica la disponibilidad del agente al iniciar
+    context.read<AgentController>().checkAgentAvailability();
   }
 
   void _listenToAuthState() {
@@ -68,11 +80,15 @@ class _HomeScreenState extends State<HomeScreen> {
               onPageChanged: changeIndex,
               controller: pageController,
               physics: const NeverScrollableScrollPhysics(),
-              children: const [
-                ControlScreen(),
-                StatisticsScreen(),
-                SettingsScreen(),
-                AgentScreen(),
+              children: [
+                const ControlScreen(),
+                const StatisticsScreen(),
+                const SettingsScreen(),
+                // Solo muestra la pantalla del agente si está disponible
+                if (context.watch<AgentController>().isAgentAvailable)
+                  const AgentScreen()
+                else
+                  const SizedBox(), // Pantalla vacía como placeholder cuando el agente no está disponible
               ],
             ),
             // if (deskController.deviceReady)
@@ -90,8 +106,18 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildCustomNavigationBar() {
-    double indicatorPosition = MediaQuery.of(context).size.width * 0.0 +
-        (index * MediaQuery.of(context).size.width * 0.2);
+    // Calcula la posición del indicador según el índice actual
+    final bool isAgentAvailable =
+        context.watch<AgentController>().isAgentAvailable;
+
+    // Calculamos el ancho de cada ítem según la cantidad de elementos en la barra
+    final int totalItems = isAgentAvailable ? 4 : 3;
+    final double navBarWidth =
+        MediaQuery.of(context).size.width * 0.8; // 80% del ancho de pantalla
+    final double itemWidth = navBarWidth / totalItems;
+
+    // Calculamos la posición del indicador
+    final double adjustedPosition = index * itemWidth;
 
     return ClipRRect(
       key: menuKey,
@@ -103,33 +129,31 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // Indicador que se mueve
             AnimatedPositioned(
-              left: indicatorPosition,
+              left: adjustedPosition,
               duration: const Duration(milliseconds: 200),
               curve: Curves.easeInOut,
               child: _buildIndicatorBack(),
             ),
             Container(
-              height: kBottomNavigationBarHeight,
-              width: MediaQuery.of(context).size.width * 0.8,
-              decoration: BoxDecoration(
-                color: Theme.of(context).navigationBarTheme.backgroundColor,
-                borderRadius: BorderRadius.circular(50),
-                border: Border.all(
-                    color:
-                        Theme.of(context).navigationBarTheme.backgroundColor!,
-                    width: 1.5),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildNavItem(Icons.home, 0),
-                  _buildNavItem(Icons.analytics, 1),
-                  _buildNavItem(Icons.settings, 2),
-                  _buildNavItem(
-                      Icons.message, 3), // Nuevo botón con ícono de perfil
-                ],
-              ),
-            ),
+                height: kBottomNavigationBarHeight,
+                width: navBarWidth,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).navigationBarTheme.backgroundColor,
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(
+                      color:
+                          Theme.of(context).navigationBarTheme.backgroundColor!,
+                      width: 1.5),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(child: _buildNavItem(Icons.home, 0)),
+                    Expanded(child: _buildNavItem(Icons.analytics, 1)),
+                    Expanded(child: _buildNavItem(Icons.settings, 2)),
+                    if (context.watch<AgentController>().isAgentAvailable)
+                      Expanded(child: _buildNavItem(Icons.message, 3)),
+                  ],
+                )),
           ],
         ),
       ),
@@ -138,8 +162,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Indicador que se moverá detrás del ícono seleccionado
   Widget _buildIndicatorBack() {
+    final bool isAgentAvailable =
+        context.watch<AgentController>().isAgentAvailable;
+    final int totalItems = isAgentAvailable ? 4 : 3;
+    final double navBarWidth = MediaQuery.of(context).size.width * 0.8;
+    final double itemWidth = navBarWidth / totalItems;
+
     return Container(
-      width: MediaQuery.of(context).size.width * 0.2,
+      width: itemWidth,
       height: kBottomNavigationBarHeight,
       decoration: BoxDecoration(
         color: Colors.cyan,
@@ -157,8 +187,9 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: Container(
         color: Colors.transparent,
-        width: MediaQuery.of(context).size.width /
-            5.1, // Ocupa 1/4 del ancho de la pantalla
+        width: MediaQuery.of(context).size.width *
+            0.8 /
+            (context.watch<AgentController>().isAgentAvailable ? 4 : 3),
         height: kBottomNavigationBarHeight,
         alignment: Alignment.center,
         child: Icon(
