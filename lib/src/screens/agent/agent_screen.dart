@@ -11,8 +11,8 @@ class AgentScreen extends StatefulWidget {
 }
 
 class _AgentScreenState extends State<AgentScreen> {
-  WebViewController? _controller; // ① ahora es nullable
-  bool isLoading = true;
+  WebViewController? _controller;
+  bool isLoading = true; // controla el estado del spinner
 
   @override
   void initState() {
@@ -25,8 +25,14 @@ class _AgentScreenState extends State<AgentScreen> {
 
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      // …todas tus demás llamadas…
-      ..loadRequest(Uri.parse('https://thunderous-dango-83ccc5.netlify.app/'));
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageStarted: (url) => setState(() => isLoading = true),
+          onPageFinished: (url) => setState(() => isLoading = false),
+        ),
+      )
+      ..loadRequest(Uri.parse(
+          'https://stellular-entremet-ccf36f.netlify.app/?lang=en&theme=negro'));
 
     // callbacks específicos de plataforma …
     if (ctrl.platform is AndroidWebViewController) {
@@ -49,7 +55,7 @@ class _AgentScreenState extends State<AgentScreen> {
       ios.setOnPlatformPermissionRequest((request) async => request.grant());
     }
 
-    setState(() => _controller = ctrl); // ② lo asignamos de golpe
+    setState(() => _controller = ctrl);
   }
 
   @override
@@ -62,12 +68,16 @@ class _AgentScreenState extends State<AgentScreen> {
               top: MediaQuery.of(context).padding.top,
               bottom: MediaQuery.of(context).padding.bottom + 80,
             ),
-            child: _controller == null // ③
-                ? const SizedBox() // mientras se crea
-                : WebViewWidget(controller: _controller!), // cuando ya existe
+            child: _controller == null
+                ? const SizedBox()
+                : WebViewWidget(controller: _controller!),
           ),
-          //if (isLoading)
-          //const Center(child: CircularProgressIndicator(color: Colors.cyan)),
+          if (isLoading)
+            const Center(
+              child: CircularProgressIndicator(
+                color: Colors.cyan,
+              ),
+            ),
         ],
       ),
     );
