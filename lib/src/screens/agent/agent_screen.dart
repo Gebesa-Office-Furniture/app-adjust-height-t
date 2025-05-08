@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../../controllers/settings/theme_controller.dart';
+import '../../controllers/settings/language_controller.dart';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -23,6 +26,23 @@ class _AgentScreenState extends State<AgentScreen> {
   Future<void> _initWebView() async {
     await [Permission.microphone].request();
 
+    // Get theme and language from providers
+    final themeController =
+        Provider.of<ThemeController>(context, listen: false);
+    final languageController =
+        Provider.of<LanguageController>(context, listen: false);
+
+    // Determine theme parameter for URL
+    String themeParam =
+        themeController.themeMode == ThemeMode.dark ? 'dark' : 'light';
+
+    // Determine language parameter for URL
+    String langParam = languageController.currentLocale.languageCode;
+
+    // Generate URL with parameters
+    String url =
+        'https://sweet-conkies-da6196.netlify.app/?lang=$langParam&theme=$themeParam';
+
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
@@ -31,8 +51,7 @@ class _AgentScreenState extends State<AgentScreen> {
           onPageFinished: (url) => setState(() => isLoading = false),
         ),
       )
-      ..loadRequest(Uri.parse(
-          'https://stellular-entremet-ccf36f.netlify.app/?lang=en&theme=negro'));
+      ..loadRequest(Uri.parse(url));
 
     // callbacks específicos de plataforma …
     if (ctrl.platform is AndroidWebViewController) {
