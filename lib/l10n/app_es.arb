@@ -774,5 +774,29 @@
     "nameTooLong": "El nombre no puede ser mayor a 20 caracteres",
     "@nameTooLong": {
         "description": "Mensaje de error para nombre demasiado largo"
+    },
+    "phoneNumber": "Número de teléfono",
+    "@phoneNumber": {
+        "description": "Etiqueta de número de teléfono"
+    },
+    "countryCode": "Lada o código de país",
+    "@countryCode": {
+        "description": "Etiqueta de lada o código de país"
+    },
+    "enterPhoneNumber": "Ingresa tu número de teléfono",
+    "@enterPhoneNumber": {
+        "description": "Marcador de posición para número de teléfono"
+    },
+    "enterCountryCode": "Ingresa la lada o código de país",
+    "@enterCountryCode": {
+        "description": "Marcador de posición para lada o código de país"
+    },
+    "phoneNumberValidation": "Por favor, ingresa un número de teléfono válido",
+    "@phoneNumberValidation": {
+        "description": "Mensaje de error para número de teléfono inválido"
+    },
+    "countryCodeValidation": "Por favor, ingresa una lada o código de país válido",
+    "@countryCodeValidation": {
+        "description": "Mensaje de error para lada o código de país inválido"
     }
 }

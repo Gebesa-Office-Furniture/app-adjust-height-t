@@ -22,6 +22,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController countryCodeController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -210,6 +212,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       return null;
                     },
                   ),
+                  const SizedBox(height: 20),
+                  // Country code field
+                  Text(
+                    AppLocalizations.of(context)!.countryCode,
+                    style: TextStyle(
+                      color: Theme.of(context).iconTheme.color,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  TextFormField(
+                    controller: countryCodeController,
+                    decoration: InputDecoration(
+                      hintText: AppLocalizations.of(context)!.enterCountryCode,
+                      prefixText: '+',
+                    ),
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(3),
+                    ],
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return AppLocalizations.of(context)!.countryCodeValidation;
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  // Phone number field
+                  Text(
+                    AppLocalizations.of(context)!.phoneNumber,
+                    style: TextStyle(
+                      color: Theme.of(context).iconTheme.color,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  TextFormField(
+                    controller: phoneNumberController,
+                    decoration: InputDecoration(
+                      hintText: AppLocalizations.of(context)!.enterPhoneNumber,
+                    ),
+                    keyboardType: TextInputType.phone,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return AppLocalizations.of(context)!.phoneNumberValidation;
+                      }
+                      return null;
+                    },
+                  ),
                   //expand the column
                   const SizedBox(height: 60),
                   RoundedButton(
@@ -225,6 +283,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 passwordController.text,
                                 usernameController.text,
                                 context,
+                                countryCode: countryCodeController.text,
+                                phoneNumber: phoneNumberController.text,
                               );
                               if (resp) {
                                 Navigator.pushNamedAndRemoveUntil(context,

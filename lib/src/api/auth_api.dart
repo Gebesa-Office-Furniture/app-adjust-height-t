@@ -17,18 +17,42 @@ class AuthApi {
   /// - `name`: Nombre del usuario.
   /// - `email`: Correo electrónico del usuario.
   /// - `password`: Contraseña del usuario.
+  /// - `countryCode`: Código de país (opcional).
+  /// - `phoneNumber`: Número de teléfono (opcional).
   ///
   /// Retorna un mapa con la respuesta de la API.
   static Future<Map<String, dynamic>> registerUser(
     String name,
     String email,
-    String password,
-  ) async {
+    String password, {
+    String? countryCode,
+    String? phoneNumber,
+  }) async {
     final url = Uri.parse('${baseUrl}auth/register');
+
+    // Crear el cuerpo de la solicitud
+    final Map<String, dynamic> requestBody = {
+      'sName': name,
+      'sEmail': email,
+      'sPassword': password,
+    };
+
+    // Añadir los campos opcionales si no son nulos
+    if (countryCode != null && countryCode.isNotEmpty) {
+      requestBody['sLada'] = '+$countryCode';
+    }
+
+    if (phoneNumber != null && phoneNumber.isNotEmpty) {
+      requestBody['sPhoneNumber'] = phoneNumber;
+    }
+
+    // Debug print de la petición
+    print('REGISTER REQUEST: ${json.encode(requestBody)}');
+
     final response = await ApiHelper.handleRequest(
       http.post(
         url,
-        body: json.encode({'sName': name, 'sEmail': email, 'sPassword': password}),
+        body: json.encode(requestBody),
         headers: {'Content-Type': 'application/json'},
       ),
     );
@@ -53,7 +77,7 @@ class AuthApi {
         body: json.encode({'sEmail': email, 'sPassword': password}),
         headers: {'Content-Type': 'application/json'},
       ),
-      isLoginRequest: true,  // Indica que es una solicitud de inicio de sesión.
+      isLoginRequest: true, // Indica que es una solicitud de inicio de sesión.
     );
     return response;
   }

@@ -245,17 +245,28 @@ class AuthController with ChangeNotifier {
   /// [password] Contraseña del usuario
   /// [name] Nombre del usuario
   /// [context] Contexto para mostrar mensajes
+  /// [countryCode] Código de país para el número de teléfono
+  /// [phoneNumber] Número de teléfono del usuario
   ///
   /// Retorna true si el registro fue exitoso
   Future<bool> signUp(
-      String email, String password, String name, BuildContext context) async {
+      String email, String password, String name, BuildContext context,
+      {String? countryCode, String? phoneNumber}) async {
     try {
       _setLoading(true);
       final userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
 
-      final response =
-          await AuthApi.registerUser(name, email, userCredential.user!.uid);
+      final response = await AuthApi.registerUser(
+        name,
+        email,
+        userCredential.user!.uid,
+        countryCode: countryCode,
+        phoneNumber: phoneNumber,
+      );
+
+      // Debug print de la respuesta
+      print('REGISTER RESPONSE: ${response['data']}');
 
       if (response['success']) {
         _firebaseUser = userCredential.user;

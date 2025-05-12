@@ -59,6 +59,8 @@ class UserModel {
   int? id;
   String? name;
   String? email;
+  String? phoneNumber;
+  String? countryCode;
   int? idViewMode;
   String? viewMode;
   int? idLangague;
@@ -78,6 +80,8 @@ class UserModel {
     this.id,
     this.name,
     this.email,
+    this.phoneNumber,
+    this.countryCode,
     this.idViewMode,
     this.viewMode,
     this.idLangague,
@@ -98,6 +102,8 @@ class UserModel {
         id: json["iId"],
         name: json["sName"],
         email: json["sEmail"],
+        phoneNumber: json["sPhoneNumber"],
+        countryCode: json["sCountryCode"],
         idViewMode: json["iViewMode"],
         viewMode: json["sViewMode"],
         idLangague: json["iIdLanguage"],
@@ -129,6 +135,8 @@ class UserModel {
         "iId": id,
         "sName": name,
         "sEmail": email,
+        "sPhoneNumber": phoneNumber,
+        "sCountryCode": countryCode,
         "iViewMode": idViewMode,
         "sViewMode": viewMode,
         "iIdLanguage": idLangague,
