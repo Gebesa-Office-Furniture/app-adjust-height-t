@@ -20,6 +20,7 @@ import 'package:controller/src/controllers/user/user_controller.dart';
 import 'package:controller/src/config/style/app_theme.dart';
 import 'package:controller/src/controllers/desk/bluetooth_controller.dart';
 import 'package:controller/src/controllers/desk/desk_controller.dart';
+import 'package:controller/src/controllers/agent/agent_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:toastification/toastification.dart';
 import 'routes/app_routes.dart';
@@ -77,6 +78,7 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (_) => ConnectivityController()),
       ChangeNotifierProvider(create: (_) => RoutineController()),
       ChangeNotifierProvider(create: (_) => StatisticsController()),
+      ChangeNotifierProvider(create: (_) => AgentController()),
     ],
     child: const MyApp(),
   ));
