@@ -6,6 +6,8 @@ import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../../controllers/settings/theme_controller.dart';
 import '../../controllers/settings/language_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../api/token_manager.dart';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -21,6 +23,14 @@ class _AgentScreenState extends State<AgentScreen> {
   void initState() {
     super.initState();
     _initWebView();
+  }
+
+  late final WebViewCookieManager _cookieManager = WebViewCookieManager();
+
+  // Función para obtener el token JWT del servidor
+  Future<String?> _getJwtToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(TokenManager.TOKEN_KEY);
   }
 
   Future<void> _initWebView() async {
@@ -39,17 +49,23 @@ class _AgentScreenState extends State<AgentScreen> {
     // Determine language parameter for URL
     String langParam = languageController.currentLocale.languageCode;
 
+    // Obtener el token JWT
+    String? jwtToken = await _getJwtToken();
+
     // Generate URL with parameters
-    String url =
-        'https://sweet-conkies-da6196.netlify.app/?lang=$langParam&theme=$themeParam';
+    String shUrl = 'https://lucky-medovik-a419a7.netlify.app/';
+    String url = '$shUrl?lang=$langParam&theme=$themeParam';
 
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
-        NavigationDelegate(
-          onPageStarted: (url) => setState(() => isLoading = true),
-          onPageFinished: (url) => setState(() => isLoading = false),
-        ),
+        NavigationDelegate(onPageStarted: (url) {
+          setState(() => isLoading = true);
+          _cookieManager.setCookie(WebViewCookie(
+              name: 'jwt_token', value: jwtToken!, domain: shUrl));
+        }, onPageFinished: (url) {
+          setState(() => isLoading = false);
+        }),
       )
       ..loadRequest(Uri.parse(url));
 
