@@ -22,7 +22,7 @@ class AgentApi {
       }
 
       // Construye la URL para la petición
-      final url = Uri.parse('${AppConfig.apiBaseUrl}/status/check');
+      final url = Uri.parse('${AppConfig.apiBaseUrl}status/check');
 
       // Realiza la petición GET al endpoint
       final request = http.get(
