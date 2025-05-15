@@ -8,6 +8,7 @@ import '../../controllers/settings/theme_controller.dart';
 import '../../controllers/settings/language_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../api/token_manager.dart';
+import 'dart:developer' as dev;
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -51,6 +52,7 @@ class _AgentScreenState extends State<AgentScreen> {
 
     // Obtener el token JWT
     String? jwtToken = await _getJwtToken();
+    dev.log('JWT Token: $jwtToken');
 
     // Generate URL with parameters
     String shUrl = 'https://lucky-medovik-a419a7.netlify.app/';

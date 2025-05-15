@@ -52,7 +52,7 @@ class UserApi {
       bool sedentaryNotification,
       int language,
       int themeMode) async {
-    final url = Uri.parse('$baseUrl/session/user/updateadditionalinfo');
+    final url = Uri.parse('${baseUrl}session/user/updateadditionalinfo');
     final prefs = await SharedPreferences.getInstance();
 
     // Verifica si el token es válido antes de realizar la solicitud.
