@@ -2,6 +2,6 @@ class AppConfig {
   static const bool isProduction = bool.fromEnvironment('dart.vm.product');
 
   static String get apiBaseUrl {
-    return 'https://wqg167lv7a7r.share.zrok.io/';
+    return 'https://xr7b1i0wy239.share.zrok.io/';
   }
 }
