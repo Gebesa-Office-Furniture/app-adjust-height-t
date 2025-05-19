@@ -72,9 +72,8 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (_) => BluetoothController()),
       ChangeNotifierProvider(create: (_) => DeskController()),
       // DeskSocketService que usa esa misma instancia
-      Provider<DeskSocketService>(
+      ChangeNotifierProvider(
         create: (context) => DeskSocketService(context.read<DeskController>()),
-        dispose: (_, svc) => svc.dispose(),
       ),
 
       // Providers para funcionalidad principal
