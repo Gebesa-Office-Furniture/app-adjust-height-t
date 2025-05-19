@@ -10,10 +10,10 @@ import 'package:controller/src/screens/settings/settings_screen.dart';
 import 'package:controller/src/widgets/backround_blur.dart';
 import 'package:provider/provider.dart';
 import '../../../routes/auth_routes.dart';
-import '../../controllers/desk/desk_controller.dart';
 import '../../controllers/agent/agent_controller.dart';
 import '../statics/statics_screen.dart';
 import '../agent/agent_screen.dart';
+import '../tutorial/debug_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -84,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const ControlScreen(),
                 const StatisticsScreen(),
                 const SettingsScreen(),
+                const DeskDebugPage(),
                 // Solo muestra la pantalla del agente si está disponible
                 if (context.watch<AgentController>().isAgentAvailable)
                   const AgentScreen()

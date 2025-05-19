@@ -52,7 +52,7 @@ class _AgentScreenState extends State<AgentScreen> {
 
     // Obtener el token JWT
     String? jwtToken = await _getJwtToken();
-    dev.log('JWT Token: $jwtToken');
+    print('JWT Token: $jwtToken');
 
     // Generate URL with parameters
     String shUrl = 'https://lucky-medovik-a419a7.netlify.app/';

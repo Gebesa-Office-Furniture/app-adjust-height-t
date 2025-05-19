@@ -7,8 +7,12 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../routines/routine_controller.dart';
 import 'desk_service_config.dart';
+import 'socket_io_controller.dart';
 
 class DeskController extends ChangeNotifier {
+  // Socket IO service
+  //DeskSocketService socketSvc;
+
   // Bluetooth connection properties
   BluetoothDevice? device;
   int? rssi;

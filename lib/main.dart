@@ -29,6 +29,7 @@ import 'src/controllers/settings/language_controller.dart';
 import 'src/controllers/settings/measurement_controller.dart';
 import 'src/controllers/settings/theme_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:controller/src/controllers/desk/socket_io_controller.dart';
 
 //
 
@@ -67,9 +68,14 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (_) => ThemeController()),
       ChangeNotifierProvider(create: (_) => LanguageController()),
 
-      // Providers para control de escritorio
+      // ─────────── Control de escritorio ───────────
       ChangeNotifierProvider(create: (_) => BluetoothController()),
       ChangeNotifierProvider(create: (_) => DeskController()),
+      // DeskSocketService que usa esa misma instancia
+      Provider<DeskSocketService>(
+        create: (context) => DeskSocketService(context.read<DeskController>()),
+        dispose: (_, svc) => svc.dispose(),
+      ),
 
       // Providers para funcionalidad principal
       ChangeNotifierProvider(create: (_) => MeasurementController()),
