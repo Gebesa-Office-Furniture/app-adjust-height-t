@@ -230,10 +230,10 @@ class _ScanScreenState extends State<ScanScreen> {
       Navigator.of(context).pop();
       print("Error al conectar: $e");
       showConnectionErrorDialog();
-    }).then((v) {
+    }).then((v) async {
       //hide dialog
       Navigator.of(context).pop();
-      context.read<DeskController>().setDevice(device);
+      await context.read<DeskController>().setDevice(device);
 
       Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     });

@@ -69,6 +69,7 @@ class DeskController extends ChangeNotifier {
 
   DeskController() {
     loadSavedName();
+    loadSavedUUID();
   }
 
   /// Loads the saved device name from SharedPreferences
@@ -77,6 +78,18 @@ class DeskController extends ChangeNotifier {
     final savedName = prefs.getString('device_name');
     if (savedName != null) {
       deviceName = savedName;
+      notifyListeners();
+    }
+  }
+  
+  /// Loads the saved device UUID from SharedPreferences
+  Future<void> loadSavedUUID() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedUUID = prefs.getString('device_uuid');
+    if (savedUUID != null) {
+      // We have a saved UUID but no device object yet
+      // This will be used during reconnection
+      print("📱 Loaded saved device UUID: $savedUUID");
       notifyListeners();
     }
   }
@@ -89,13 +102,63 @@ class DeskController extends ChangeNotifier {
       } catch (e) {
         print("Error al reconectar: $e");
       }
+    } else {
+      // Try to reconnect using the saved UUID
+      final prefs = await SharedPreferences.getInstance();
+      final savedUUID = prefs.getString('device_uuid');
+      
+      if (savedUUID != null) {
+        try {
+          print("Intentando reconectar usando UUID guardado: $savedUUID");
+          
+          // Search for device with saved UUID among known devices
+          try {
+            List<BluetoothDevice> systemDevices = await FlutterBluePlus.systemDevices([]);
+            
+            for (var d in systemDevices) {
+              if (d.remoteId.str == savedUUID) {
+                print("Dispositivo encontrado en systemDevices: ${d.advName}");
+                await setDevice(d);
+                await d.connect();
+                print("Dispositivo reconectado exitosamente.");
+                return;
+              }
+            }
+            
+            // If not found in system devices, try scanning
+            print("Dispositivo no encontrado en systemDevices, iniciando escaneo...");
+            await FlutterBluePlus.startScan(timeout: const Duration(seconds: 4));
+            await for (final results in FlutterBluePlus.scanResults) {
+              for (ScanResult r in results) {
+                if (r.device.remoteId.str == savedUUID) {
+                  print("Dispositivo encontrado en escaneo: ${r.device.advName}");
+                  await FlutterBluePlus.stopScan();
+                  await setDevice(r.device);
+                  await r.device.connect();
+                  print("Dispositivo reconectado exitosamente.");
+                  return;
+                }
+              }
+            }
+          } catch (e) {
+            print("Error buscando dispositivo: $e");
+          }
+        } catch (e) {
+          print("Error al reconectar usando UUID guardado: $e");
+        }
+      }
     }
   }
 
-  void setDevice(BluetoothDevice? newDevice) {
+  Future<void> setDevice(BluetoothDevice? newDevice) async {
     device = newDevice;
     if (device != null) {
       deviceName = device!.advName;
+      
+      // Save the device UUID to SharedPreferences for future reconnections
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('device_uuid', device!.remoteId.str);
+      print("📱 Saved device UUID: ${device!.remoteId.str}");
     } else {
       deviceName = "";
       deviceReady = false;
@@ -261,7 +324,7 @@ class DeskController extends ChangeNotifier {
             if (response['success'] == true && !_wsStarted) {
               final socketSvc = context.read<DeskSocketService>();
               // final token = prefs.getString('token') ?? '';
-              socketSvc.connect(
+              await socketSvc.connect(
                 sUUID: device!.remoteId.str,
                 // token: token,
               );

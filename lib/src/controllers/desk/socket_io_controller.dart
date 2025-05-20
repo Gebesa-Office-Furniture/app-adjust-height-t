@@ -1,6 +1,7 @@
 // services/desk_socket_service.dart
 import 'package:flutter/foundation.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
+import 'package:shared_preferences/shared_preferences.dart';
 import './desk_controller.dart';
 import '../../config/app_config.dart';
 
@@ -15,7 +16,19 @@ class DeskSocketService extends ChangeNotifier {
 
   DeskSocketService(this.desk);
 
-  void connect({required String sUUID}) {
+  Future<void> connect({String? sUUID}) async {
+    String deviceUUID = sUUID ?? '';
+    
+    // If no UUID provided, try to get from SharedPreferences
+    if (deviceUUID.isEmpty) {
+      final prefs = await SharedPreferences.getInstance();
+      deviceUUID = prefs.getString('device_uuid') ?? '';
+      if (deviceUUID.isEmpty) {
+        debugPrint('❌ No device UUID provided or found in SharedPreferences');
+        return;
+      }
+    }
+    
     _socket = io.io(
       baseUrl,
       io.OptionBuilder()
@@ -28,8 +41,8 @@ class DeskSocketService extends ChangeNotifier {
     _socket!
       ..onConnect((_) {
         _connected = true;
-        _socket!.emit('joinDesk', sUUID);
-        debugPrint('🔌 Unido a $sUUID');
+        _socket!.emit('joinDesk', deviceUUID);
+        debugPrint('🔌 Unido a $deviceUUID');
         notifyListeners();
       })
       ..onDisconnect((_) {
