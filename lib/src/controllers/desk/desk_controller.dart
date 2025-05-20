@@ -179,6 +179,14 @@ class DeskController extends ChangeNotifier {
 
       if (state == BluetoothConnectionState.connected && device != null) {
         try {
+          // Iniciar la conexión al WebSocket al conectar con el dispositivo
+          if (!_wsStarted) {
+            final socketSvc = context.read<DeskSocketService>();
+            await socketSvc.connect(sUUID: device!.remoteId.str);
+            _wsStarted = true;
+            print('🔌 Conectado al servicio de WebSocket');
+          }
+          
           await _discoverServices(context);
 
           _controller = AnimationController(
