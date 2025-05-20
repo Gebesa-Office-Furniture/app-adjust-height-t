@@ -41,16 +41,16 @@ class _DeskDebugPageState extends State<DeskDebugPage> {
                   child: TextField(
                     controller: _deskIdCtrl,
                     decoration: const InputDecoration(
-                        labelText: 'Desk ID', border: OutlineInputBorder()),
-                    keyboardType: TextInputType.number,
+                        labelText: 'UUID', border: OutlineInputBorder()),
+                    keyboardType: TextInputType.text,
                   ),
                 ),
                 const SizedBox(width: 12),
                 ElevatedButton(
                   onPressed: () {
-                    final id = int.tryParse(_deskIdCtrl.text);
-                    if (id != null) {
-                      socketSvc.connect(deskId: id);
+                    final id = _deskIdCtrl.text;
+                    if (id.isNotEmpty) {
+                      socketSvc.connect(sUUID: id);
                     }
                   },
                   child: const Text('Conectar WS'),

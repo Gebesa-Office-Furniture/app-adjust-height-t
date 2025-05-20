@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:controller/src/controllers/desk/socket_io_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:controller/src/api/desk_api.dart';
@@ -7,11 +8,9 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../routines/routine_controller.dart';
 import 'desk_service_config.dart';
-import 'socket_io_controller.dart';
 
 class DeskController extends ChangeNotifier {
-  // Socket IO service
-  //DeskSocketService socketSvc;
+  bool _wsStarted = false; // evita dobles conexiones
 
   // Bluetooth connection properties
   BluetoothDevice? device;
@@ -247,6 +246,29 @@ class DeskController extends ChangeNotifier {
 
           progress =
               calculateProgressPercentage(heightIN!, minHeight, maxHeight);
+
+          // Enviar límites de altura al backend si hay conexión a internet
+          if (await InternetConnection().hasInternetAccess && device != null) {
+            final response = await DeskApi.registerDeskDevice(
+              deviceName ?? "Desk",
+              device!.remoteId.str,
+              "1",
+              minHeightMM: minHeightMM,
+              maxHeightMM: maxHeightMM,
+            );
+
+            // Si la llamada fue exitosa y aún no hay socket:
+            if (response['success'] == true && !_wsStarted) {
+              final socketSvc = context.read<DeskSocketService>();
+              // final token = prefs.getString('token') ?? '';
+              socketSvc.connect(
+                sUUID: device!.remoteId.str,
+                // token: token,
+              );
+
+              _wsStarted = true;
+            }
+          }
 
           firstConnection = false;
           notifyListeners();

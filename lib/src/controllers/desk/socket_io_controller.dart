@@ -15,21 +15,22 @@ class DeskSocketService extends ChangeNotifier {
 
   DeskSocketService(this.desk);
 
-  void connect({required int deskId}) {
+  void connect({required String sUUID}) {
     _socket = io.io(
       baseUrl,
-      {
-        'transports': ['websocket'],
-        'autoConnect': false
-      },
+      io.OptionBuilder()
+          .setTransports(['websocket'])
+          .disableAutoConnect()
+          //  .setQuery(token != null ? {'token': token} : {}) // opcional
+          .build(),
     );
 
     _socket!
       ..onConnect((_) {
         _connected = true;
-        _socket!.emit('joinDesk', deskId);
-        debugPrint('🔌 Conectado y unido a desk $deskId');
-        notifyListeners(); // 🔔
+        _socket!.emit('joinDesk', sUUID);
+        debugPrint('🔌 Unido a $sUUID');
+        notifyListeners();
       })
       ..onDisconnect((_) {
         _connected = false;

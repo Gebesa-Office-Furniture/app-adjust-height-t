@@ -83,10 +83,13 @@ class DeskApi {
   /// - `deviceName`: Nombre del dispositivo.
   /// - `deviceId`: Identificador único del dispositivo.
   /// - `status`: Estado del dispositivo.
+  /// - `minHeightMM`: (Opcional) Altura mínima del escritorio en milímetros.
+  /// - `maxHeightMM`: (Opcional) Altura máxima del escritorio en milímetros.
   ///
   /// Retorna un mapa con la respuesta de la API.
   static Future<Map<String, dynamic>> registerDeskDevice(
-      String deviceName, String deviceId, String status) async {
+      String deviceName, String deviceId, String status,
+      {double? minHeightMM, double? maxHeightMM}) async {
     final url = Uri.parse('${baseUrl}session/desk/conexion');
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(TokenManager.TOKEN_KEY);
@@ -97,14 +100,24 @@ class DeskApi {
       return {'success': false, 'type': 'SESSION_EXPIRED'};
     }
 
+    final Map<String, dynamic> requestBody = {
+      'sDeskName': deviceName,
+      'iStatus': status,
+      'sUUID': deviceId,
+    };
+    
+    // Añadir límites de altura si están disponibles
+    if (minHeightMM != null) {
+      requestBody['dMinHeightMm'] = minHeightMM;
+    }
+    if (maxHeightMM != null) {
+      requestBody['dMaxHeightMm'] = maxHeightMM;
+    }
+
     final response = await ApiHelper.handleRequest(
       http.post(
         url,
-        body: json.encode({
-          'sDeskName': deviceName,
-          'iStatus': status,
-          'sUUID': deviceId,
-        }),
+        body: json.encode(requestBody),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token'
