@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
+import 'dart:convert'; // utf8, json, base64Url
 import 'package:permission_handler/permission_handler.dart';
 import '../../controllers/settings/theme_controller.dart';
 import '../../controllers/settings/language_controller.dart';
@@ -34,6 +35,15 @@ class _AgentScreenState extends State<AgentScreen> {
     return prefs.getString(TokenManager.TOKEN_KEY);
   }
 
+  Future<String?> _loadUUID() async {
+    final prefs = await SharedPreferences.getInstance();
+    final uuid = prefs.getString('sUUID');
+    if (uuid == null) {
+      return 'noexiste';
+    }
+    return uuid;
+  }
+
   Future<void> _initWebView() async {
     await [Permission.microphone].request();
 
@@ -52,19 +62,36 @@ class _AgentScreenState extends State<AgentScreen> {
 
     // Obtener el token JWT
     String? jwtToken = await _getJwtToken();
+    String? uuid = await _loadUUID();
     print('JWT Token: $jwtToken');
+    print('UUID: $uuid');
 
     // Generate URL with parameters
-    String shUrl = 'https://lucky-medovik-a419a7.netlify.app/';
+    String host = 'teal-haupia-698380.netlify.app'; // ← sin “https://”
+    String shUrl = 'https://$host/';
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
+
+    // 1️⃣ Cookie ANTES de la navegación
+
+    final payload = jsonEncode({'jwt': jwtToken, 'uuid': uuid});
+    final encoded = base64Url.encode(utf8.encode(payload));
+    print(
+        'Encoded payload AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: $encoded');
+
+    await _cookieManager.setCookie(
+      WebViewCookie(
+        name: 'auth_data',
+        value: encoded,
+        domain: host, // ← host exacto, sin “sh…”, sin barra
+        path: '/',
+      ),
+    );
 
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(onPageStarted: (url) {
           setState(() => isLoading = true);
-          _cookieManager.setCookie(WebViewCookie(
-              name: 'jwt_token', value: jwtToken!, domain: shUrl));
         }, onPageFinished: (url) {
           setState(() => isLoading = false);
         }),

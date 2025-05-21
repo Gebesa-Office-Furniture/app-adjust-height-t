@@ -45,8 +45,6 @@ import 'package:permission_handler/permission_handler.dart';
 Future<void> main() async {
   // Inicialización de permisos
   WidgetsFlutterBinding.ensureInitialized();
-  await Permission.camera.request();
-  await Permission.microphone.request();
   // Inicialización del binding de Flutter
   var binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);

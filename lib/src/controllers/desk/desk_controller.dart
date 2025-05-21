@@ -11,6 +11,7 @@ import 'desk_service_config.dart';
 
 class DeskController extends ChangeNotifier {
   bool _wsStarted = false; // evita dobles conexiones
+  late final DeskSocketService socketSvc;
 
   // Bluetooth connection properties
   BluetoothDevice? device;
@@ -259,13 +260,12 @@ class DeskController extends ChangeNotifier {
 
             // Si la llamada fue exitosa y aún no hay socket:
             if (response['success'] == true && !_wsStarted) {
-              final socketSvc = context.read<DeskSocketService>();
               // final token = prefs.getString('token') ?? '';
               socketSvc.connect(
                 sUUID: device!.remoteId.str,
                 // token: token,
               );
-
+              prefs.setString('sUUID', device!.remoteId.str);
               _wsStarted = true;
             }
           }
@@ -728,6 +728,11 @@ class DeskController extends ChangeNotifier {
     device = null;
     _controller!.reset();
     _controller!.dispose();
+    //Dudas aqui tbh, no he calado lo suficiente
+    _wsStarted = false;
+    socketSvc.dispose();
+    final prefs = SharedPreferences.getInstance();
+    prefs.then((prefs) => prefs.remove('sUUID'));
     notifyListeners();
   }
 }
