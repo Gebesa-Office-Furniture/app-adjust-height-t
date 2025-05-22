@@ -11,7 +11,7 @@ import 'desk_service_config.dart';
 
 class DeskController extends ChangeNotifier {
   bool _wsStarted = false; // evita dobles conexiones
-  late final DeskSocketService socketSvc;
+  late DeskSocketService socketSvc;
 
   // Bluetooth connection properties
   BluetoothDevice? device;
@@ -70,6 +70,7 @@ class DeskController extends ChangeNotifier {
 
   DeskController() {
     loadSavedName();
+    socketSvc = DeskSocketService(this); // ← ¡YA inicializado!
   }
 
   /// Loads the saved device name from SharedPreferences
@@ -259,17 +260,9 @@ class DeskController extends ChangeNotifier {
             );
 
             // Si la llamada fue exitosa y aún no hay socket:
-            if (response['success'] == true && !_wsStarted) {
-              // final token = prefs.getString('token') ?? '';
-              socketSvc.connect(
-                sUUID: device!.remoteId.str,
-                // token: token,
-              );
-              prefs.setString('sUUID', device!.remoteId.str);
-              _wsStarted = true;
-            }
           }
-
+          print(
+              "sUUID: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:  ${prefs.getString('sUUID')}");
           firstConnection = false;
           notifyListeners();
           return;
@@ -298,6 +291,16 @@ class DeskController extends ChangeNotifier {
         }
 
         heightMM = inchesToMm(heightIN!);
+        if (!_wsStarted) {
+          socketSvc.connect(
+            sUUID: device!.remoteId.str,
+            // token: token,
+          );
+          final prefs = await SharedPreferences.getInstance();
+          prefs.setString('sUUID', device!.remoteId.str);
+          _wsStarted = true;
+          print("SI ENTRO");
+        }
 
         print("Altura actual: $heightIN pulgadas");
         print("Altura actual: $heightMM mm");
