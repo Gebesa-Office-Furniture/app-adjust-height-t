@@ -67,31 +67,25 @@ class _AgentScreenState extends State<AgentScreen> {
     print('UUID: $uuid');
 
     // Generate URL with parameters
-    String host = 'teal-haupia-698380.netlify.app'; // ← sin “https://”
+    String host = 'lucky-medovik-a419a7.netlify.app'; // ← sin “https://”
     String shUrl = 'https://$host/';
+    print('URL: $shUrl');
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
 
     // 1️⃣ Cookie ANTES de la navegación
-
+    /*
     final payload = jsonEncode({'jwt': jwtToken, 'uuid': uuid});
     final encoded = base64Url.encode(utf8.encode(payload));
     print(
-        'Encoded payload AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: $encoded');
-
-    await _cookieManager.setCookie(
-      WebViewCookie(
-        name: 'auth_data',
-        value: encoded,
-        domain: host, // ← host exacto, sin “sh…”, sin barra
-        path: '/',
-      ),
-    );
+        'Encoded payload AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: $encoded'); */
 
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(onPageStarted: (url) {
           setState(() => isLoading = true);
+          _cookieManager.setCookie(WebViewCookie(
+              name: 'jwt_token', value: '$jwtToken,,,,,$uuid', domain: shUrl));
         }, onPageFinished: (url) {
           setState(() => isLoading = false);
         }),
