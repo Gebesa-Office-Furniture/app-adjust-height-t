@@ -499,7 +499,18 @@ class DeskController extends ChangeNotifier {
 
   //move to specific height
   void moveToHeight(int mm) async {
-    if (targetCharacteristic != null) {
+    if (targetCharacteristic == null) {
+      print("❌ Característica de destino no disponible");
+      return;
+    }
+
+    if (device == null ||
+        connectionState != BluetoothConnectionState.connected) {
+      print("❌ Dispositivo no conectado - estado: $connectionState");
+      return;
+    }
+
+    try {
       // Generar el comando con la altura deseada en pulgadas
       String hexStr = mm.toRadixString(16).padLeft(4, '0');
 
@@ -508,15 +519,28 @@ class DeskController extends ChangeNotifier {
         bytes.add(int.parse(hexStr.substring(i, i + 2), radix: 16));
       }
 
-      print("Comando generado para mover a $mm mm de altura: $bytes");
+      print("📤 Comando generado para mover a $mm mm de altura: $bytes");
 
       List<int> command = periferial(bytes);
 
       // Enviar el comando al targetCharacteristic
       await targetCharacteristic!
           .write(command, withoutResponse: true, allowLongWrite: false);
-    } else {
-      print("Característica de destino no disponible");
+
+      print("✅ Comando enviado exitosamente a la mesa");
+    } catch (e) {
+      print("❌ Error al enviar comando a la mesa: $e");
+      // Intentar reconectar si hay error
+      if (device != null) {
+        try {
+          await reconnect();
+          print("🔄 Reintentando envío después de reconexión...");
+          await Future.delayed(const Duration(milliseconds: 500));
+          moveToHeight(mm);
+        } catch (reconnectError) {
+          print("❌ Error en reconexión: $reconnectError");
+        }
+      }
     }
   }
 
