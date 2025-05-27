@@ -13,6 +13,7 @@ import '../../../routes/auth_routes.dart';
 import '../../controllers/agent/agent_controller.dart';
 import '../statics/statics_screen.dart';
 import '../agent/agent_screen.dart';
+import '../tutorial/debug_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

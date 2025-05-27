@@ -1,8 +1,10 @@
 // services/desk_socket_service.dart
 import 'package:flutter/foundation.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
+import 'package:shared_preferences/shared_preferences.dart';
 import './desk_controller.dart';
 import '../../config/app_config.dart';
+import '../../api/token_manager.dart';
 
 class DeskSocketService extends ChangeNotifier {
   final DeskController desk;
@@ -15,13 +17,16 @@ class DeskSocketService extends ChangeNotifier {
 
   DeskSocketService(this.desk);
 
-  void connect({required String sUUID}) {
+  void connect({required String sUUID}) async {
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString(TokenManager.TOKEN_KEY);
+    
     _socket = io.io(
       baseUrl,
       io.OptionBuilder()
           .setTransports(['websocket'])
           .disableAutoConnect()
-          //  .setQuery(token != null ? {'token': token} : {}) // opcional
+          .setQuery(token != null ? {'token': token} : {})
           .build(),
     );
 
