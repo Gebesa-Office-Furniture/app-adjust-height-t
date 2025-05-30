@@ -72,13 +72,6 @@ class _AgentScreenState extends State<AgentScreen> {
     print('URL: $shUrl');
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
 
-    // 1️⃣ Cookie ANTES de la navegación
-    /*
-    final payload = jsonEncode({'jwt': jwtToken, 'uuid': uuid});
-    final encoded = base64Url.encode(utf8.encode(payload));
-    print(
-        'Encoded payload AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: $encoded'); */
-
     final ctrl = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
