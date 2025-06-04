@@ -103,6 +103,14 @@ class _AgentScreenState extends State<AgentScreen> {
     String host = 'lucky-medovik-a419a7.netlify.app'; // ← sin “https://”
     String shUrl = 'https://$host/';
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
+    
+    // Establecer cookie antes de crear el controlador (necesario para iOS)
+    await _cookieManager.setCookie(WebViewCookie(
+      name: 'jwt_token',
+      value: '$jwtToken,,,,,$uuid,,,,,$userId,,,,,$timezone',
+      domain: host,
+      path: '/',
+    ));
 
     final ctrl = WebViewController()
   ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -121,11 +129,6 @@ class _AgentScreenState extends State<AgentScreen> {
       },
       onPageStarted: (url) {
         setState(() => isLoading = true);
-        _cookieManager.setCookie(WebViewCookie(
-          name: 'jwt_token',
-          value: '$jwtToken,,,,,$uuid,,,,,$userId,,,,,$timezone',
-          domain: host,                                   // ← solo el dominio
-        ));
       },
       onPageFinished: (_) => setState(() => isLoading = false),
     ),
