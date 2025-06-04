@@ -8,8 +8,10 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../controllers/settings/theme_controller.dart';
 import '../../controllers/settings/language_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';   // ← nuevo
 import '../../api/token_manager.dart';
 import 'dart:developer' as dev;
+import 'package:flutter_timezone/flutter_timezone.dart';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -44,6 +46,37 @@ class _AgentScreenState extends State<AgentScreen> {
     return uuid;
   }
 
+  Future<int?> _getUserId() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt('id');
+  }
+
+  Future<String?> _getTimezone() async {
+    return  await FlutterTimezone.getLocalTimezone();
+  }
+
+  /// Detecta `.../https//`  ↔  añade el  ':'  que falta.
+/// Si la URL no tiene esquema (`www.`) también antepone `https://`.
+  Uri _repairUri(String original) {
+    final exp = RegExp(r'^https?://[^/]+/https//');         // caso netlify
+    if (exp.hasMatch(original)) {
+      return Uri.parse(original.replaceFirst(exp, 'https://'));
+    }
+    if (!original.startsWith(RegExp(r'https?://'))) {        // caso “www.”
+      return Uri.parse('https://$original');
+    }
+    return Uri.parse(original);
+  }
+
+  /// Abre la dirección en el navegador por defecto.
+  Future<void> _launchExternal(Uri uri) async {
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication) && mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('No se pudo abrir ${uri.toString()}')),
+      );
+    }
+  }
+
   Future<void> _initWebView() async {
     await [Permission.microphone].request();
 
@@ -63,27 +96,41 @@ class _AgentScreenState extends State<AgentScreen> {
     // Obtener el token JWT
     String? jwtToken = await _getJwtToken();
     String? uuid = await _loadUUID();
-    print('JWT Token: $jwtToken');
-    print('UUID: $uuid');
+    int? userId = await _getUserId();
+    String? timezone = await _getTimezone();
 
     // Generate URL with parameters
     String host = 'lucky-medovik-a419a7.netlify.app'; // ← sin “https://”
     String shUrl = 'https://$host/';
-    print('URL: $shUrl');
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
 
     final ctrl = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(onPageStarted: (url) {
-          setState(() => isLoading = true);
-          _cookieManager.setCookie(WebViewCookie(
-              name: 'jwt_token', value: '$jwtToken,,,,,$uuid', domain: shUrl));
-        }, onPageFinished: (url) {
-          setState(() => isLoading = false);
-        }),
-      )
-      ..loadRequest(Uri.parse(url));
+  ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  ..setNavigationDelegate(
+    NavigationDelegate(
+      onNavigationRequest: (request) async {
+        final fixed = _repairUri(request.url);
+
+        // Si cambió o pertenece a otro dominio, sácalo de la WebView
+        if (fixed.toString() != request.url ||
+            !fixed.host.contains(host)) {                 // host = lucky-medovik...
+          await _launchExternal(fixed);
+          return NavigationDecision.prevent;
+        }
+        return NavigationDecision.navigate;
+      },
+      onPageStarted: (url) {
+        setState(() => isLoading = true);
+        _cookieManager.setCookie(WebViewCookie(
+          name: 'jwt_token',
+          value: '$jwtToken,,,,,$uuid,,,,,$userId,,,,,$timezone',
+          domain: host,                                   // ← solo el dominio
+        ));
+      },
+      onPageFinished: (_) => setState(() => isLoading = false),
+    ),
+  )
+  ..loadRequest(Uri.parse(url));
 
     // callbacks específicos de plataforma …
     if (ctrl.platform is AndroidWebViewController) {
