@@ -35,6 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final int maxIndex = isAgentAvailable ? 3 : 2;
 
     if (newIndex <= maxIndex) {
+       // Ocultar el teclado antes de cambiar de pantalla
+      FocusScope.of(context).unfocus();
+      // Forzar el cierre del teclado del sistema
+      SystemChannels.textInput.invokeMethod('TextInput.hide');
       setState(() {
         index = newIndex;
       });

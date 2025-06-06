@@ -1,4 +1,3 @@
-// services/desk_socket_service.dart
 import 'package:flutter/foundation.dart';
 import 'package:socket_io_client/socket_io_client.dart' as io;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,13 +39,15 @@ class DeskSocketService extends ChangeNotifier {
       ..onDisconnect((_) {
         _connected = false;
         debugPrint('🛑 Socket desconectado');
-        notifyListeners(); // 🔔
+        notifyListeners();
       })
       ..onConnectError((e) => debugPrint('❗ connect error $e'))
       ..onError((e) => debugPrint('❗ socket error  $e'))
       ..on('desk:height', (data) {
-        final target = data['targetMm'] as int;
-        final cmdId = data['cmdId'] as int;
+        // ⬇️ Cambio clave: convertimos a num y luego a int
+        final target = (data['targetMm'] as num).toInt();
+        final cmdId  = (data['cmdId']   as num).toInt();
+
         debugPrint('📥 Orden: $target mm (cmd $cmdId)');
 
         desk.moveToHeight(target);
