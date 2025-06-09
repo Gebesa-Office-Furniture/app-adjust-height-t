@@ -16,7 +16,7 @@ class DeskSocketService extends ChangeNotifier {
 
   DeskSocketService(this.desk);
 
-  void connect({required String sUUID}) async {
+  void connect({required String sUUID, required String sName}) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(TokenManager.TOKEN_KEY);
     
