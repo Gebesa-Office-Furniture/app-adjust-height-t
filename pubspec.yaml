@@ -68,7 +68,7 @@ dependencies:
   webview_flutter: ^4.10.0
   socket_io_client: ^3.1.2
   flutter_timezone: ^4.1.1
-  
+  file_picker: ^6.1.1
   
 
 dev_dependencies:

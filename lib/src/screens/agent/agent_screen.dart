@@ -12,6 +12,8 @@ import 'package:url_launcher/url_launcher.dart';   // ← nuevo
 import '../../api/token_manager.dart';
 import 'dart:developer' as dev;
 import 'package:flutter_timezone/flutter_timezone.dart';
+import 'package:file_picker/file_picker.dart';
+import 'dart:io';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -100,7 +102,7 @@ class _AgentScreenState extends State<AgentScreen> {
     String? timezone = await _getTimezone();
 
     // Generate URL with parameters
-    String host = 'beautiful-arithmetic-344826.netlify.app'; // ← sin “https://”
+    String host = 'kaleidoscopic-peony-5f796e.netlify.app'; // ← sin “https://”
     String shUrl = 'https://$host/';
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
     
@@ -148,6 +150,19 @@ class _AgentScreenState extends State<AgentScreen> {
           } else {
             await request.deny();
           }
+        })
+        ..setOnShowFileSelector((fileSelectorParams) async {
+          final result = await FilePicker.platform.pickFiles(
+            allowMultiple: fileSelectorParams.mode == 
+                FileSelectorMode.open,
+            type: FileType.any,
+          );
+          
+          if (result != null && result.files.isNotEmpty) {
+            final files = result.files.map((file) => file.path!).toList();
+            return files;
+          }
+          return [];
         });
     }
 
