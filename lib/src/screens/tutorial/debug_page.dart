@@ -50,7 +50,7 @@ class _DeskDebugPageState extends State<DeskDebugPage> {
                   onPressed: () {
                     final id = _deskIdCtrl.text;
                     if (id.isNotEmpty) {
-                      socketSvc.connect(sUUID: id, sName: 'Escritorio $id');
+                      socketSvc.connect(sUUID: id);
                     }
                   },
                   child: const Text('Conectar WS'),

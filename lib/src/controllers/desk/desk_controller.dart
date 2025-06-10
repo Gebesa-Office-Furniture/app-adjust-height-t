@@ -294,7 +294,6 @@ class DeskController extends ChangeNotifier {
         if (!_wsStarted) {
           socketSvc.connect(
             sUUID: device!.remoteId.str,
-            sName: deviceName ?? "Desk",
             // token: token,
           );
           final prefs = await SharedPreferences.getInstance();
