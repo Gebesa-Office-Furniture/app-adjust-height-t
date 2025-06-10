@@ -142,7 +142,7 @@ class _AgentScreenState extends State<AgentScreen> {
       final android = ctrl.platform as AndroidWebViewController;
       android
         ..setMediaPlaybackRequiresUserGesture(false)
-        ..setOnPlatformPermissionRequest((request) async {
+                ..setOnPlatformPermissionRequest((request) async {
           if (request.types
                   .contains(WebViewPermissionResourceType.microphone) ||
               request.types.contains(WebViewPermissionResourceType.camera)) {
@@ -151,25 +151,30 @@ class _AgentScreenState extends State<AgentScreen> {
             await request.deny();
           }
         })
-        ..setOnShowFileSelector((fileSelectorParams) async {
-          final result = await FilePicker.platform.pickFiles(
-            allowMultiple: fileSelectorParams.mode == 
-                FileSelectorMode.open,
+
+        ..setOnShowFileSelector((params) async {
+          final allowMulti = params.mode == FileSelectorMode.openMultiple;
+          final picked = await FilePicker.platform.pickFiles(
+            allowMultiple: allowMulti,
             type: FileType.any,
           );
-          
-          if (result != null && result.files.isNotEmpty) {
-            final files = result.files.map((file) => file.path!).toList();
-            return files;
-          }
-          return [];
+
+          if (picked == null || picked.files.isEmpty) return [];
+
+          // 🔑 Convierte cada ruta a URI (file://…)
+          return picked.files
+              .where((f) => f.path != null)
+              .map((f) => File(f.path!).uri.toString())
+              .toList();
         });
     }
 
-    if (ctrl.platform is WebKitWebViewController) {
-      final ios = ctrl.platform as WebKitWebViewController;
-      ios.setOnPlatformPermissionRequest((request) async => request.grant());
-    }
+  if (ctrl.platform is WebKitWebViewController) {
+    final ios = ctrl.platform as WebKitWebViewController;
+    // En iOS solo hace falta gestionar permisos (si quisieras).
+    ios.setOnPlatformPermissionRequest((request) async => request.grant());
+    // NO hay setOnShowFileSelector aquí.
+  }
 
     setState(() => _controller = ctrl);
   }
