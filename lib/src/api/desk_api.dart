@@ -165,7 +165,7 @@ class DeskApi {
   }
 
   static Future<Map<String, dynamic>> setNewUUID(String sName, String newUUID) async{
-    final url = Uri.parse('${baseUrl}/desk/chnageUUID');
+    final url = Uri.parse('${baseUrl}desk/changeUUID');
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(TokenManager.TOKEN_KEY);
     // Verifica si el token es válido antes de realizar la solicitud.

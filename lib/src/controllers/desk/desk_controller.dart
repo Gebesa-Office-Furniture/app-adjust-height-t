@@ -248,18 +248,6 @@ class DeskController extends ChangeNotifier {
 
           progress =
               calculateProgressPercentage(heightIN!, minHeight, maxHeight);
-
-          if (device != null) {
-            final response = await DeskApi.setNewUUID(deviceName ?? 'none', prefs.getString('sUUID') ?? 'none');
-            print(response);
-            if (response['success']) {
-              print("UUID actualizado correctamente.");
-            } else {
-              print("Error al actualizar el UUID: ${response['message']}");
-            }
-          }
-          print(
-              "sUUID: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:  ${prefs.getString('sUUID')}");
           firstConnection = false;
           notifyListeners();
           return;
@@ -297,6 +285,14 @@ class DeskController extends ChangeNotifier {
           prefs.setString('sUUID', device!.remoteId.str);
           _wsStarted = true;
           print("SI ENTRO");
+          print("UUID: ${device!.remoteId.str} - Nombre: ${device!.advName}");
+            final response = await DeskApi.setNewUUID(device!.advName, device!.remoteId.str);
+            print(response);
+            if (response['success']) {
+              print("advN actualizado correctamente.");
+            } else {
+              print("Error al actualizar el UUID: ${response['message']}");
+            }
         }
 
         print("Altura actual: $heightIN pulgadas");

@@ -102,7 +102,7 @@ class _AgentScreenState extends State<AgentScreen> {
     String? timezone = await _getTimezone();
 
     // Generate URL with parameters
-    String host = 'kaleidoscopic-peony-5f796e.netlify.app'; // ← sin “https://”
+    String host = 'grand-caramel-8afbe1.netlify.app'; // ← sin “https://”
     String shUrl = 'https://$host/';
     String url = '$shUrl?lang=$langParam&theme=$themeParam';
     
