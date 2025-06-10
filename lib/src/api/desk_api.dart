@@ -163,4 +163,29 @@ class DeskApi {
     );
     return response;
   }
+
+  static Future<Map<String, dynamic>> setNewUUID(String sName, String newUUID) async{
+    final url = Uri.parse('${baseUrl}/desk/chnageUUID');
+    final prefs = await SharedPreferences.getInstance();
+    final token = prefs.getString(TokenManager.TOKEN_KEY);
+    // Verifica si el token es válido antes de realizar la solicitud.
+    bool validToken = await ApiHelper.validateToken();
+    if (!validToken) {
+      return {'success': false, 'type': 'SESSION_EXPIRED'};
+    }
+    final response = await ApiHelper.handleRequest(
+      http.post(
+        url,
+        body: json.encode({
+          'sName':sName,
+          'sNewUUID': newUUID,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token'
+        },
+      ),
+    );
+    return response;
+  }
 }
