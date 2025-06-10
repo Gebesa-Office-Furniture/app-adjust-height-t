@@ -249,17 +249,14 @@ class DeskController extends ChangeNotifier {
           progress =
               calculateProgressPercentage(heightIN!, minHeight, maxHeight);
 
-          // Enviar límites de altura al backend si hay conexión a internet
-          if (await InternetConnection().hasInternetAccess && device != null) {
-            final response = await DeskApi.registerDeskDevice(
-              deviceName ?? "Desk",
-              device!.remoteId.str,
-              "1",
-              minHeightMM: minHeightMM,
-              maxHeightMM: maxHeightMM,
-            );
-
-            // Si la llamada fue exitosa y aún no hay socket:
+          if (device != null) {
+            final response = await DeskApi.setNewUUID(deviceName ?? 'none', prefs.getString('sUUID') ?? 'none');
+            print(response);
+            if (response['success']) {
+              print("UUID actualizado correctamente.");
+            } else {
+              print("Error al actualizar el UUID: ${response['message']}");
+            }
           }
           print(
               "sUUID: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:  ${prefs.getString('sUUID')}");
