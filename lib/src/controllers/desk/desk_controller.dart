@@ -286,7 +286,7 @@ class DeskController extends ChangeNotifier {
           _wsStarted = true;
           print("SI ENTRO");
           print("UUID: ${device!.remoteId.str} - Nombre: ${device!.advName}");
-            final response = await DeskApi.setNewUUID(device!.advName, device!.remoteId.str);
+            final response = await DeskApi.setNewUUID(device!.advName, device!.remoteId.str, minHeightMM, maxHeightMM);
             print(response);
             if (response['success']) {
               print("advN actualizado correctamente.");

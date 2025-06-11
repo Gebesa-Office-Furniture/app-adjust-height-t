@@ -5,6 +5,7 @@ import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 import 'dart:convert'; // utf8, json, base64Url
 import 'package:permission_handler/permission_handler.dart';
+import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 import '../../controllers/settings/theme_controller.dart';
 import '../../controllers/settings/language_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -80,7 +81,8 @@ class _AgentScreenState extends State<AgentScreen> {
   }
 
   Future<void> _initWebView() async {
-    await [Permission.microphone].request();
+    // Solicitar permisos de micrófono y cámara explícitamente
+    await [Permission.microphone, Permission.camera].request();
 
     // Get theme and language from providers
     final themeController =
@@ -114,28 +116,39 @@ class _AgentScreenState extends State<AgentScreen> {
       path: '/',
     ));
 
-    final ctrl = WebViewController()
-  ..setJavaScriptMode(JavaScriptMode.unrestricted)
-  ..setNavigationDelegate(
-    NavigationDelegate(
-      onNavigationRequest: (request) async {
-        final fixed = _repairUri(request.url);
+    // Crear configuraciones específicas para iOS
+    late final PlatformWebViewControllerCreationParams params;
+    if (WebViewPlatform.instance is WebKitWebViewPlatform) {
+      params = WebKitWebViewControllerCreationParams(
+        allowsInlineMediaPlayback: true,
+        mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+      );
+    } else {
+      params = const PlatformWebViewControllerCreationParams();
+    }
+    
+    final ctrl = WebViewController.fromPlatformCreationParams(params)
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onNavigationRequest: (request) async {
+            final fixed = _repairUri(request.url);
 
-        // Si cambió o pertenece a otro dominio, sácalo de la WebView
-        if (fixed.toString() != request.url ||
-            !fixed.host.contains(host)) {                 // host = lucky-medovik...
-          await _launchExternal(fixed);
-          return NavigationDecision.prevent;
-        }
-        return NavigationDecision.navigate;
-      },
-      onPageStarted: (url) {
-        setState(() => isLoading = true);
-      },
-      onPageFinished: (_) => setState(() => isLoading = false),
-    ),
-  )
-  ..loadRequest(Uri.parse(url));
+            // Si cambió o pertenece a otro dominio, sácalo de la WebView
+            if (fixed.toString() != request.url ||
+                !fixed.host.contains(host)) {                 // host = lucky-medovik...
+              await _launchExternal(fixed);
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+          onPageStarted: (url) {
+            setState(() => isLoading = true);
+          },
+          onPageFinished: (_) => setState(() => isLoading = false),
+        ),
+      )
+      ..loadRequest(Uri.parse(url));
 
     // callbacks específicos de plataforma …
     if (ctrl.platform is AndroidWebViewController) {
@@ -171,8 +184,12 @@ class _AgentScreenState extends State<AgentScreen> {
 
   if (ctrl.platform is WebKitWebViewController) {
     final ios = ctrl.platform as WebKitWebViewController;
-    // En iOS solo hace falta gestionar permisos (si quisieras).
-    ios.setOnPlatformPermissionRequest((request) async => request.grant());
+    // En iOS necesitamos configuraciones específicas para el micrófono
+    // Asegurarnos de otorgar todos los permisos de forma explícita
+    ios.setOnPlatformPermissionRequest((request) async {
+      // Siempre otorgar permisos para micrófono y cámara
+      await request.grant();
+    });
     // NO hay setOnShowFileSelector aquí.
   }
 

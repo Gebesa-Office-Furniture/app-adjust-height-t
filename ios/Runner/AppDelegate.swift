@@ -2,7 +2,7 @@ import UIKit
 import Flutter
 import Firebase
 import FirebaseMessaging
-
+import AVFoundation
 
 
 @main
@@ -16,6 +16,15 @@ import FirebaseMessaging
       if #available(iOS 10.0, *) {
           UNUserNotificationCenter.current().delegate = self
       }
+      
+    // Configurar AVAudioSession para permitir el uso del micrófono en WebView
+    do {
+      let audioSession = AVAudioSession.sharedInstance()
+      try audioSession.setCategory(.playAndRecord, mode: .default, options: [.allowBluetooth, .defaultToSpeaker, .mixWithOthers])
+      try audioSession.setActive(true)
+    } catch {
+      print("Error configurando AVAudioSession: \(error)")
+    }
 
     application.registerForRemoteNotifications()
     GeneratedPluginRegistrant.register(with: self)

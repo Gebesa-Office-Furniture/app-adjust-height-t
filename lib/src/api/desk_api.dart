@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import '../config/app_config.dart';
 import 'api_helper.dart';
@@ -164,7 +166,7 @@ class DeskApi {
     return response;
   }
 
-  static Future<Map<String, dynamic>> setNewUUID(String sName, String newUUID) async{
+  static Future<Map<String, dynamic>> setNewUUID(String sName, String newUUID, double minHeightMM, double maxHeightMM) async{
     final url = Uri.parse('${baseUrl}desk/changeUUID');
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString(TokenManager.TOKEN_KEY);
@@ -179,6 +181,8 @@ class DeskApi {
         body: json.encode({
           'sName':sName,
           'sNewUUID': newUUID,
+          'dMinHeightMm': minHeightMM,
+          'dMaxHeightMm': maxHeightMM,
         }),
         headers: {
           'Content-Type': 'application/json',

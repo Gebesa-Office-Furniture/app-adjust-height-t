@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Need Microphone permission</string>
+	<string>This apps needs Microphone permission to communicate with Ascend Agent</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Need Camera permission</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -78,6 +78,11 @@
 	<string>Main</string>
 	<key>UIStatusBarHidden</key>
 	<false/>
+	<key>WKAppBoundDomains</key>
+	<array>
+		<string>tubular-cheesecake-c3222a.netlify.app</string>
+		<string>grand-caramel-8afbe1.netlify.app</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
