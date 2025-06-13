@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
-import 'dart:convert'; // utf8, json, base64Url
 import 'package:permission_handler/permission_handler.dart';
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 import '../../controllers/settings/theme_controller.dart';
@@ -11,7 +10,6 @@ import '../../controllers/settings/language_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';   // ← nuevo
 import '../../api/token_manager.dart';
-import 'dart:developer' as dev;
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:file_picker/file_picker.dart';
 import 'dart:io';

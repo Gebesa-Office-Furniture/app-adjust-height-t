@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>This apps needs Microphone permission to communicate with Ascend Agent</string>
+	<string>Gebesa Office needs Microphone permission to communicate with Ascend Agent</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Need Camera permission</string>
+	<string>Gebesa Office doesn't require camera permissions, but I don't see any other workaround to get the microphone working.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app needs access to photo library to upload images</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
