@@ -79,9 +79,6 @@ class _AgentScreenState extends State<AgentScreen> {
   }
 
   Future<void> _initWebView() async {
-    // Solicitar permisos de micrófono y cámara explícitamente
-    await [Permission.microphone, Permission.camera].request();
-
     // Get theme and language from providers
     final themeController =
         Provider.of<ThemeController>(context, listen: false);
@@ -120,6 +117,7 @@ class _AgentScreenState extends State<AgentScreen> {
       params = WebKitWebViewControllerCreationParams(
         allowsInlineMediaPlayback: true,
         mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
+        limitsNavigationsToAppBoundDomains: true,   //  ← ¡clave!
       );
     } else {
       params = const PlatformWebViewControllerCreationParams();
