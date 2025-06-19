@@ -1,0 +1,1023 @@
+[   +1 ms] Found plugin path_provider_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\
+[   +1 ms] Found plugin path_provider_foundation at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_foundation-2.3.2\
+[   +1 ms] Found plugin path_provider_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_linux-2.2.1\
+[   +3 ms] Found plugin path_provider_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_windows-2.3.0\
+[   +2 ms] Found plugin permission_handler at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler-11.3.1\
+[   +1 ms] Found plugin permission_handler_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.0.13\
+[   +1 ms] Found plugin permission_handler_apple at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_apple-9.4.5\
+[   +1 ms] Found plugin permission_handler_html at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_html-0.1.1\
+[   +2 ms] Found plugin permission_handler_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_windows-0.2.1\
+[   +6 ms] Found plugin rive_common at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\rive_common-0.4.15\
+[   +2 ms] Found plugin shared_preferences at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences-2.2.3\
+[   +1 ms] Found plugin shared_preferences_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.2\
+[   +1 ms] Found plugin shared_preferences_foundation at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_foundation-2.3.5\
+[   +2 ms] Found plugin shared_preferences_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_linux-2.4.0\
+[   +2 ms] Found plugin shared_preferences_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_web-2.4.2\
+[        ] Found plugin shared_preferences_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_windows-2.4.0\
+[   +1 ms] Found plugin sign_in_with_apple at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-6.1.3\
+[   +1 ms] Found plugin sign_in_with_apple_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple_web-2.1.0\
+[   +4 ms] Found plugin sqflite at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.2\
+[   +8 ms] Found plugin url_launcher at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher-6.3.1\
+[   +1 ms] Found plugin url_launcher_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.14\
+[        ] Found plugin url_launcher_ios at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_ios-6.3.2\
+[   +1 ms] Found plugin url_launcher_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_linux-3.2.1\
+[   +1 ms] Found plugin url_launcher_macos at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_macos-3.2.2\
+[   +2 ms] Found plugin url_launcher_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_web-2.3.3\
+[   +1 ms] Found plugin url_launcher_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_windows-3.1.3\
+[   +7 ms] Found plugin webview_flutter at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter-4.10.0\
+[   +2 ms] Found plugin webview_flutter_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-4.3.2\
+[   +2 ms] Found plugin webview_flutter_wkwebview at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_wkwebview-3.20.0\
+[  +38 ms] Found plugin connectivity_plus at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-6.1.4\
+[   +8 ms] Found plugin file_picker at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-6.2.1\
+[   +1 ms] Found plugin firebase_auth at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\
+[   +1 ms] Found plugin firebase_auth_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth_web-5.8.13\
+[   +1 ms] Found plugin firebase_core at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\
+[   +3 ms] Found plugin firebase_core_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core_web-2.18.2\
+[   +1 ms] Found plugin firebase_messaging at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\
+[   +2 ms] Found plugin firebase_messaging_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging_web-3.5.18\
+[   +2 ms] Found plugin flutter_blue_plus at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus-1.35.3\
+[   +1 ms] Found plugin flutter_blue_plus_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_android-3.0.0\
+[   +1 ms] Found plugin flutter_blue_plus_darwin at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_darwin-3.0.0\
+[   +1 ms] Found plugin flutter_blue_plus_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_linux-3.0.0\
+[   +1 ms] Found plugin flutter_blue_plus_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_web-3.0.0\
+[   +2 ms] Found plugin flutter_native_splash at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.3.10\
+[   +1 ms] Found plugin flutter_plugin_android_lifecycle at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_plugin_android_lifecycle-2.0.26\
+[   +3 ms] Found plugin flutter_timezone at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_timezone-4.1.1\
+[   +4 ms] Found plugin google_sign_in at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in-6.2.1\
+[   +1 ms] Found plugin google_sign_in_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_android-6.1.23\
+[   +1 ms] Found plugin google_sign_in_ios at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_ios-5.7.3\
+[   +1 ms] Found plugin google_sign_in_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_web-0.12.4+3\
+[  +21 ms] Found plugin open_settings_plus at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\open_settings_plus-0.3.3\
+[   +2 ms] Found plugin path_provider at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider-2.1.4\
+[   +1 ms] Found plugin path_provider_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\
+[        ] Found plugin path_provider_foundation at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_foundation-2.3.2\
+[        ] Found plugin path_provider_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_linux-2.2.1\
+[   +1 ms] Found plugin path_provider_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_windows-2.3.0\
+[   +1 ms] Found plugin permission_handler at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler-11.3.1\
+[        ] Found plugin permission_handler_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.0.13\
+[        ] Found plugin permission_handler_apple at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_apple-9.4.5\
+[   +1 ms] Found plugin permission_handler_html at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_html-0.1.1\
+[   +3 ms] Found plugin permission_handler_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_windows-0.2.1\
+[   +6 ms] Found plugin rive_common at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\rive_common-0.4.15\
+[   +2 ms] Found plugin shared_preferences at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences-2.2.3\
+[   +1 ms] Found plugin shared_preferences_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.2\
+[   +1 ms] Found plugin shared_preferences_foundation at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_foundation-2.3.5\
+[   +1 ms] Found plugin shared_preferences_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_linux-2.4.0\
+[   +3 ms] Found plugin shared_preferences_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_web-2.4.2\
+[   +1 ms] Found plugin shared_preferences_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_windows-2.4.0\
+[   +3 ms] Found plugin sign_in_with_apple at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-6.1.3\
+[   +2 ms] Found plugin sign_in_with_apple_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple_web-2.1.0\
+[   +3 ms] Found plugin sqflite at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.2\
+[  +11 ms] Found plugin url_launcher at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher-6.3.1\
+[   +1 ms] Found plugin url_launcher_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.14\
+[   +1 ms] Found plugin url_launcher_ios at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_ios-6.3.2\
+[   +1 ms] Found plugin url_launcher_linux at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_linux-3.2.1\
+[   +1 ms] Found plugin url_launcher_macos at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_macos-3.2.2\
+[   +2 ms] Found plugin url_launcher_web at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_web-2.3.3\
+[   +3 ms] Found plugin url_launcher_windows at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_windows-3.1.3\
+[  +13 ms] Found plugin webview_flutter at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter-4.10.0\
+[   +1 ms] Found plugin webview_flutter_android at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-4.3.2\
+[   +2 ms] Found plugin webview_flutter_wkwebview at C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_wkwebview-3.20.0\
+[  +21 ms] Generating C:\dev\development\ascend\app-adjust-height-t\android\app\src\main\java\io\flutter\plugins\GeneratedPluginRegistrant.java
+[  +94 ms] executing: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[ +118 ms] Exit code 0 from: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[        ] openjdk version "17.0.9" 2023-10-17
+           OpenJDK Runtime Environment (build 17.0.9+0--11185874)
+           OpenJDK 64-Bit Server VM (build 17.0.9+0--11185874, mixed mode)
+[   +1 ms] executing: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[ +124 ms] Exit code 0 from: C:\Program Files\Android\Android Studio\jbr\bin\java -version
+[        ] openjdk version "17.0.9" 2023-10-17
+           OpenJDK Runtime Environment (build 17.0.9+0--11185874)
+           OpenJDK 64-Bit Server VM (build 17.0.9+0--11185874, mixed mode)
+[  +10 ms] executing: C:\Program Files\Java\jdk-17\bin\java --version
+[ +100 ms] Exit code 0 from: C:\Program Files\Java\jdk-17\bin\java --version
+[        ] java 17.0.12 2024-07-16 LTS
+           Java(TM) SE Runtime Environment (build 17.0.12+8-LTS-286)
+           Java HotSpot(TM) 64-Bit Server VM (build 17.0.12+8-LTS-286, mixed mode, sharing)
+[  +22 ms] Using gradle from C:\dev\development\ascend\app-adjust-height-t\android\gradlew.bat.
+[   +1 ms] Running Gradle task 'assembleRelease'...
+[   +5 ms] executing: [C:\dev\development\ascend\app-adjust-height-t\android/] C:\dev\development\ascend\app-adjust-height-t\android\gradlew.bat --full-stacktrace --info -Pverbose=true
+-Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-obfuscation=false -Ptrack-widget-creation=true
+-Ptree-shake-icons=true assembleRelease
+[+5571 ms] Initialized native services in: C:\Users\Product Manager\.gradle\native
+[   +1 ms] Initialized jansi services in: C:\Users\Product Manager\.gradle\native
+[ +120 ms] Received JVM installation metadata from 'C:\Program Files\Java\jdk-17': {JAVA_HOME=C:\Program Files\Java\jdk-17, JAVA_VERSION=17.0.12, JAVA_VENDOR=Oracle Corporation, RUNTIME_NAME=Java(TM) SE
+Runtime Environment, RUNTIME_VERSION=17.0.12+8-LTS-286, VM_NAME=Java HotSpot(TM) 64-Bit Server VM, VM_VERSION=17.0.12+8-LTS-286, VM_VENDOR=Oracle Corporation, OS_ARCH=amd64}
+[ +388 ms] The client will now receive all logging from the daemon (pid: 28384). The daemon log file: C:\Users\Product Manager\.gradle\daemon\8.2\daemon-28384.out.log
+[        ] Starting 2nd build in daemon [uptime: 3 mins 9.472 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 8 GiB]
+[        ] Using 16 worker leases.
+[        ] Now considering [C:\dev\development\ascend\app-adjust-height-t\android, C:\dev\flutter\packages\flutter_tools\gradle] as hierarchies to watch
+[        ] Watching the file system is configured to be enabled if available
+[        ] File system watching is active
+[ +105 ms] Starting Build
+[        ] Now considering [C:\dev\flutter\packages\flutter_tools\gradle, C:\dev\development\ascend\app-adjust-height-t\android] as hierarchies to watch
+[   +1 ms] > Configure project :gradle
+[        ] Evaluating project ':gradle' using build file 'C:\dev\flutter\packages\flutter_tools\gradle\build.gradle.kts'.
+[        ] The configuration :gradle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :gradle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :gradle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :gradle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Caching disabled for Kotlin DSL accessors for project ':gradle' because:
+[        ]   Build cache is disabled
+[        ] Skipping Kotlin DSL accessors for project ':gradle' as it is up-to-date.
+[        ] The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :gradle:mainSourceElements is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[  +80 ms] Resolve mutations for :gradle:compileJava (Thread[Execution worker,5,main]) started.
+[        ] :gradle:compileJava (Thread[Execution worker,5,main]) started.
+[        ] > Task :gradle:compileJava NO-SOURCE
+[        ] Skipping task ':gradle:compileJava' as it has no source files and no previous output files.
+[        ] Resolve mutations for :gradle:compileGroovy (Thread[Execution worker,5,main]) started.
+[        ] :gradle:compileGroovy (Thread[Execution worker,5,main]) started.
+[        ] > Task :gradle:compileGroovy UP-TO-DATE
+[        ] Caching disabled for task ':gradle:compileGroovy' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':gradle:compileGroovy' as it is up-to-date.
+[        ] Resolve mutations for :gradle:pluginDescriptors (Thread[Execution worker,5,main]) started.
+[        ] :gradle:pluginDescriptors (Thread[Execution worker,5,main]) started.
+[        ] > Task :gradle:pluginDescriptors UP-TO-DATE
+[        ] Caching disabled for task ':gradle:pluginDescriptors' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':gradle:pluginDescriptors' as it is up-to-date.
+[        ] Resolve mutations for :gradle:processResources (Thread[Execution worker,5,main]) started.
+[        ] :gradle:processResources (Thread[Execution worker,5,main]) started.
+[        ] > Task :gradle:processResources UP-TO-DATE
+[        ] Caching disabled for task ':gradle:processResources' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':gradle:processResources' as it is up-to-date.
+[        ] Resolve mutations for :gradle:classes (Thread[Execution worker,5,main]) started.
+[        ] :gradle:classes (Thread[Execution worker Thread 13,5,main]) started.
+[        ] > Task :gradle:classes UP-TO-DATE
+[        ] Skipping task ':gradle:classes' as it has no actions.
+[        ] Resolve mutations for :gradle:jar (Thread[Execution worker Thread 8,5,main]) started.
+[        ] :gradle:jar (Thread[Execution worker Thread 13,5,main]) started.
+[        ] > Task :gradle:jar UP-TO-DATE
+[        ] Caching disabled for task ':gradle:jar' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':gradle:jar' as it is up-to-date.
+[        ] The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[ +188 ms] Settings evaluated using settings file 'C:\dev\development\ascend\app-adjust-height-t\android\settings.gradle'.
+[        ] Projects loaded. Root project using build file 'C:\dev\development\ascend\app-adjust-height-t\android\build.gradle'.
+[        ] Included projects: [root project 'android', project ':app', project ':connectivity_plus', project ':file_picker', project ':firebase_auth', project ':firebase_core', project
+':firebase_messaging', project ':flutter_blue_plus_android', project ':flutter_native_splash', project ':flutter_plugin_android_lifecycle', project ':flutter_timezone', project
+':google_sign_in_android', project ':open_settings_plus', project ':path_provider_android', project ':permission_handler_android', project ':rive_common', project ':shared_preferences_android', project 
+':sign_in_with_apple', project ':sqflite', project ':url_launcher_android', project ':webview_flutter_android']
+[ +405 ms] > Configure project :app
+[        ] Evaluating project ':app' using build file 'C:\dev\development\ascend\app-adjust-height-t\android\app\build.gradle'.
+[        ] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[        ] The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Parsed shrinker version: 8.2.47
+[        ] > Configure project :
+[        ] Evaluating root project 'android' using build file 'C:\dev\development\ascend\app-adjust-height-t\android\build.gradle'.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[+1985 ms] > Configure project :connectivity_plus
+[        ] Evaluating project ':connectivity_plus' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-6.1.4\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-6.1.4\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[ +492 ms] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\connectivity_plus-6.1.4\android\build.gradle' using BuildScriptTransformer.
+[ +201 ms] Using default execution profile
+[+2004 ms] > Configure project :file_picker
+[        ] Evaluating project ':file_picker' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-6.2.1\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-6.2.1\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\file_picker-6.2.1\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[+1999 ms] > Configure project :firebase_auth
+[        ] Evaluating project ':firebase_auth' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\android\user-agent.gradle' using SubsetScriptTransformer.
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.16.0\android\user-agent.gradle' using BuildScriptTransformer.
+[ +290 ms] > Configure project :firebase_core
+[        ] Evaluating project ':firebase_core' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\android\user-agent.gradle' using SubsetScriptTransformer.
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.27.0\android\user-agent.gradle' using BuildScriptTransformer.
+[ +292 ms] > Configure project :firebase_messaging
+[        ] Evaluating project ':firebase_messaging' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\user-agent.gradle' using SubsetScriptTransformer.
+[        ] Compiling script 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_messaging-14.7.10\android\user-agent.gradle' using BuildScriptTransformer.
+[ +198 ms] > Configure project :flutter_blue_plus_android
+[        ] Evaluating project ':flutter_blue_plus_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_android-3.0.0\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_android-3.0.0\android\build.gradle' using SubsetScriptTransformer.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_blue_plus_android-3.0.0\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[+1903 ms] > Configure project :flutter_native_splash
+[        ] Evaluating project ':flutter_native_splash' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.3.10\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.3.10\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[ +494 ms] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.3.10\android\build.gradle' using BuildScriptTransformer.
+[  +92 ms] Using default execution profile
+[+2003 ms] > Configure project :flutter_plugin_android_lifecycle
+[        ] Evaluating project ':flutter_plugin_android_lifecycle' using build file 'C:\Users\Product
+Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_plugin_android_lifecycle-2.0.26\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_plugin_android_lifecycle-2.0.26\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[  +91 ms] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_plugin_android_lifecycle-2.0.26\android\build.gradle' using BuildScriptTransformer.
+[ +109 ms] Using default execution profile
+[        ] Warning: The plugin flutter_plugin_android_lifecycle requires Android SDK version 35 or higher.
+[        ] For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+[ +591 ms] > Configure project :flutter_timezone
+[        ] Evaluating project ':flutter_timezone' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_timezone-4.1.1\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_timezone-4.1.1\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_timezone-4.1.1\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[        ] Warning: The plugin flutter_timezone requires Android SDK version 35 or higher.
+[        ] For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+[+1605 ms] > Configure project :google_sign_in_android
+[        ] Evaluating project ':google_sign_in_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_android-6.1.23\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_android-6.1.23\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[        ] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[        ] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\google_sign_in_android-6.1.23\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[+1984 ms] > Configure project :open_settings_plus
+[        ] Evaluating project ':open_settings_plus' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\open_settings_plus-0.3.3\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\open_settings_plus-0.3.3\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[+2699 ms] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\open_settings_plus-0.3.3\android\build.gradle' using BuildScriptTransformer.
+[ +108 ms] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[+1100 ms] > Configure project :path_provider_android
+[        ] Evaluating project ':path_provider_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.4\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[+1788 ms] > Configure project :permission_handler_android
+[        ] Evaluating project ':permission_handler_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.0.13\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.0.13\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.0.13\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[ +398 ms] > Configure project :rive_common
+[        ] Evaluating project ':rive_common' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\rive_common-0.4.15\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\rive_common-0.4.15\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\rive_common-0.4.15\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[        ] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[        ] C/C++: android.ndkVersion from module build.gradle is [25.1.8937393]
+[   +1 ms] C/C++: android.ndkPath from module build.gradle is not set
+[        ] C/C++: ndk.dir in local.properties is not set
+[        ] C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+[        ] C/C++: sdkFolder is C:\Users\Product Manager\AppData\Local\Android\sdk
+[+1057 ms] > Configure project :shared_preferences_android
+[        ] Evaluating project ':shared_preferences_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.2\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.2\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.2.2\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[ +197 ms] > Configure project :sign_in_with_apple
+[        ] Evaluating project ':sign_in_with_apple' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-6.1.3\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-6.1.3\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sign_in_with_apple-6.1.3\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[ +197 ms] > Configure project :sqflite
+[        ] Evaluating project ':sqflite' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.2\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.2\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.3.2\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[ +183 ms] > Configure project :url_launcher_android
+[        ] Evaluating project ':url_launcher_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.14\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.14\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.14\android\build.gradle' using BuildScriptTransformer.
+[        ] Using default execution profile
+[+2003 ms] > Configure project :webview_flutter_android
+[        ] Evaluating project ':webview_flutter_android' using build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-4.3.2\android\build.gradle'.
+[        ] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-4.3.2\android\build.gradle' using SubsetScriptTransformer.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin/2.1.10/kotlin-gradle-plugin-2.1.10-gradle82.jar to C:\Users\Product
+Manager\.gradle\.tmp\gradle_download15249197469263817014bin
+[+1901 ms] Compiling build file 'C:\Users\Product Manager\AppData\Local\Pub\Cache\hosted\pub.dev\webview_flutter_android-4.3.2\android\build.gradle' using BuildScriptTransformer.
+[ +187 ms] Using default execution profile
+[        ] Using Kotlin Gradle Plugin gradle82 variant
+[        ] All projects evaluated.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] Your project is configured to compile against Android SDK 34, but the following plugin(s) require to be compiled against a higher Android SDK version:
+[   +1 ms] - flutter_plugin_android_lifecycle compiles against Android SDK 35
+[        ] - flutter_timezone compiles against Android SDK 35
+[        ] Fix this issue by compiling against the highest Android SDK version (they are backward compatible).
+[        ] Add the following to C:\dev\development\ascend\app-adjust-height-t\android\app\build.gradle:
+[        ]     android {
+[        ]         compileSdk = 35
+[        ]         ...
+[        ]     }
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[   +1 ms] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :app:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :app:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[   +1 ms] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :connectivity_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.        
+[        ] The configuration :connectivity_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[   +1 ms] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +2 ms] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :file_picker:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :file_picker:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_auth:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_auth:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[  +65 ms] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_core:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :firebase_core:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :firebase_messaging:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :firebase_messaging:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_blue_plus_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_blue_plus_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_native_splash:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :flutter_native_splash:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[   +1 ms] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_plugin_android_lifecycle:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[   +1 ms] The configuration :flutter_plugin_android_lifecycle:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :flutter_timezone:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :flutter_timezone:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[        ] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[   +1 ms] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[        ] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[        ] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :google_sign_in_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.   
+[   +1 ms] The configuration :google_sign_in_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :open_settings_plus:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :open_settings_plus:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :path_provider_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.    
+[        ] The configuration :path_provider_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[   +1 ms] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :permission_handler_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :permission_handler_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :rive_common:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :rive_common:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of      
+these.
+[        ] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :shared_preferences_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of
+these.
+[   +1 ms] The configuration :shared_preferences_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sign_in_with_apple:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.       
+[        ] The configuration :sign_in_with_apple:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :sqflite:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[        ] The configuration :sqflite:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[   +1 ms] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[   +1 ms] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :url_launcher_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.     
+[        ] The configuration :url_launcher_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[        ] The configuration :webview_flutter_android:classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.  
+[        ] The configuration :webview_flutter_android:classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[  +97 ms] Task name matched 'assembleRelease'
+[        ] Selected primary task 'assembleRelease' from project :
+[ +391 ms] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\30.0.3\package.xml
+[ +106 ms] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\33.0.1\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\35.0.1\package.xml
+[        ] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that 
+were released at different times.
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\36.0.0\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\cmake\3.18.1\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\cmdline-tools\latest\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\emulator\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\extras\google\usb_driver\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\ndk\25.1.8937393\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platform-tools\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-31\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-33\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-34\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-35\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\sources\android-35\package.xml
+[  +88 ms] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\30.0.3\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\33.0.1\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\35.0.1\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\build-tools\36.0.0\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\cmake\3.18.1\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\cmdline-tools\latest\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\emulator\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\extras\google\usb_driver\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\ndk\25.1.8937393\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platform-tools\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-31\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-33\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-34\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\platforms\android-35\package.xml
+[        ] Parsing C:\Users\Product Manager\AppData\Local\Android\sdk\sources\android-35\package.xml
+[+11102 ms] Failed to connect to host: https://dl.google.com/android/repository/addons_list-5.xml
+[        ] Failed to connect to host: https://dl.google.com/android/repository/addons_list-4.xml
+[        ] Failed to connect to host: https://dl.google.com/android/repository/addons_list-3.xml
+[        ] Failed to connect to host: https://dl.google.com/android/repository/addons_list-2.xml
+[        ] Failed to connect to host: https://dl.google.com/android/repository/addons_list-1.xml
+[        ] Failed to download any source lists!
+[        ] IO exception while downloading manifest:
+[        ] java.net.UnknownHostException: dl.google.com
+[        ]      at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572)
+[        ]      at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+[        ]      at java.base/java.net.Socket.connect(Socket.java:633)
+[        ]      at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+[        ]      at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:174)
+[        ]      at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+[        ]      at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:534)
+[        ]      at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:639)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:266)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:380)
+[        ]      at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+[        ]      at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1286)
+[        ]      at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1127)
+[        ]      at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:142)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.openUrl(DownloadCache.java:245)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.downloadAndCache(DownloadCache.java:622)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.openCachedUrl(DownloadCache.java:453)
+[        ]      at com.android.sdklib.repository.legacy.LegacyDownloader.downloadAndStream(LegacyDownloader.java:82)
+[        ]      at com.android.repository.impl.downloader.LocalFileAwareDownloader.downloadAndStream(LocalFileAwareDownloader.java:51)
+[        ]      at com.android.repository.impl.manager.RemoteRepoLoaderImpl.lambda$fetchPackages$0(RemoteRepoLoaderImpl.java:138)
+[        ]      at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[        ]      at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[        ]      at java.base/java.lang.Thread.run(Thread.java:842)
+[        ] IO exception while downloading manifest:
+[        ] java.net.UnknownHostException: dl.google.com
+[        ]      at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572)
+[        ]      at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+[        ]      at java.base/java.net.Socket.connect(Socket.java:633)
+[        ]      at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+[        ]      at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:174)
+[        ]      at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:183)
+[        ]      at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:534)
+[        ]      at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:639)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:266)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:380)
+[        ]      at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+[        ]      at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1286)
+[        ]      at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1127)
+[        ]      at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+[        ]      at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:142)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.openUrl(DownloadCache.java:245)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.downloadAndCache(DownloadCache.java:622)
+[        ]      at com.android.sdklib.repository.legacy.remote.internal.DownloadCache.openCachedUrl(DownloadCache.java:453)
+[        ]      at com.android.sdklib.repository.legacy.LegacyDownloader.downloadAndStream(LegacyDownloader.java:82)
+[        ]      at com.android.repository.impl.downloader.LocalFileAwareDownloader.downloadAndStream(LocalFileAwareDownloader.java:51)
+[        ]      at com.android.repository.impl.manager.RemoteRepoLoaderImpl.lambda$fetchPackages$0(RemoteRepoLoaderImpl.java:138)
+[        ]      at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+[        ]      at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[        ]      at java.base/java.lang.Thread.run(Thread.java:842)
+[ +963 ms] Still waiting for package manifests to be fetched remotely.
+[ +109 ms] FAILURE: Build failed with an exception.
+[        ] * What went wrong:
+[        ] Could not determine the dependencies of task ':app:lintVitalReportRelease'.
+[        ] > Failed to find Build Tools revision 34.0.0
+[        ] * Try:
+[        ] > Run with --debug option to get more log output.
+[        ] > Run with --scan to get full insights.
+[        ] > Get more help at https://help.gradle.org.
+[        ] * Exception is:
+[        ] org.gradle.api.internal.tasks.TaskDependencyResolveException: Could not determine the dependencies of task ':app:lintVitalReportRelease'.
+[        ]      at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext.getDependencies(CachingTaskDependencyResolveContext.java:68)
+[        ]      at org.gradle.execution.plan.TaskDependencyResolver.resolveDependenciesFor(TaskDependencyResolver.java:49)
+[        ]      at org.gradle.execution.plan.LocalTaskNode.getDependencies(LocalTaskNode.java:148)
+[        ]      at org.gradle.execution.plan.LocalTaskNode.resolveDependencies(LocalTaskNode.java:122)
+[        ]      at org.gradle.execution.plan.DefaultExecutionPlan.discoverNodeRelationships(DefaultExecutionPlan.java:184)
+[        ]      at org.gradle.execution.plan.DefaultExecutionPlan.doAddEntryNodes(DefaultExecutionPlan.java:156)
+[        ]      at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:131)
+[        ]      at org.gradle.execution.plan.DefaultExecutionPlan.addEntryTasks(DefaultExecutionPlan.java:123)
+[        ]      at org.gradle.execution.TaskNameResolvingBuildTaskScheduler.scheduleRequestedTasks(TaskNameResolvingBuildTaskScheduler.java:54)
+[        ]      at org.gradle.execution.DefaultTasksBuildTaskScheduler.scheduleRequestedTasks(DefaultTasksBuildTaskScheduler.java:72)
+[        ]      at org.gradle.initialization.DefaultTaskExecutionPreparer.lambda$scheduleRequestedTasks$0(DefaultTaskExecutionPreparer.java:46)
+[        ]      at org.gradle.internal.Factories$1.create(Factories.java:31)
+[        ]      at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
+[        ]      at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:228)
+[        ]      at org.gradle.api.internal.project.DefaultProjectStateRegistry$DefaultBuildProjectRegistry.withMutableStateOfAllProjects(DefaultProjectStateRegistry.java:221)
+[        ]      at org.gradle.initialization.DefaultTaskExecutionPreparer.scheduleRequestedTasks(DefaultTaskExecutionPreparer.java:45)
+[        ]      at org.gradle.initialization.VintageBuildModelController.lambda$scheduleRequestedTasks$0(VintageBuildModelController.java:76)
+[   +1 ms]      at org.gradle.internal.model.StateTransitionController.lambda$inState$1(StateTransitionController.java:99)
+[        ]      at org.gradle.internal.model.StateTransitionController.lambda$inState$2(StateTransitionController.java:114)
+[        ]      at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[        ]      at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:110)
+[        ]      at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:98)
+[        ]      at org.gradle.initialization.VintageBuildModelController.scheduleRequestedTasks(VintageBuildModelController.java:76)
+[        ]      at org.gradle.internal.build.DefaultBuildLifecycleController$DefaultWorkGraphBuilder.addRequestedTasks(DefaultBuildLifecycleController.java:351)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.lambda$scheduleRequestedTasks$0(DefaultBuildTreeWorkPreparer.java:41)
+[        ]      at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$populateWorkGraph$7(DefaultBuildLifecycleController.java:186)
+[        ]      at org.gradle.internal.build.DefaultBuildWorkPreparer.populateWorkGraph(DefaultBuildWorkPreparer.java:42)
+[        ]      at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer$PopulateWorkGraph.populateTaskGraph(BuildOperationFiringBuildWorkPreparer.java:106)
+[        ]      at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer$PopulateWorkGraph.run(BuildOperationFiringBuildWorkPreparer.java:92)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+[        ]      at org.gradle.internal.build.BuildOperationFiringBuildWorkPreparer.populateWorkGraph(BuildOperationFiringBuildWorkPreparer.java:67)
+[        ]      at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$populateWorkGraph$8(DefaultBuildLifecycleController.java:186)
+[        ]      at org.gradle.internal.model.StateTransitionController.lambda$inState$1(StateTransitionController.java:99)
+[        ]      at org.gradle.internal.model.StateTransitionController.lambda$inState$2(StateTransitionController.java:114)
+[        ]      at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[        ]      at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:110)
+[        ]      at org.gradle.internal.model.StateTransitionController.inState(StateTransitionController.java:98)
+[        ]      at org.gradle.internal.build.DefaultBuildLifecycleController.populateWorkGraph(DefaultBuildLifecycleController.java:186)
+[   +1 ms]      at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.populateWorkGraph(DefaultBuildWorkGraphController.java:169)
+[        ]      at org.gradle.composite.internal.DefaultBuildController.populateWorkGraph(DefaultBuildController.java:76)
+[        ]      at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraphBuilder.withWorkGraph(DefaultIncludedBuildTaskGraph.java:153)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.lambda$scheduleRequestedTasks$1(DefaultBuildTreeWorkPreparer.java:41)
+[        ]      at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraph$1.run(DefaultIncludedBuildTaskGraph.java:209)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+[        ]      at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph$DefaultBuildTreeWorkGraph.scheduleWork(DefaultIncludedBuildTaskGraph.java:204)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(DefaultBuildTreeWorkPreparer.java:37)
+[        ]      at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:36)
+[        ]      at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:35)
+[        ]      at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(DefaultIncludedBuildTaskGraph.java:112)
+[        ]      at org.gradle.configurationcache.VintageBuildTreeWorkController.scheduleAndRunRequestedTasks(VintageBuildTreeWorkController.kt:35)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$scheduleAndRunTasks$1(DefaultBuildTreeLifecycleController.java:68)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:98)
+[        ]      at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:169)
+[        ]      at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+[        ]      at org.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransitionController.java:169)
+[        ]      at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+[        ]      at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:169)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:95)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:68)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:63)
+[        ]      at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:31)
+[        ]      at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+[        ]      at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
+[        ]      at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
+[        ]      at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:140)
+[        ]      at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
+[        ]      at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
+[        ]      at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:122)
+[        ]      at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
+[        ]      at org.gradle.internal.buildtree.InitDeprecationLoggingActionExecutor.execute(InitDeprecationLoggingActionExecutor.java:58)
+[        ]      at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
+[        ]      at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:65)
+[        ]      at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
+[        ]      at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:65)
+[        ]      at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
+[        ]      at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+[        ]      at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+[        ]      at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
+[        ]      at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
+[        ]      at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
+[        ]      at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
+[        ]      at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
+[        ]      at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
+[        ]      at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
+[        ]      at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
+[        ]      at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:100)
+[        ]      at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:88)
+[        ]      at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:69)
+[        ]      at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
+[        ]      at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
+[        ]      at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:64)
+[        ]      at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:32)
+[        ]      at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:50)
+[        ]      at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:38)
+[        ]      at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
+[   +1 ms]      at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
+[        ]      at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
+[        ]      at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
+[        ]      at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
+[        ]      at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
+[        ]      at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:64)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+[        ]      at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+[        ]      at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+[        ]      at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+[        ]      at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+[        ]      at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
+[        ]      at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+[        ]      at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[        ]      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[        ]      at java.base/java.lang.Thread.run(Thread.java:842)
+[        ] Caused by: com.android.builder.errors.EvalIssueException: Failed to find Build Tools revision 34.0.0
+[        ]      at com.android.builder.errors.IssueReporter.reportError(IssueReporter.kt:129)
+[        ]      at com.android.build.gradle.internal.SdkHandler.initTarget(SdkHandler.java:151)
+[        ]      at com.android.build.gradle.internal.SdkFullLoadingStrategy.init(SdkFullLoadingStrategy.kt:49)
+[   +1 ms]      at com.android.build.gradle.internal.SdkFullLoadingStrategy.getTargetBootClasspath(SdkFullLoadingStrategy.kt:71)
+[        ]      at com.android.build.gradle.internal.SdkLoadingStrategy.getTargetBootClasspath(SdkLoadingStrategy.kt:36)
+[        ]      at com.android.build.gradle.internal.SdkComponentsBuildService$VersionedSdkLoader$targetBootClasspathProvider$1.call(SdkComponents.kt:192)
+[        ]      at com.android.build.gradle.internal.SdkComponentsBuildService$VersionedSdkLoader$targetBootClasspathProvider$1.call(SdkComponents.kt:191)
+[        ]      at org.gradle.api.internal.provider.DefaultProvider.calculateOwnValue(DefaultProvider.java:72)
+[        ]      at org.gradle.api.internal.provider.AbstractMinimalProvider.calculateValue(AbstractMinimalProvider.java:108)
+[        ]      at org.gradle.api.internal.provider.FlatMapProvider.calculateOwnValue(FlatMapProvider.java:50)
+[        ]      at org.gradle.api.internal.provider.AbstractMinimalProvider.calculateValue(AbstractMinimalProvider.java:108)
+[        ]      at org.gradle.api.internal.provider.FlatMapProvider.backingProvider(FlatMapProvider.java:68)
+[        ]      at org.gradle.api.internal.provider.FlatMapProvider.getProducer(FlatMapProvider.java:77)
+[        ]      at org.gradle.api.internal.provider.Collectors$ElementsFromCollectionProvider.getProducer(Collectors.java:236)
+[        ]      at org.gradle.api.internal.provider.AbstractCollectionProperty$CollectingSupplier.getProducer(AbstractCollectionProperty.java:399)
+[   +2 ms]      at org.gradle.api.internal.provider.AbstractProperty.getProducer(AbstractProperty.java:187)
+[   +1 ms]      at org.gradle.api.internal.provider.Collectors$ElementsFromCollectionProvider.getProducer(Collectors.java:236)
+[        ]      at org.gradle.api.internal.provider.AbstractCollectionProperty$PlusCollector.getProducer(AbstractCollectionProperty.java:486)
+[        ]      at org.gradle.api.internal.provider.AbstractCollectionProperty$CollectingSupplier.getProducer(AbstractCollectionProperty.java:399)
+[        ]      at org.gradle.api.internal.provider.AbstractProperty.getProducer(AbstractProperty.java:187)
+[        ]      at org.gradle.api.internal.file.collections.ProviderBackedFileCollection.visitDependencies(ProviderBackedFileCollection.java:51)
+[        ]      at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext$TaskGraphImpl.getNodeValues(CachingTaskDependencyResolveContext.java:103)
+[        ]      at org.gradle.internal.graph.CachingDirectedGraphWalker$GraphWithEmptyEdges.getNodeValues(CachingDirectedGraphWalker.java:213)
+[   +1 ms]      at org.gradle.internal.graph.CachingDirectedGraphWalker.doSearch(CachingDirectedGraphWalker.java:121)
+[   +1 ms]      at org.gradle.internal.graph.CachingDirectedGraphWalker.findValues(CachingDirectedGraphWalker.java:73)
+[        ]      at org.gradle.api.internal.tasks.CachingTaskDependencyResolveContext.getDependencies(CachingTaskDependencyResolveContext.java:66)
+[        ]      ... 145 more
+[        ] Caused by: java.lang.IllegalStateException: Failed to find Build Tools revision 34.0.0
+[        ]      at com.android.builder.sdk.DefaultSdkLoader.installBuildTools(DefaultSdkLoader.java:307)
+[        ]      at com.android.builder.sdk.DefaultSdkLoader.getTargetInfo(DefaultSdkLoader.java:155)
+[        ]      at com.android.build.gradle.internal.SdkHandler.initTarget(SdkHandler.java:131)
+[        ]      ... 169 more
+[        ] BUILD FAILED in 48s
+[   +1 ms] 4 actionable tasks: 4 up-to-date
+[        ] Watched directory hierarchies: [C:\dev\flutter\packages\flutter_tools\gradle]
+[ +507 ms] Running Gradle task 'assembleRelease'... (completed in 48.9s)
+[   +9 ms] "flutter apk" took 50,272ms.
+[  +12 ms] Gradle task assembleRelease failed with exit code 1
+[        ]
+           #0      throwToolExit (package:flutter_tools/src/base/common.dart:10:3)
+           #1      AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:500:9)
+           <asynchronous suspension>
+           #2      AndroidGradleBuilder.buildApk (package:flutter_tools/src/android/gradle.dart:224:5)
+           <asynchronous suspension>
+           #3      BuildApkCommand.runCommand (package:flutter_tools/src/commands/build_apk.dart:141:5)
+           <asynchronous suspension>
+           #4      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1408:27)
+           <asynchronous suspension>
+           #5      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+           <asynchronous suspension>
+           #6      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+           <asynchronous suspension>
+           #7      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:420:9)
+           <asynchronous suspension>
+           #8      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+           <asynchronous suspension>
+           #9      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+           <asynchronous suspension>
+           #10     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+           <asynchronous suspension>
+           #11     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+           <asynchronous suspension>
+           #12     main (package:flutter_tools/executable.dart:93:3)
+           <asynchronous suspension>
+
+
+[ +204 ms] ensureAnalyticsSent: 201ms
+[        ] Running 1 shutdown hook
+[   +1 ms] Shutdown hooks complete
+[   +6 ms] exiting with code 1
+PS C:\dev\development\ascend\app-adjust-height-t> 
