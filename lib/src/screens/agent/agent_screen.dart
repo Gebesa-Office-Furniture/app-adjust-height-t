@@ -84,7 +84,7 @@ class _AgentScreenState extends State<AgentScreen> {
     final tz = await _getTimezone();
 
     // URL base
-    const host = 'grand-caramel-8afbe1.netlify.app';
+    const host = 'ubiquitous-mandazi-271500.netlify.app';
     final url = Uri.https(host, '/', {'lang': langParam, 'theme': themeParam});
 
     // Cookie antes de cargar la vista (requisito iOS)
