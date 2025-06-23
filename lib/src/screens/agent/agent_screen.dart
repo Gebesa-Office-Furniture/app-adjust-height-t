@@ -68,9 +68,28 @@ class _AgentScreenState extends State<AgentScreen> {
     }
   }
 
+  Future<void> _setPermissions() async {
+    if (Platform.isIOS) {
+      // Solicitar permisos de micrófono en iOS
+      final microphoneStatus = await Permission.microphone.request();
+      if (microphoneStatus != PermissionStatus.granted) {
+        debugPrint('Microphone permission denied');
+      }
+      
+      // También solicitar permiso de reconocimiento de voz si es necesario
+      final speechStatus = await Permission.speech.request();
+      if (speechStatus != PermissionStatus.granted) {
+        debugPrint('Speech recognition permission denied');
+      }
+    }
+  }
+
   // ───────────────────── WebView ─────────────────────
 
   Future<void> _initWebView() async {
+    // Solicitar permisos antes de inicializar WebView
+    await _setPermissions();
+    
     // Tema e idioma
     final themeCtrl = Provider.of<ThemeController>(context, listen: false);
     final langCtrl = Provider.of<LanguageController>(context, listen: false);
@@ -149,7 +168,7 @@ class _AgentScreenState extends State<AgentScreen> {
         ..setMediaPlaybackRequiresUserGesture(false)
         ..setOnShowFileSelector((params) async {
           final picked = await FilePicker.platform.pickFiles(
-            allowMultiple: params.mode == FileSelectorMode.openMultiple,
+            allowMultiple: params.mode == FileSelectorMode.open,
             type: FileType.any,
           );
           if (picked == null || picked.files.isEmpty) return [];
