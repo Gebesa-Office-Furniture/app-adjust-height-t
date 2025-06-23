@@ -143,23 +143,38 @@ class _AgentScreenState extends State<AgentScreen> {
           await request.deny();
         }
       },
-    )
-      ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setNavigationDelegate(
-        NavigationDelegate(
-          onNavigationRequest: (request) async {
-            final fixed = _repairUri(request.url);
-            if (fixed.toString() != request.url || !fixed.host.contains(host)) {
-              await _launchExternal(fixed);
-              return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
-          },
-          onPageStarted: (_) => setState(() => isLoading = true),
-          onPageFinished: (_) => setState(() => isLoading = false),
-        ),
-      )
-      ..loadRequest(url);
+    );
+    
+    // Configurar JavaScript primero
+    await ctrl.setJavaScriptMode(JavaScriptMode.unrestricted);
+    
+    // Configurar el delegado de navegación
+    await ctrl.setNavigationDelegate(
+      NavigationDelegate(
+        onNavigationRequest: (request) async {
+          final fixed = _repairUri(request.url);
+          if (fixed.toString() != request.url || !fixed.host.contains(host)) {
+            await _launchExternal(fixed);
+            return NavigationDecision.prevent;
+          }
+          return NavigationDecision.navigate;
+        },
+        onPageStarted: (_) => setState(() => isLoading = true),
+        onPageFinished: (_) async {
+          setState(() => isLoading = false);
+          
+          // Inyectar JavaScript para solicitar permisos después de cargar
+          if (Platform.isIOS) {
+            await ctrl.runJavaScript('''
+              // Verificar si navigator.mediaDevices está disponible
+              if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                console.log('getUserMedia disponible');
+              }
+            ''');
+          }
+        },
+      ),
+    );
 
     // ── Ajustes extra Android ──
     if (ctrl.platform is AndroidWebViewController) {
@@ -178,8 +193,18 @@ class _AgentScreenState extends State<AgentScreen> {
               .toList();
         });
     }
+    
+    // ── Ajustes extra iOS ──
+    if (ctrl.platform is WebKitWebViewController) {
+      final webkit = ctrl.platform as WebKitWebViewController;
+      // Permitir reproducción automática de medios
+      await webkit.setAllowsBackForwardNavigationGestures(false);
+    }
 
     setState(() => _controller = ctrl);
+    
+    // Cargar la URL al final, después de toda la configuración
+    await ctrl.loadRequest(url);
   }
 
   // ───────────────────── UI ─────────────────────
