@@ -87,6 +87,8 @@
 		<string>ubiquitous-mandazi-271500.netlify.app</string>
 		<string>general-runtime.voiceflow.com</string>
 		<string>cdn.voiceflow.com</string>
+		<string>mediastream.voiceflow.com</string>
+		<string>*.voiceflow.com</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
