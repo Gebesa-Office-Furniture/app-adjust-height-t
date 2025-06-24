@@ -2,10 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import 'package:webview_flutter_android/webview_flutter_android.dart';
-import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
-import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -24,10 +21,9 @@ class AgentScreen extends StatefulWidget {
 }
 
 class _AgentScreenState extends State<AgentScreen> {
-  WebViewController? _controller;
+  InAppWebViewController? _controller;
   bool isLoading = true;
-
-  late final WebViewCookieManager _cookieManager = WebViewCookieManager();
+  final CookieManager _cookieManager = CookieManager.instance();
 
   @override
   void initState() {
@@ -107,104 +103,13 @@ class _AgentScreenState extends State<AgentScreen> {
     final url = Uri.https(host, '/', {'lang': langParam, 'theme': themeParam});
 
     // Cookie antes de cargar la vista (requisito iOS)
-    await _cookieManager.setCookie(WebViewCookie(
+    await _cookieManager.setCookie(
+      url: WebUri(url.toString()),
       name: 'jwt_token',
       value: '$jwt,,,,,$uuid,,,,,$userId,,,,,$tz',
       domain: host,
       path: '/',
-    ));
-
-    // ── Config común ──
-    const baseParams = PlatformWebViewControllerCreationParams();
-    late final PlatformWebViewControllerCreationParams params;
-
-    if (WebViewPlatform.instance is WebKitWebViewPlatform) {
-      // ── iOS / macOS ──
-      params = WebKitWebViewControllerCreationParams
-          .fromPlatformWebViewControllerCreationParams(
-        baseParams,
-        allowsInlineMediaPlayback: true,
-        mediaTypesRequiringUserAction: const <PlaybackMediaTypes>{},
-        limitsNavigationsToAppBoundDomains: true, // 🔑 App-Bound
-      );
-    } else {
-      // ── Android / otras ──
-      params = baseParams;
-    }
-
-    // ── Crea el controlador concediendo permisos desde el inicio ──
-    final ctrl = WebViewController.fromPlatformCreationParams(
-      params,
-      onPermissionRequest: (request) async {
-        if (request.types.contains(WebViewPermissionResourceType.microphone) ||
-            request.types.contains(WebViewPermissionResourceType.camera)) {
-          await request.grant(); // micrófono / cámara
-        } else {
-          await request.deny();
-        }
-      },
     );
-    
-    // Configurar JavaScript primero
-    await ctrl.setJavaScriptMode(JavaScriptMode.unrestricted);
-    
-    // Configurar el delegado de navegación
-    await ctrl.setNavigationDelegate(
-      NavigationDelegate(
-        onNavigationRequest: (request) async {
-          final fixed = _repairUri(request.url);
-          if (fixed.toString() != request.url || !fixed.host.contains(host)) {
-            await _launchExternal(fixed);
-            return NavigationDecision.prevent;
-          }
-          return NavigationDecision.navigate;
-        },
-        onPageStarted: (_) => setState(() => isLoading = true),
-        onPageFinished: (_) async {
-          setState(() => isLoading = false);
-          
-          // Inyectar JavaScript para solicitar permisos después de cargar
-          if (Platform.isIOS) {
-            await ctrl.runJavaScript('''
-              // Verificar si navigator.mediaDevices está disponible
-              if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                console.log('getUserMedia disponible');
-              }
-            ''');
-          }
-        },
-      ),
-    );
-
-    // ── Ajustes extra Android ──
-    if (ctrl.platform is AndroidWebViewController) {
-      final android = ctrl.platform as AndroidWebViewController;
-      android
-        ..setMediaPlaybackRequiresUserGesture(false)
-        ..setOnShowFileSelector((params) async {
-          final picked = await FilePicker.platform.pickFiles(
-            allowMultiple: params.mode == FileSelectorMode.open,
-            type: FileType.any,
-          );
-          if (picked == null || picked.files.isEmpty) return [];
-          return picked.files
-              .where((f) => f.path != null)
-              .map((f) => File(f.path!).uri.toString())
-              .toList();
-        });
-    }
-    
-    // ── Ajustes extra iOS ──
-    if (ctrl.platform is WebKitWebViewController) {
-      final webkit = ctrl.platform as WebKitWebViewController;
-      // Permitir reproducción automática de medios
-      await webkit.setAllowsBackForwardNavigationGestures(false);
-    }
-
-    setState(() => _controller = ctrl);
-    
-    // Cargar la URL al final, después de toda la configuración
-    await ctrl.loadRequest(url);
   }
 
   // ───────────────────── UI ─────────────────────
@@ -219,9 +124,84 @@ class _AgentScreenState extends State<AgentScreen> {
               top: MediaQuery.of(context).padding.top,
               bottom: MediaQuery.of(context).padding.bottom + 80,
             ),
-            child: _controller == null
-                ? const SizedBox()
-                : WebViewWidget(controller: _controller!),
+            child: InAppWebView(
+              initialUrlRequest: URLRequest(
+                url: WebUri(
+                  Uri.https(
+                    'ubiquitous-mandazi-271500.netlify.app',
+                    '/',
+                    {
+                      'lang': Provider.of<LanguageController>(context, listen: false).currentLocale.languageCode,
+                      'theme': Provider.of<ThemeController>(context, listen: false).themeMode == ThemeMode.dark ? 'dark' : 'light',
+                    },
+                  ).toString(),
+                ),
+              ),
+              initialSettings: InAppWebViewSettings(
+                javaScriptEnabled: true,
+                allowsInlineMediaPlayback: true,
+                mediaPlaybackRequiresUserGesture: false,
+                allowFileAccess: true,
+                allowFileAccessFromFileURLs: true,
+                allowUniversalAccessFromFileURLs: true,
+                useShouldOverrideUrlLoading: true,
+                supportMultipleWindows: false,
+                iframeAllow: 'camera; microphone; geolocation',
+                iframeAllowFullscreen: true,
+              ),
+              onWebViewCreated: (controller) {
+                _controller = controller;
+              },
+              onPermissionRequest: (controller, request) async {
+                if (request.resources.contains(PermissionResourceType.MICROPHONE) ||
+                    request.resources.contains(PermissionResourceType.CAMERA)) {
+                  return PermissionResponse(
+                    resources: request.resources,
+                    action: PermissionResponseAction.GRANT,
+                  );
+                }
+                return PermissionResponse(
+                  resources: request.resources,
+                  action: PermissionResponseAction.DENY,
+                );
+              },
+              shouldOverrideUrlLoading: (controller, navigationAction) async {
+                final uri = navigationAction.request.url!;
+                final fixed = _repairUri(uri.toString());
+                if (fixed.toString() != uri.toString() || !fixed.host.contains('ubiquitous-mandazi-271500.netlify.app')) {
+                  await _launchExternal(fixed);
+                  return NavigationActionPolicy.CANCEL;
+                }
+                return NavigationActionPolicy.ALLOW;
+              },
+              onLoadStart: (controller, url) {
+                setState(() => isLoading = true);
+              },
+              onLoadStop: (controller, url) async {
+                setState(() => isLoading = false);
+                
+                // Inyectar JavaScript para solicitar permisos después de cargar
+                if (Platform.isIOS) {
+                  await controller.evaluateJavascript(source: '''
+                    // Verificar si navigator.mediaDevices está disponible
+                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                      console.log('getUserMedia disponible');
+                    }
+                  ''');
+                }
+              },
+              onReceivedServerTrustAuthRequest: (controller, challenge) async {
+                return ServerTrustAuthResponse(
+                  action: ServerTrustAuthResponseAction.PROCEED,
+                );
+              },
+              androidOnPermissionRequest: (controller, origin, resources) async {
+                return PermissionRequestResponse(
+                  resources: resources,
+                  action: PermissionRequestResponseAction.GRANT,
+                );
+              },
+            ),
           ),
           if (isLoading)
             const Center(
