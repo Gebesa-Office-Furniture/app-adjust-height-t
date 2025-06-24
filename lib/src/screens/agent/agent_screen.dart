@@ -146,23 +146,21 @@ class _AgentScreenState extends State<AgentScreen> {
                 allowUniversalAccessFromFileURLs: true,
                 useShouldOverrideUrlLoading: true,
                 supportMultipleWindows: false,
-                iframeAllow: 'camera; microphone; geolocation',
+                iframeAllow: 'microphone *; camera *',
                 iframeAllowFullscreen: true,
+                // iOS specific settings for media capture
+                allowsAirPlayForMediaPlayback: true,
+                allowsPictureInPictureMediaPlayback: true,
+                allowsBackForwardNavigationGestures: false,
               ),
               onWebViewCreated: (controller) {
                 _controller = controller;
               },
               onPermissionRequest: (controller, request) async {
-                if (request.resources.contains(PermissionResourceType.MICROPHONE) ||
-                    request.resources.contains(PermissionResourceType.CAMERA)) {
-                  return PermissionResponse(
-                    resources: request.resources,
-                    action: PermissionResponseAction.GRANT,
-                  );
-                }
+                // Siempre otorgar permisos de micrófono y cámara
                 return PermissionResponse(
                   resources: request.resources,
-                  action: PermissionResponseAction.DENY,
+                  action: PermissionResponseAction.GRANT,
                 );
               },
               shouldOverrideUrlLoading: (controller, navigationAction) async {
@@ -180,13 +178,42 @@ class _AgentScreenState extends State<AgentScreen> {
               onLoadStop: (controller, url) async {
                 setState(() => isLoading = false);
                 
-                // Inyectar JavaScript para solicitar permisos después de cargar
+                // Inyectar JavaScript para habilitar micrófono en iOS
                 if (Platform.isIOS) {
                   await controller.evaluateJavascript(source: '''
-                    // Verificar si navigator.mediaDevices está disponible
-                    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                      console.log('getUserMedia disponible');
+                    // Polyfill para getUserMedia en iOS WebView
+                    if (!navigator.mediaDevices) {
+                      navigator.mediaDevices = {};
                     }
+                    
+                    // Asegurar que getUserMedia esté disponible
+                    if (!navigator.mediaDevices.getUserMedia) {
+                      navigator.mediaDevices.getUserMedia = function(constraints) {
+                        var getUserMedia = navigator.getUserMedia ||
+                                         navigator.webkitGetUserMedia ||
+                                         navigator.mozGetUserMedia ||
+                                         navigator.msGetUserMedia;
+                        
+                        if (!getUserMedia) {
+                          return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+                        }
+                        
+                        return new Promise(function(resolve, reject) {
+                          getUserMedia.call(navigator, constraints, resolve, reject);
+                        });
+                      };
+                    }
+                    
+                    // Solicitar permisos de micrófono automáticamente
+                    navigator.mediaDevices.getUserMedia({ audio: true })
+                      .then(function(stream) {
+                        console.log('Microphone access granted');
+                        // Detener el stream inmediatamente
+                        stream.getTracks().forEach(track => track.stop());
+                      })
+                      .catch(function(err) {
+                        console.error('Microphone access denied:', err);
+                      });
                   ''');
                 }
               },
