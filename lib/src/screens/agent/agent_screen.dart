@@ -64,28 +64,9 @@ class _AgentScreenState extends State<AgentScreen> {
     }
   }
 
-  Future<void> _setPermissions() async {
-    if (Platform.isIOS) {
-      // Solicitar permisos de micrófono en iOS
-      final microphoneStatus = await Permission.microphone.request();
-      if (microphoneStatus != PermissionStatus.granted) {
-        debugPrint('Microphone permission denied');
-      }
-      
-      // También solicitar permiso de reconocimiento de voz si es necesario
-      final speechStatus = await Permission.speech.request();
-      if (speechStatus != PermissionStatus.granted) {
-        debugPrint('Speech recognition permission denied');
-      }
-    }
-  }
-
   // ───────────────────── WebView ─────────────────────
 
   Future<void> _initWebView() async {
-    // Solicitar permisos antes de inicializar WebView
-    await _setPermissions();
-    
     // Tema e idioma
     final themeCtrl = Provider.of<ThemeController>(context, listen: false);
     final langCtrl = Provider.of<LanguageController>(context, listen: false);
@@ -110,6 +91,36 @@ class _AgentScreenState extends State<AgentScreen> {
       domain: host,
       path: '/',
     );
+  }
+
+  /// Solicita permisos de dispositivo basados en los recursos que pide el WebView.
+  Future<bool> _requestPermissions(List<String> resources) async {
+    if (resources.isEmpty) return true;
+
+    // Evita solicitar el mismo permiso varias veces
+    final permissionsToRequest = <Permission>{};
+
+    for (final resource in resources) {
+      // Mapea recursos de WebView a permisos del dispositivo
+      if (resource.contains('AUDIO_CAPTURE') ||
+          resource == PermissionRequest.fromMap(
+              {'name': 'AUDIO_CAPTURE', 'type': 'microphone'})) {
+        permissionsToRequest.add(Permission.microphone);
+      }
+      if (resource.contains('VIDEO_CAPTURE') ||
+          resource == PermissionRequest.fromMap(
+              {'name': 'VIDEO_CAPTURE', 'type': 'camera'})) {
+        permissionsToRequest.add(Permission.camera);
+      }
+    }
+
+    if (permissionsToRequest.isEmpty) return true;
+
+    // Solicita todos los permisos necesarios
+    final statuses = await permissionsToRequest.toList().request();
+
+    // Verifica si todos los permisos fueron otorgados
+    return statuses.values.every((status) => status.isGranted);
   }
 
   // ───────────────────── UI ─────────────────────
@@ -157,10 +168,13 @@ class _AgentScreenState extends State<AgentScreen> {
                 _controller = controller;
               },
               onPermissionRequest: (controller, request) async {
-                // Siempre otorgar permisos de micrófono y cámara
+                debugPrint(">>>> iOS PERMISSION REQUEST: ${request.resources}");
+                final granted = await _requestPermissions(request.resources.cast<String>());
                 return PermissionResponse(
                   resources: request.resources,
-                  action: PermissionResponseAction.GRANT,
+                  action: granted
+                      ? PermissionResponseAction.GRANT
+                      : PermissionResponseAction.DENY,
                 );
               },
               shouldOverrideUrlLoading: (controller, navigationAction) async {
@@ -177,55 +191,21 @@ class _AgentScreenState extends State<AgentScreen> {
               },
               onLoadStop: (controller, url) async {
                 setState(() => isLoading = false);
-                
-                // Inyectar JavaScript para habilitar micrófono en iOS
-                if (Platform.isIOS) {
-                  await controller.evaluateJavascript(source: '''
-                    // Polyfill para getUserMedia en iOS WebView
-                    if (!navigator.mediaDevices) {
-                      navigator.mediaDevices = {};
-                    }
-                    
-                    // Asegurar que getUserMedia esté disponible
-                    if (!navigator.mediaDevices.getUserMedia) {
-                      navigator.mediaDevices.getUserMedia = function(constraints) {
-                        var getUserMedia = navigator.getUserMedia ||
-                                         navigator.webkitGetUserMedia ||
-                                         navigator.mozGetUserMedia ||
-                                         navigator.msGetUserMedia;
-                        
-                        if (!getUserMedia) {
-                          return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
-                        }
-                        
-                        return new Promise(function(resolve, reject) {
-                          getUserMedia.call(navigator, constraints, resolve, reject);
-                        });
-                      };
-                    }
-                    
-                    // Solicitar permisos de micrófono automáticamente
-                    navigator.mediaDevices.getUserMedia({ audio: true })
-                      .then(function(stream) {
-                        console.log('Microphone access granted');
-                        // Detener el stream inmediatamente
-                        stream.getTracks().forEach(track => track.stop());
-                      })
-                      .catch(function(err) {
-                        console.error('Microphone access denied:', err);
-                      });
-                  ''');
-                }
               },
               onReceivedServerTrustAuthRequest: (controller, challenge) async {
                 return ServerTrustAuthResponse(
                   action: ServerTrustAuthResponseAction.PROCEED,
                 );
               },
-              androidOnPermissionRequest: (controller, origin, resources) async {
+              androidOnPermissionRequest:
+                  (controller, origin, resources) async {
+                debugPrint(">>>> Android PERMISSION REQUEST: $resources");
+                final granted = await _requestPermissions(resources);
                 return PermissionRequestResponse(
                   resources: resources,
-                  action: PermissionRequestResponseAction.GRANT,
+                  action: granted
+                      ? PermissionRequestResponseAction.GRANT
+                      : PermissionRequestResponseAction.DENY,
                 );
               },
             ),
