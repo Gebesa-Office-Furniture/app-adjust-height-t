@@ -48,11 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<BluetoothController>().listenToAdapterState();
-    _listenToAuthState();
-    context.read<AuthController>().initializeNotifications(context);
-    // Verifica la disponibilidad del agente al iniciar
-    context.read<AgentController>().checkAgentAvailability();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        context.read<AgentController>().checkAgentAvailability();
+        context.read<BluetoothController>().listenToAdapterState();
+        _listenToAuthState();
+        context.read<AuthController>().initializeNotifications(context);
+      }
+    });
   }
 
   void _listenToAuthState() {
