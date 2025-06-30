@@ -94,36 +94,93 @@ class _AgentScreenState extends State<AgentScreen> {
   }
 
   /// Solicita permisos de dispositivo basados en los recursos que pide el WebView.
-  Future<bool> _requestPermissions(List<String> resources) async {
-    if (resources.isEmpty) return true;
+Future<bool> _requestPermissions(List<PermissionResourceType> resources) async {
+  if (resources.isEmpty) return true;
 
-    // Evita solicitar el mismo permiso varias veces
-    final permissionsToRequest = <Permission>{};
+  // Evita solicitar el mismo permiso varias veces
+  final permissionsToRequest = <Permission>{};
 
-    for (final resource in resources) {
-      // Mapea recursos de WebView a permisos del dispositivo
-      if (resource.contains('AUDIO_CAPTURE') ||
-          resource == PermissionRequest.fromMap(
-              {'name': 'AUDIO_CAPTURE', 'type': 'microphone'})) {
+  for (final resource in resources) {
+    debugPrint("Processing resource: $resource (type: ${resource.runtimeType})");
+    
+    // Usar toString() en lugar de toNativeValue() para evitar el error con int
+    final resourceString = resource.toString();
+    
+    // Mapea recursos de WebView a permisos del dispositivo
+    if (resourceString.contains('AUDIO_CAPTURE') || 
+        resourceString.toLowerCase().contains('microphone')) {
+      permissionsToRequest.add(Permission.microphone);
+    }
+    
+    if (resourceString.contains('VIDEO_CAPTURE') || 
+        resourceString.toLowerCase().contains('camera')) {
+      permissionsToRequest.add(Permission.camera);
+    }
+    
+    // También verificar por comparación directa del enum
+    try {
+      if (resource == PermissionResourceType.MICROPHONE) {
         permissionsToRequest.add(Permission.microphone);
       }
-      if (resource.contains('VIDEO_CAPTURE') ||
-          resource == PermissionRequest.fromMap(
-              {'name': 'VIDEO_CAPTURE', 'type': 'camera'})) {
+      if (resource == PermissionResourceType.CAMERA) {
         permissionsToRequest.add(Permission.camera);
       }
+    } catch (e) {
+      debugPrint("Error comparando enum: $e");
     }
-
-    if (permissionsToRequest.isEmpty) return true;
-
-    // Solicita todos los permisos necesarios
-    final statuses = await permissionsToRequest.toList().request();
-
-    // Verifica si todos los permisos fueron otorgados
-    return statuses.values.every((status) => status.isGranted);
   }
 
-  // ───────────────────── UI ─────────────────────
+  if (permissionsToRequest.isEmpty) {
+    debugPrint("No se encontraron permisos reconocidos en: $resources");
+    return true;
+  }
+
+  debugPrint("Solicitando permisos: $permissionsToRequest");
+
+  try {
+    // Solicita todos los permisos necesarios
+    final statuses = await permissionsToRequest.toList().request();
+    
+    // Verifica si todos los permisos fueron otorgados
+    final allGranted = statuses.values.every((status) => status.isGranted);
+    debugPrint("Resultado de permisos: $statuses");
+    
+    return allGranted;
+  } catch (e) {
+    debugPrint("Error al solicitar permisos: $e");
+    return false;
+  }
+}
+
+/// Método auxiliar para Android que recibe List<String>
+Future<bool> _requestPermissionsFromStrings(List<String> resources) async {
+  if (resources.isEmpty) return true;
+
+  final permissionsToRequest = <Permission>{};
+
+  for (final resource in resources) {
+    if (resource.contains('AUDIO_CAPTURE') || 
+        resource.toLowerCase().contains('microphone')) {
+      permissionsToRequest.add(Permission.microphone);
+    }
+    if (resource.contains('VIDEO_CAPTURE') || 
+        resource.toLowerCase().contains('camera')) {
+      permissionsToRequest.add(Permission.camera);
+    }
+  }
+
+  if (permissionsToRequest.isEmpty) return true;
+
+  try {
+    final statuses = await permissionsToRequest.toList().request();
+    return statuses.values.every((status) => status.isGranted);
+  } catch (e) {
+    debugPrint("Error al solicitar permisos en Android: $e");
+    return false;
+  }
+}
+
+// ───────────────────── UI ─────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -168,15 +225,15 @@ class _AgentScreenState extends State<AgentScreen> {
                 _controller = controller;
               },
               onPermissionRequest: (controller, request) async {
-                debugPrint(">>>> iOS PERMISSION REQUEST: ${request.resources}");
-                final granted = await _requestPermissions(request.resources.cast<String>());
-                return PermissionResponse(
-                  resources: request.resources,
-                  action: granted
-                      ? PermissionResponseAction.GRANT
-                      : PermissionResponseAction.DENY,
-                );
-              },
+              debugPrint(">>>> iOS PERMISSION REQUEST: ${request.resources}");
+              final granted = await _requestPermissions(request.resources); // SIN .cast<String>()
+              return PermissionResponse(
+                resources: request.resources,
+                action: granted 
+                    ? PermissionResponseAction.GRANT 
+                    : PermissionResponseAction.DENY,
+              );
+            },
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 final uri = navigationAction.request.url!;
                 final fixed = _repairUri(uri.toString());
@@ -197,16 +254,15 @@ class _AgentScreenState extends State<AgentScreen> {
                   action: ServerTrustAuthResponseAction.PROCEED,
                 );
               },
-              androidOnPermissionRequest:
-                  (controller, origin, resources) async {
-                debugPrint(">>>> Android PERMISSION REQUEST: $resources");
-                final granted = await _requestPermissions(resources);
-                return PermissionRequestResponse(
-                  resources: resources,
-                  action: granted
-                      ? PermissionRequestResponseAction.GRANT
-                      : PermissionRequestResponseAction.DENY,
-                );
+              androidOnPermissionRequest: (controller, origin, resources) async {
+              debugPrint(">>>> Android PERMISSION REQUEST: $resources");
+              final granted = await _requestPermissionsFromStrings(resources);
+              return PermissionRequestResponse(
+                resources: resources,
+                action: granted
+                    ? PermissionRequestResponseAction.GRANT
+                    : PermissionRequestResponseAction.DENY,
+              );
               },
             ),
           ),
