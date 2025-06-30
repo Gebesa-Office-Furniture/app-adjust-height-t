@@ -20,6 +20,8 @@ class AccountSettingsScreen extends StatefulWidget {
 class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _countryCodeController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
   final List<String> _tapSequence = [];
   Timer? _sequenceTimer;
 
@@ -39,6 +41,15 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
     var authController = context.read<AuthController>();
     _nameController.text = authController.userInfo!.name!;
     _emailController.text = authController.userInfo!.email!;
+    
+    // Cargar datos del teléfono si existen
+    if (authController.userInfo!.countryCode != null) {
+      _countryCodeController.text = authController.userInfo!.countryCode!;
+    }
+    if (authController.userInfo!.phoneNumber != null) {
+      _phoneController.text = authController.userInfo!.phoneNumber!;
+    }
+    
     setState(() {});
   }
 
@@ -67,8 +78,21 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
                     Icon(Icons.check, color: Theme.of(context).primaryColor),
                 onPressed: () async {
                   FocusScope.of(context).unfocus();
-                  await authController.changeName(
-                      _nameController.text, context);
+                  
+                  // Actualizar nombre si cambió
+                  if (_nameController.text != authController.userInfo!.name) {
+                    await authController.changeName(
+                        _nameController.text, context);
+                  }
+                  
+                  // Actualizar teléfono si se proporcionó
+                  if (_countryCodeController.text.isNotEmpty && 
+                      _phoneController.text.isNotEmpty) {
+                    await authController.updatePhoneNumber(
+                        _countryCodeController.text, 
+                        _phoneController.text, 
+                        context);
+                  }
                 },
                 builder: (context, child, callback, _) {
                   return TextButton(
@@ -130,6 +154,43 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
                       }
                       return null;
                     },
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    AppLocalizations.of(context)!.phoneNumber,
+                    style: TextStyle(
+                      color: Theme.of(context).iconTheme.color,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: TextField(
+                          controller: _countryCodeController,
+                          keyboardType: TextInputType.phone,
+                          decoration: InputDecoration(
+                            hintText: '+52',
+                            labelText: AppLocalizations.of(context)!.countryCode,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        flex: 5,
+                        child: TextField(
+                          controller: _phoneController,
+                          keyboardType: TextInputType.phone,
+                          decoration: InputDecoration(
+                            hintText: '1234567890',
+                            labelText: AppLocalizations.of(context)!.phoneNumber,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   Text(

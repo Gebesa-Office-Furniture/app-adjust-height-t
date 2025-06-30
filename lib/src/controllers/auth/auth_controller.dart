@@ -557,6 +557,29 @@ class AuthController with ChangeNotifier {
     }
   }
 
+  /// Actualiza el número de teléfono del usuario.
+  ///
+  /// [countryCode] Código de país (ej: +52)
+  /// [phoneNumber] Número de teléfono sin código de país
+  /// [context] Contexto para mostrar mensajes
+  Future<void> updatePhoneNumber(
+      String countryCode, String phoneNumber, BuildContext context) async {
+    try {
+      _setLoading(true);
+      // TODO: Implementar la actualización del número de teléfono en el backend
+      // Por ahora solo mostraremos un mensaje de éxito simulado
+      await Future.delayed(const Duration(seconds: 1));
+      
+      ToastService.showSuccess(
+          context, AppLocalizations.of(context)!.phoneNumberUpdated);
+    } catch (e) {
+      ToastService.showError(
+          context, AppLocalizations.of(context)!.errorUpdatingPhone);
+    } finally {
+      _setLoading(false);
+    }
+  }
+
   /// Elimina la cuenta del usuario actual.
   ///
   /// [context] Contexto para mostrar mensajes

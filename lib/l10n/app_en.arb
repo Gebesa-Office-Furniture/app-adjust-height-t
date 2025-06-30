@@ -798,5 +798,17 @@
     "countryCodeValidation": "Please enter a valid country code",
     "@countryCodeValidation": {
         "description": "Error message for invalid country code"
+    },
+    "update": "Update",
+    "@update": {
+        "description": "Update button"
+    },
+    "phoneNumberUpdated": "Phone number updated successfully",
+    "@phoneNumberUpdated": {
+        "description": "Success message when phone number is updated"
+    },
+    "errorUpdatingPhone": "Error updating phone number",
+    "@errorUpdatingPhone": {
+        "description": "Error message when phone number update fails"
     }
 }

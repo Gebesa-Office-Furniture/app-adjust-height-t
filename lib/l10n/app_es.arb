@@ -798,5 +798,17 @@
     "countryCodeValidation": "Por favor, ingresa una lada o código de país válido",
     "@countryCodeValidation": {
         "description": "Mensaje de error para lada o código de país inválido"
+    },
+    "update": "Actualizar",
+    "@update": {
+        "description": "Botón de actualizar"
+    },
+    "phoneNumberUpdated": "Número de teléfono actualizado exitosamente",
+    "@phoneNumberUpdated": {
+        "description": "Mensaje de éxito al actualizar número de teléfono"
+    },
+    "errorUpdatingPhone": "Error al actualizar el número de teléfono",
+    "@errorUpdatingPhone": {
+        "description": "Mensaje de error al actualizar número de teléfono"
     }
 }
