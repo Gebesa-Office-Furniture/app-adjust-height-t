@@ -20,6 +20,11 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import '../../../routes/settings_routes.dart';
 import '../../widgets/toast_service.dart';
 
+@pragma('vm:entry-point')
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print('Mensaje recibido en segundo plano: ${message.messageId}');
+}
+
 /// Controlador encargado de manejar toda la autenticación y gestión de usuarios.
 ///
 /// Provee funcionalidades para:
@@ -112,8 +117,7 @@ class AuthController with ChangeNotifier {
       });
 
       //onBackgroundMessage
-      FirebaseMessaging.onBackgroundMessage(
-          (message) => firebaseMessagingBackgroundHandler(message));
+      FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
     } else {
       print('Permisos denegados para las notificaciones push');
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -121,10 +125,6 @@ class AuthController with ChangeNotifier {
     }
   }
 
-  /// Manejador de mensajes recibidos cuando la app está en segundo plano
-  Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-    print('Mensaje recibido en segundo plano: ${message.messageId}');
-  }
 
   /// Actualiza el estado de `isLoading` y notifica
   void _setLoading(bool value) {
