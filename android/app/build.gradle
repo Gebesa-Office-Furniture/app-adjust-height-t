@@ -27,7 +27,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "app.gebesa.controller"
-    compileSdkVersion 34
+    compileSdkVersion 35
     ndkVersion = "25.1.8937393"
 
     compileOptions {

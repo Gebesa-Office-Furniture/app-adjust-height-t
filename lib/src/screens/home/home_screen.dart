@@ -13,7 +13,6 @@ import '../../../routes/auth_routes.dart';
 import '../../controllers/agent/agent_controller.dart';
 import '../statics/statics_screen.dart';
 import '../agent/agent_screen.dart';
-import '../tutorial/debug_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -48,14 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        context.read<AgentController>().checkAgentAvailability();
-        context.read<BluetoothController>().listenToAdapterState();
-        _listenToAuthState();
-        context.read<AuthController>().initializeNotifications(context);
-      }
-    });
+    context.read<BluetoothController>().listenToAdapterState();
+    _listenToAuthState();
+    context.read<AuthController>().initializeNotifications(context);
+    // Verifica la disponibilidad del agente al iniciar
+    context.read<AgentController>().checkAgentAvailability();
   }
 
   void _listenToAuthState() {
