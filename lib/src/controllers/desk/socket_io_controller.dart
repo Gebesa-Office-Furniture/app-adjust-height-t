@@ -21,12 +21,12 @@ class DeskSocketService extends ChangeNotifier {
     final token = prefs.getString(TokenManager.TOKEN_KEY);
     
     _socket = io.io(
-      baseUrl,
+      'https://api.gebesa-app.com',
       io.OptionBuilder()
-          .setTransports(['websocket'])
-          .disableAutoConnect()
-          .setQuery(token != null ? {'token': token} : {})
-          .build(),
+        .setPath('/socket.io')          // sin barra final extra
+        .setTransports(['websocket', 'polling'])   // o deja polling + websocket si hay proxys
+        .setQuery(token != null ? {'token': token} : {})
+        .build(),
     );
 
     _socket!
