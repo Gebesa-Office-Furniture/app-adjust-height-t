@@ -286,13 +286,23 @@ class DeskController extends ChangeNotifier {
           _wsStarted = true;
           print("SI ENTRO");
           print("UUID: ${device!.remoteId.str} - Nombre: ${device!.advName}");
-            final response = await DeskApi.setNewUUID(device!.advName, device!.remoteId.str, minHeightMM, maxHeightMM);
-            print(response);
-            if (response['success']) {
-              print("advN actualizado correctamente.");
-            } else {
-              print("Error al actualizar el UUID: ${response['message']}");
-            }
+                      if (await InternetConnection().hasInternetAccess) {
+            final registerResponse = await DeskApi.registerDeskDevice(
+              deviceName ?? "Desk",
+              device!.remoteId.str,
+              "1",
+              minHeightMM: minHeightMM,
+              maxHeightMM: maxHeightMM,
+            );
+            print(registerResponse);
+          }
+          final response = await DeskApi.setNewUUID(device!.advName, device!.remoteId.str, minHeightMM, maxHeightMM);
+          print(response);
+          if (response["success"]) {
+            print("advN actualizado correctamente.");
+          } else {
+            print("Error al actualizar el UUID: ${response["message"]}");
+          }
         }
 
         print("Altura actual: $heightIN pulgadas");
